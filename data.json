@@ -1,0 +1,4299 @@
+{
+  "products": [
+    {
+      "name": "Amplificador Imagen Celular",
+      "category": "Accesorios",
+      "price": 10000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_17786909119811s5x.jpg",
+      "oferta": false,
+      "id": "17786909119811s5x"
+    },
+    {
+      "name": "Anillo Celular",
+      "category": "Accesorios",
+      "price": 4000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778690911981x6uc.jpg",
+      "oferta": false,
+      "id": "1778690911981x6uc"
+    },
+    {
+      "name": "Apoya celular",
+      "category": "Accesorios",
+      "price": 5000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778690911982uwkr.jpg",
+      "oferta": false,
+      "id": "1778690911982uwkr"
+    },
+    {
+      "name": "Aro Selfie Chico",
+      "category": "Accesorios",
+      "price": 5000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778690911982wt1f.jpg",
+      "oferta": false,
+      "id": "1778690911982wt1f"
+    },
+    {
+      "name": "Aro Selfie RGB",
+      "category": "Accesorios",
+      "price": 17000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778690911982jzpn.jpg",
+      "oferta": false,
+      "id": "1778690911982jzpn"
+    },
+    {
+      "name": "Auricular Under Armour",
+      "category": "Auriculares",
+      "price": 9000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778690911982z56u.jpg",
+      "oferta": false,
+      "id": "1778690911982z56u"
+    },
+    {
+      "name": "Balanza Chica",
+      "category": "Accesorios",
+      "price": 9500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778690911982dp5k.jpg",
+      "oferta": false,
+      "id": "1778690911982dp5k"
+    },
+    {
+      "name": "Balanza Equipaje",
+      "category": "Accesorios",
+      "price": 9000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778690911982lhh3.jpg",
+      "oferta": false,
+      "id": "1778690911982lhh3"
+    },
+    {
+      "name": "Balanza Grande",
+      "category": "Accesorios",
+      "price": 13500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778690911982oudi.jpg",
+      "oferta": false,
+      "id": "1778690911982oudi"
+    },
+    {
+      "name": "Baston Selfie",
+      "category": "Accesorios",
+      "price": 7500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_17786909119835m2b.jpg",
+      "oferta": false,
+      "id": "17786909119835m2b"
+    },
+    {
+      "name": "Baston Selfie con Bluetooth",
+      "category": "Accesorios",
+      "price": 9500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_17786909119838blf.jpg",
+      "oferta": false,
+      "id": "17786909119838blf"
+    },
+    {
+      "name": "Bluetooth 5.0",
+      "category": "Accesorios",
+      "price": 6000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_17786909119832vi9.jpg",
+      "oferta": false,
+      "id": "17786909119832vi9"
+    },
+    {
+      "name": "Bluetooth auto",
+      "category": "Accesorios",
+      "price": 6000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778690911983m3tn.jpg",
+      "oferta": false,
+      "id": "1778690911983m3tn"
+    },
+    {
+      "name": "Brazalete Celular Running",
+      "category": "Accesorios",
+      "price": 5000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778690911983vcb8.jpg",
+      "oferta": false,
+      "id": "1778690911983vcb8"
+    },
+    {
+      "name": "Cable Usb Reforzado multiple",
+      "category": "Cables",
+      "price": 7000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778690911983fjgw.jpg",
+      "oferta": false,
+      "id": "1778690911983fjgw"
+    },
+    {
+      "name": "Caddy Notebook",
+      "category": "Accesorios",
+      "price": 10500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778690911983phqg.jpg",
+      "oferta": false,
+      "id": "1778690911983phqg"
+    },
+    {
+      "name": "Caja Sata 2.5 2.0",
+      "category": "Accesorios",
+      "price": 13500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778690911983duq2.jpg",
+      "oferta": false,
+      "id": "1778690911983duq2"
+    },
+    {
+      "name": "Caja Sata 3.0",
+      "category": "Accesorios",
+      "price": 18000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778690911983gcco.jpg",
+      "oferta": false,
+      "id": "1778690911983gcco"
+    },
+    {
+      "name": "Candado Notebook",
+      "category": "Accesorios",
+      "price": 12000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_17786909119839rns.jpg",
+      "oferta": false,
+      "id": "17786909119839rns"
+    },
+    {
+      "name": "Cargador Motorola 168W",
+      "category": "Cargadores",
+      "price": 29500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778690911983pu0w.jpg",
+      "oferta": false,
+      "id": "1778690911983pu0w"
+    },
+    {
+      "name": "Cargador Motorola 68w",
+      "category": "Cargadores",
+      "price": 17500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778690911983f89h.jpg",
+      "oferta": false,
+      "id": "1778690911983f89h"
+    },
+    {
+      "name": "Cartucho 60 Gneiss Color",
+      "category": "Cartuchos",
+      "price": 37000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778690911984r0o1.webp",
+      "oferta": false,
+      "id": "1778690911984r0o1"
+    },
+    {
+      "name": "Control Aire Acondicionado Digital",
+      "category": "Accesorios",
+      "price": 8500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778690911984znl2.jpg",
+      "oferta": false,
+      "id": "1778690911984znl2"
+    },
+    {
+      "name": "Control Remoto Smart TV",
+      "category": "Accesorios",
+      "price": 9500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778690911984lmg7.jpg",
+      "oferta": false,
+      "id": "1778690911984lmg7"
+    },
+    {
+      "name": "Control Remoto TV",
+      "category": "Accesorios",
+      "price": 5500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778690911984eoxt.jpg",
+      "oferta": false,
+      "id": "1778690911984eoxt"
+    },
+    {
+      "name": "Crimpeadora",
+      "category": "Accesorios",
+      "price": 19000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_17786909119845ly5.jpg",
+      "oferta": false,
+      "id": "17786909119845ly5"
+    },
+    {
+      "name": "Chispero",
+      "category": "Accesorios",
+      "price": 4000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778690911984ckrf.jpg",
+      "oferta": false,
+      "id": "1778690911984ckrf"
+    },
+    {
+      "name": "Destornillador Kit Amarillo",
+      "category": "Accesorios",
+      "price": 6000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778690911984kxjf.jpg",
+      "oferta": false,
+      "id": "1778690911984kxjf"
+    },
+    {
+      "name": "Fichas RJ45",
+      "category": "Fichas",
+      "price": 250,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778690911984lsil.jpg",
+      "oferta": false,
+      "id": "1778690911984lsil"
+    },
+    {
+      "name": "Hub 4 Ports Tipo C",
+      "category": "Accesorios",
+      "price": 12500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778690911984m3bn.jpg",
+      "oferta": false,
+      "id": "1778690911984m3bn"
+    },
+    {
+      "name": "Hub Usb 7 Ports",
+      "category": "Accesorios",
+      "price": 8000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778690911985hphk.jpg",
+      "oferta": false,
+      "id": "1778690911985hphk"
+    },
+    {
+      "name": "Lapiz tactil Chico",
+      "category": "Accesorios",
+      "price": 1500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778690911985ak9p.jpg",
+      "oferta": false,
+      "id": "1778690911985ak9p"
+    },
+    {
+      "name": "Lapiz Tactil Dibujo",
+      "category": "Accesorios",
+      "price": 13000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778690911985kq6w.jpg",
+      "oferta": false,
+      "id": "1778690911985kq6w"
+    },
+    {
+      "name": "Lector Micro SD",
+      "category": "Accesorios",
+      "price": 3000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_17786909119853br5.jpg",
+      "oferta": false,
+      "id": "17786909119853br5"
+    },
+    {
+      "name": "Lector Multi 4 in 1",
+      "category": "Accesorios",
+      "price": 4000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778690911985cnib.jpg",
+      "oferta": false,
+      "id": "1778690911985cnib"
+    },
+    {
+      "name": "Linterna Led caja verde",
+      "category": "Accesorios",
+      "price": 7000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778690911985uvxt.webp",
+      "oferta": false,
+      "id": "1778690911985uvxt"
+    },
+    {
+      "name": "Linterna Led Grande",
+      "category": "Accesorios",
+      "price": 14000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_17786909119856oq6.jpg",
+      "oferta": false,
+      "id": "17786909119856oq6"
+    },
+    {
+      "name": "Linterna Minera Vincha",
+      "category": "Accesorios",
+      "price": 9000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_17786909119860qfw.jpg",
+      "oferta": false,
+      "id": "17786909119860qfw"
+    },
+    {
+      "name": "Luces LEd 3 metros",
+      "category": "Accesorios",
+      "price": 12500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778690911986y52x.jpg",
+      "oferta": false,
+      "id": "1778690911986y52x"
+    },
+    {
+      "name": "Luces LEd 5 metros",
+      "category": "Accesorios",
+      "price": 16500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691005785j2l9.jpg",
+      "oferta": false,
+      "id": "1778691005785j2l9"
+    },
+    {
+      "name": "Luz Bici Recargable",
+      "category": "Accesorios",
+      "price": 5000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691005785d6tp.jpg",
+      "oferta": false,
+      "id": "1778691005785d6tp"
+    },
+    {
+      "name": "Luz de Emergemcia 60 Led",
+      "category": "Accesorios",
+      "price": 29000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_17786910057863wgc.jpg",
+      "oferta": false,
+      "id": "17786910057863wgc"
+    },
+    {
+      "name": "Luz Led Bici x 2",
+      "category": "Accesorios",
+      "price": 6000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691005787zbdq.jpg",
+      "oferta": false,
+      "id": "1778691005787zbdq"
+    },
+    {
+      "name": "Media Pointer Genius 100 Presentador",
+      "category": "Accesorios",
+      "price": 55000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691005787m12h.jpg",
+      "oferta": false,
+      "id": "1778691005787m12h"
+    },
+    {
+      "name": "Placa sonido 5.1",
+      "category": "Accesorios",
+      "price": 5000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691005788et7q.jpg",
+      "oferta": false,
+      "id": "1778691005788et7q"
+    },
+    {
+      "name": "Pilas Recargas x4 Deleex aa",
+      "category": "Pilas",
+      "price": 25000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_17786910057889jis.jpg",
+      "oferta": false,
+      "id": "17786910057889jis"
+    },
+    {
+      "name": "Pilas Recargas x4 Deleex aaa",
+      "category": "Pilas",
+      "price": 20000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691005788vpg8.jpg",
+      "oferta": false,
+      "id": "1778691005788vpg8"
+    },
+    {
+      "name": "Placa Sonido Noga 5.1",
+      "category": "Accesorios",
+      "price": 6500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691005789ejep.jpg",
+      "oferta": false,
+      "id": "1778691005789ejep"
+    },
+    {
+      "name": "Placa Sonido USB 7.1",
+      "category": "Accesorios",
+      "price": 7500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691005789fvba.jpg",
+      "oferta": false,
+      "id": "1778691005789fvba"
+    },
+    {
+      "name": "Placas Wifi Noga Duales",
+      "category": "Redes",
+      "price": 18000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_17786910057890932.jpg",
+      "oferta": false,
+      "id": "17786910057890932"
+    },
+    {
+      "name": "Protector de Tension 10A",
+      "category": "Fuentes",
+      "price": 19000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691005789x47e.jpg",
+      "oferta": false,
+      "id": "1778691005789x47e"
+    },
+    {
+      "name": "Protector de Tension 20A",
+      "category": "Fuentes",
+      "price": 23500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691005790xe6g.jpg",
+      "oferta": false,
+      "id": "1778691005790xe6g"
+    },
+    {
+      "name": "Switch HDMI con remoto",
+      "category": "Accesorios",
+      "price": 13500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691005790jg51.jpg",
+      "oferta": false,
+      "id": "1778691005790jg51"
+    },
+    {
+      "name": "Switch HDMI Sin remoto",
+      "category": "Accesorios",
+      "price": 9500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691005790q8za.jpg",
+      "oferta": false,
+      "id": "1778691005790q8za"
+    },
+    {
+      "name": "Tableta Genius EasyPen i405",
+      "category": "Accesorios",
+      "price": 75000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691005790y30o.jpg",
+      "oferta": false,
+      "id": "1778691005790y30o"
+    },
+    {
+      "name": "Tester Digital",
+      "category": "Accesorios",
+      "price": 11000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691005791e0l1.jpg",
+      "oferta": false,
+      "id": "1778691005791e0l1"
+    },
+    {
+      "name": "Timbre V-Zorr",
+      "category": "Accesorios",
+      "price": 10000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691005791phoq.jpg",
+      "oferta": false,
+      "id": "1778691005791phoq"
+    },
+    {
+      "name": "Tv Box 4K",
+      "category": "Consolas",
+      "price": 39000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691005791cnj0.jpg",
+      "oferta": false,
+      "id": "1778691005791cnj0"
+    },
+    {
+      "name": "Velador Luces Suono",
+      "category": "Accesorios",
+      "price": 13500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691005791mjf2.jpg",
+      "oferta": false,
+      "id": "1778691005791mjf2"
+    },
+    {
+      "name": "Adaptador doble mini plug hembra a macho",
+      "category": "Cables",
+      "price": 3000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_177869108755857xo.jpg",
+      "oferta": false,
+      "id": "177869108755857xo"
+    },
+    {
+      "name": "Adaptador Electricidad Triple",
+      "category": "Adaptadores",
+      "price": 35000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691087559no04.jpg",
+      "oferta": false,
+      "id": "1778691087559no04"
+    },
+    {
+      "name": "Adaptador Hdmi a DVI",
+      "category": "Adaptadores",
+      "price": 4500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691087559otk8.jpg",
+      "oferta": false,
+      "id": "1778691087559otk8"
+    },
+    {
+      "name": "Adaptador HDMI Hembra",
+      "category": "Adaptadores",
+      "price": 4000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691087559oo6i.jpg",
+      "oferta": false,
+      "id": "1778691087559oo6i"
+    },
+    {
+      "name": "Adaptador HDMI VGA Sin Audio",
+      "category": "Adaptadores",
+      "price": 7500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691087559j8gs.jpg",
+      "oferta": false,
+      "id": "1778691087559j8gs"
+    },
+    {
+      "name": "Adaptador Iphone",
+      "category": "Adaptadores",
+      "price": 5000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691087560kw8k.jpg",
+      "oferta": false,
+      "id": "1778691087560kw8k"
+    },
+    {
+      "name": "Adaptador Micro Hdmi a HDMI",
+      "category": "Adaptadores",
+      "price": 4000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691087560dydn.jpg",
+      "oferta": false,
+      "id": "1778691087560dydn"
+    },
+    {
+      "name": "Adaptador Mini Hdmi a HDMI",
+      "category": "Adaptadores",
+      "price": 4000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691087560qnsw.jpg",
+      "oferta": false,
+      "id": "1778691087560qnsw"
+    },
+    {
+      "name": "Adaptador para Foco",
+      "category": "Adaptadores",
+      "price": 2500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_17786910875602071.jpg",
+      "oferta": false,
+      "id": "17786910875602071"
+    },
+    {
+      "name": "Adaptador Pared 2 Patas",
+      "category": "Adaptadores",
+      "price": 1000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691087561gr1j.jpg",
+      "oferta": false,
+      "id": "1778691087561gr1j"
+    },
+    {
+      "name": "Adaptador Pared 3 Patas",
+      "category": "Adaptadores",
+      "price": 1000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_17786910875612mto.jpg",
+      "oferta": false,
+      "id": "17786910875612mto"
+    },
+    {
+      "name": "Adaptador USB a RS232",
+      "category": "Adaptadores",
+      "price": 13500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691087561e776.jpg",
+      "oferta": false,
+      "id": "1778691087561e776"
+    },
+    {
+      "name": "Adaptador VGA a DVI",
+      "category": "Adaptadores",
+      "price": 14000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_17786910875616e1j.jpg",
+      "oferta": false,
+      "id": "17786910875616e1j"
+    },
+    {
+      "name": "Adaptador Viajero",
+      "category": "Adaptadores",
+      "price": 6000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691087562lz9f.jpg",
+      "oferta": false,
+      "id": "1778691087562lz9f"
+    },
+    {
+      "name": "Auricular YDMini",
+      "category": "Auriculares",
+      "price": 18000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691087562oypx.jpg",
+      "oferta": false,
+      "id": "1778691087562oypx"
+    },
+    {
+      "name": "Conversor HDMI 2 AV // 2 AV HDMI",
+      "category": "Adaptadores",
+      "price": 13500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691087562w3yx.jpg",
+      "oferta": false,
+      "id": "1778691087562w3yx"
+    },
+    {
+      "name": "Conversor Tipo C  a HDMI/VGA",
+      "category": "Adaptadores",
+      "price": 25000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691087563xlkj.jpg",
+      "oferta": false,
+      "id": "1778691087563xlkj"
+    },
+    {
+      "name": "Display Port a Hdmi",
+      "category": "Cables",
+      "price": 13000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691087563jh8q.jpg",
+      "oferta": false,
+      "id": "1778691087563jh8q"
+    },
+    {
+      "name": "Display port a VGA",
+      "category": "Adaptadores",
+      "price": 13000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691087564km5k.jpg",
+      "oferta": false,
+      "id": "1778691087564km5k"
+    },
+    {
+      "name": "Foco Led boliche",
+      "category": "Adaptadores",
+      "price": 5000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691087564ui27.jpg",
+      "oferta": false,
+      "id": "1778691087564ui27"
+    },
+    {
+      "name": "Mini Display Port a Hdmi",
+      "category": "Adaptadores",
+      "price": 9500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691087564gw5i.jpg",
+      "oferta": false,
+      "id": "1778691087564gw5i"
+    },
+    {
+      "name": "Mini Display Port a VGA",
+      "category": "Adaptadores",
+      "price": 9790,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691087565ewgs.jpg",
+      "oferta": false,
+      "id": "1778691087565ewgs"
+    },
+    {
+      "name": "Popit Electronico",
+      "category": "Consolas",
+      "price": 9500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691087566g6ii.jpg",
+      "oferta": false,
+      "id": "1778691087566g6ii"
+    },
+    {
+      "name": "Transmisor Bluetooth Intco",
+      "category": "Adaptadores",
+      "price": 14500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_17786910875664k98.jpg",
+      "oferta": false,
+      "id": "17786910875664k98"
+    },
+    {
+      "name": "Auricular Bluetooth A6s",
+      "category": "Auriculares",
+      "price": 10000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691172075l803.jpg",
+      "oferta": false,
+      "id": "1778691172075l803"
+    },
+    {
+      "name": "Auricular Bluetooth E6s",
+      "category": "Auriculares",
+      "price": 11000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691172076r1lz.jpg",
+      "oferta": false,
+      "id": "1778691172076r1lz"
+    },
+    {
+      "name": "Auricular Bluetooth F9",
+      "category": "Auriculares",
+      "price": 10000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691172077lv8e.jpg",
+      "oferta": false,
+      "id": "1778691172077lv8e"
+    },
+    {
+      "name": "Auricular Bluetooth JBL",
+      "category": "Auriculares",
+      "price": 30000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691172077jvjm.jpg",
+      "oferta": false,
+      "id": "1778691172077jvjm"
+    },
+    {
+      "name": "Auricular Bluetooth JBL TWS -3",
+      "category": "Auriculares",
+      "price": 35000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691172077nojr.jpg",
+      "oferta": false,
+      "id": "1778691172077nojr"
+    },
+    {
+      "name": "Auricular Bluetooth Motorola XT220",
+      "category": "Auriculares",
+      "price": 75000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_177869117207894z9.jpg",
+      "oferta": false,
+      "id": "177869117207894z9"
+    },
+    {
+      "name": "Auricular Bluetooth Orejas",
+      "category": "Auriculares",
+      "price": 15000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691172078ktxj.jpg",
+      "oferta": false,
+      "id": "1778691172078ktxj"
+    },
+    {
+      "name": "Auricular Bluetooth P47",
+      "category": "Auriculares",
+      "price": 9500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691172078san9.jpg",
+      "oferta": false,
+      "id": "1778691172078san9"
+    },
+    {
+      "name": "Auricular Bluetooth Pro 6",
+      "category": "Auriculares",
+      "price": 13000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_17786911720793cm1.jpg",
+      "oferta": false,
+      "id": "17786911720793cm1"
+    },
+    {
+      "name": "Auricular Bluetooth YD03",
+      "category": "Auriculares",
+      "price": 24000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_17786911720792hnv.jpg",
+      "oferta": false,
+      "id": "17786911720792hnv"
+    },
+    {
+      "name": "Auricular Genius G600V",
+      "category": "Auriculares",
+      "price": 59000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691172080fuvg.jpg",
+      "oferta": false,
+      "id": "1778691172080fuvg"
+    },
+    {
+      "name": "Auricular JBL Tune 110",
+      "category": "Auriculares",
+      "price": 22500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_17786911720800gd0.jpg",
+      "oferta": false,
+      "id": "17786911720800gd0"
+    },
+    {
+      "name": "Auricular Motorola In Ear Blister Azul",
+      "category": "Auriculares",
+      "price": 13500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_17786911720811s4d.jpg",
+      "oferta": false,
+      "id": "17786911720811s4d"
+    },
+    {
+      "name": "Auricular Motorola XT200",
+      "category": "Auriculares",
+      "price": 60500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691172081evqq.jpg",
+      "oferta": false,
+      "id": "1778691172081evqq"
+    },
+    {
+      "name": "Auricular Philips 1405",
+      "category": "Auriculares",
+      "price": 14500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_17786911720816sw0.jpg",
+      "oferta": false,
+      "id": "17786911720816sw0"
+    },
+    {
+      "name": "Auricular Samsung Buds",
+      "category": "Auriculares",
+      "price": 39000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691172082ew1t.jpg",
+      "oferta": false,
+      "id": "1778691172082ew1t"
+    },
+    {
+      "name": "Auricular Samsung Manos Libres HS330",
+      "category": "Auriculares",
+      "price": 4000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691172082tlbe.jpg",
+      "oferta": true,
+      "id": "1778691172082tlbe"
+    },
+    {
+      "name": "Auricular Samsung S10 AKG / Sport Pace",
+      "category": "Auriculares",
+      "price": 7000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691172083n4vz.jpg",
+      "oferta": false,
+      "id": "1778691172083n4vz"
+    },
+    {
+      "name": "Auricular Samsung S8",
+      "category": "Auriculares",
+      "price": 4000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691172083jq8a.jpg",
+      "oferta": false,
+      "id": "1778691172083jq8a"
+    },
+    {
+      "name": "Auricular Samsung Tipo C",
+      "category": "Auriculares",
+      "price": 7500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_177869117208489au.jpg",
+      "oferta": false,
+      "id": "177869117208489au"
+    },
+    {
+      "name": "Destornillador Kit Naranja",
+      "category": "Accesorios",
+      "price": 7500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_17786911720841j11.webp",
+      "oferta": false,
+      "id": "17786911720841j11"
+    },
+    {
+      "name": "Mouse Raptor 3600",
+      "category": "Mouse",
+      "price": 14000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691172084ygo0.jpg",
+      "oferta": false,
+      "id": "1778691172084ygo0"
+    },
+    {
+      "name": "Mouse Raptor 8000",
+      "category": "Mouse",
+      "price": 17000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691172085uq73.jpg",
+      "oferta": false,
+      "id": "1778691172085uq73"
+    },
+    {
+      "name": "Base Cooler B-9",
+      "category": "Coolers",
+      "price": 25000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691216913q6kv.jpg",
+      "oferta": false,
+      "id": "1778691216913q6kv"
+    },
+    {
+      "name": "Base Cooler Netmak",
+      "category": "Coolers",
+      "price": 45000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_177869121691546me.webp",
+      "oferta": false,
+      "id": "177869121691546me"
+    },
+    {
+      "name": "Cable 3 in 1",
+      "category": "Cables",
+      "price": 28500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691216915osuv.jpg",
+      "oferta": false,
+      "id": "1778691216915osuv"
+    },
+    {
+      "name": "Cable 3 RCA 1.5Mts",
+      "category": "Cables",
+      "price": 3000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_17786912169168tcj.jpg",
+      "oferta": false,
+      "id": "17786912169168tcj"
+    },
+    {
+      "name": "Cable Apple Tipo C a Tipo C",
+      "category": "Cables",
+      "price": 6000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_177869121691608a7.jpg",
+      "oferta": false,
+      "id": "177869121691608a7"
+    },
+    {
+      "name": "Cable Audio Video Miniplug",
+      "category": "Cables",
+      "price": 4000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691216916nbyl.webp",
+      "oferta": false,
+      "id": "1778691216916nbyl"
+    },
+    {
+      "name": "Cable Auxiliar Colores Reforzados 1.8",
+      "category": "Cables",
+      "price": 3500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691216917hp1z.jpg",
+      "oferta": false,
+      "id": "1778691216917hp1z"
+    },
+    {
+      "name": "Cable Auxiliar con Microfono",
+      "category": "Cables",
+      "price": 5000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691216917u2v9.jpg",
+      "oferta": false,
+      "id": "1778691216917u2v9"
+    },
+    {
+      "name": "Cable de Red 10.0Mts",
+      "category": "Cables",
+      "price": 7000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691216918h83g.jpg",
+      "oferta": false,
+      "id": "1778691216918h83g"
+    },
+    {
+      "name": "Cable de Red 15.0",
+      "category": "Cables",
+      "price": 9500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_177869121691814qn.jpg",
+      "oferta": false,
+      "id": "177869121691814qn"
+    },
+    {
+      "name": "Cable de Red 2.0Mts",
+      "category": "Cables",
+      "price": 2500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691216918kube.jpg",
+      "oferta": false,
+      "id": "1778691216918kube"
+    },
+    {
+      "name": "Cable de Red 20.0 Mts",
+      "category": "Cables",
+      "price": 11000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_17786912169193o8c.jpg",
+      "oferta": false,
+      "id": "17786912169193o8c"
+    },
+    {
+      "name": "Cable de Red 3.0Mts",
+      "category": "Cables",
+      "price": 3500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691216919peql.jpg",
+      "oferta": false,
+      "id": "1778691216919peql"
+    },
+    {
+      "name": "Cable de red 30.0",
+      "category": "Cables",
+      "price": 15000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_17786912169218tkl.jpg",
+      "oferta": false,
+      "id": "17786912169218tkl"
+    },
+    {
+      "name": "Cable de Red 5.0Mts",
+      "category": "Cables",
+      "price": 5000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691216921mhgd.jpg",
+      "oferta": false,
+      "id": "1778691216921mhgd"
+    },
+    {
+      "name": "Cable de Red Categoria 6 x Metro",
+      "category": "Cables",
+      "price": 1300,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_177869121692146ex.jpg",
+      "oferta": false,
+      "id": "177869121692146ex"
+    },
+    {
+      "name": "Cable de Red x Metro",
+      "category": "Cables",
+      "price": 1000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691216922oovh.jpg",
+      "oferta": false,
+      "id": "1778691216922oovh"
+    },
+    {
+      "name": "Cable Disco Externo",
+      "category": "Cables",
+      "price": 6500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691216922u185.jpg",
+      "oferta": false,
+      "id": "1778691216922u185"
+    },
+    {
+      "name": "Cable Display Port",
+      "category": "Cables",
+      "price": 9500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691216923r3qa.jpg",
+      "oferta": false,
+      "id": "1778691216923r3qa"
+    },
+    {
+      "name": "Cable Extencion USB 2.0Mts",
+      "category": "Cables",
+      "price": 6000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691216923wm94.jpg",
+      "oferta": false,
+      "id": "1778691216923wm94"
+    },
+    {
+      "name": "Cable HDMI 1.5Mts",
+      "category": "Cables",
+      "price": 4500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691216923f6lt.jpg",
+      "oferta": false,
+      "id": "1778691216923f6lt"
+    },
+    {
+      "name": "Cable HDMI 10.0Mts",
+      "category": "Cables",
+      "price": 13500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_177869121692478og.jpg",
+      "oferta": false,
+      "id": "177869121692478og"
+    },
+    {
+      "name": "Cable HDMI 15.0 Mts",
+      "category": "Cables",
+      "price": 16000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691216924g701.jpg",
+      "oferta": false,
+      "id": "1778691216924g701"
+    },
+    {
+      "name": "Cable Hdmi 2.0 1.5Mts",
+      "category": "Cables",
+      "price": 8500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691216924hhj1.jpg",
+      "oferta": false,
+      "id": "1778691216924hhj1"
+    },
+    {
+      "name": "Cable Hdmi 2.0 3.0Mts",
+      "category": "Cables",
+      "price": 11000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691216925chpc.jpg",
+      "oferta": false,
+      "id": "1778691216925chpc"
+    },
+    {
+      "name": "Cable HDMI 3.0Mts",
+      "category": "Cables",
+      "price": 5500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_17786912169265m7w.jpg",
+      "oferta": false,
+      "id": "17786912169265m7w"
+    },
+    {
+      "name": "Cable HDMI 5.0Mts",
+      "category": "Cables",
+      "price": 8500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691216926qxsu.jpg",
+      "oferta": false,
+      "id": "1778691216926qxsu"
+    },
+    {
+      "name": "Cable Impresora 1.8Mts 1.5Mts",
+      "category": "Cables",
+      "price": 5000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691216927ltxg.jpg",
+      "oferta": false,
+      "id": "1778691216927ltxg"
+    },
+    {
+      "name": "Cable Impresora 3.0Mts",
+      "category": "Cables",
+      "price": 6500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691216927py2y.jpg",
+      "oferta": false,
+      "id": "1778691216927py2y"
+    },
+    {
+      "name": "Cable Impresora 5.0Mts",
+      "category": "Cables",
+      "price": 8500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691216928c9dq.jpg",
+      "oferta": false,
+      "id": "1778691216928c9dq"
+    },
+    {
+      "name": "Cable Iphone 2.0mts 5 6 7",
+      "category": "Cables",
+      "price": 9500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691216929ueod.jpg",
+      "oferta": false,
+      "id": "1778691216929ueod"
+    },
+    {
+      "name": "Cable Iphone Generico",
+      "category": "Cables",
+      "price": 3500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_177869121692989jk.jpg",
+      "oferta": false,
+      "id": "177869121692989jk"
+    },
+    {
+      "name": "Cable Iphone Tipo C a Tipo C",
+      "category": "Cables",
+      "price": 6000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691216930ffo5.jpg",
+      "oferta": false,
+      "id": "1778691216930ffo5"
+    },
+    {
+      "name": "Cable Lighting Iphone",
+      "category": "Cables",
+      "price": 6000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_177869121693058rr.jpg",
+      "oferta": false,
+      "id": "177869121693058rr"
+    },
+    {
+      "name": "Cable Micro Usb Carga Rapida",
+      "category": "Cables",
+      "price": 4000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691216931cpku.jpg",
+      "oferta": false,
+      "id": "1778691216931cpku"
+    },
+    {
+      "name": "Cable Micro USB Xiaomi",
+      "category": "Cables",
+      "price": 6000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691216931rhsi.jpg",
+      "oferta": false,
+      "id": "1778691216931rhsi"
+    },
+    {
+      "name": "Cable MicroUsb Samsung Original",
+      "category": "Cables",
+      "price": 4000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_17786912169326sbp.jpg",
+      "oferta": true,
+      "id": "17786912169326sbp"
+    },
+    {
+      "name": "Cable Mini Dsiplay Port Mac",
+      "category": "Cables",
+      "price": 9500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691216932gzz3.jpg",
+      "oferta": false,
+      "id": "1778691216932gzz3"
+    },
+    {
+      "name": "Cable MiniPlug 1.5Mts",
+      "category": "Cables",
+      "price": 2500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_17786912169339nb0.jpg",
+      "oferta": false,
+      "id": "17786912169339nb0"
+    },
+    {
+      "name": "Cable MiniPlug 3.0Mts",
+      "category": "Cables",
+      "price": 3500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691216933id8u.jpg",
+      "oferta": false,
+      "id": "1778691216933id8u"
+    },
+    {
+      "name": "Cable MiniPlug 4.5Mts",
+      "category": "Cables",
+      "price": 6000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691216934g7nk.jpg",
+      "oferta": false,
+      "id": "1778691216934g7nk"
+    },
+    {
+      "name": "Cable Miniplug a 2 RCA 1.5Mts",
+      "category": "Cables",
+      "price": 2500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691216934ft8q.jpg",
+      "oferta": false,
+      "id": "1778691216934ft8q"
+    },
+    {
+      "name": "Cable Miniplug a 2 RCA 3.0Mts",
+      "category": "Cables",
+      "price": 3500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_177869121693573ou.jpg",
+      "oferta": false,
+      "id": "177869121693573ou"
+    },
+    {
+      "name": "Cable Miniplug Extencion 1.5Mts",
+      "category": "Cables",
+      "price": 4000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_17786912169350trn.jpg",
+      "oferta": false,
+      "id": "17786912169350trn"
+    },
+    {
+      "name": "Cable Molex a Poder 6 pines 8 Pines",
+      "category": "Cables",
+      "price": 5000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691273656mcp3.jpg",
+      "oferta": false,
+      "id": "1778691273656mcp3"
+    },
+    {
+      "name": "Cable Molex Y",
+      "category": "Cables",
+      "price": 4000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691273656bapp.jpg",
+      "oferta": false,
+      "id": "1778691273656bapp"
+    },
+    {
+      "name": "Cable Motorola Original",
+      "category": "Cables",
+      "price": 4000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691273657opgb.jpg",
+      "oferta": false,
+      "id": "1778691273657opgb"
+    },
+    {
+      "name": "Cable Optico",
+      "category": "Cables",
+      "price": 6000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691273658vrn4.jpg",
+      "oferta": false,
+      "id": "1778691273658vrn4"
+    },
+    {
+      "name": "Cable optico 3.0mts",
+      "category": "Cables",
+      "price": 8000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691273658z8ni.jpg",
+      "oferta": false,
+      "id": "1778691273658z8ni"
+    },
+    {
+      "name": "Cable OTG",
+      "category": "Cables",
+      "price": 3000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691273659fw97.jpg",
+      "oferta": false,
+      "id": "1778691273659fw97"
+    },
+    {
+      "name": "Cable OTG Tipo C",
+      "category": "Cables",
+      "price": 3000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691273659b6qz.jpg",
+      "oferta": false,
+      "id": "1778691273659b6qz"
+    },
+    {
+      "name": "Cable Play 2 a Rca",
+      "category": "Cables",
+      "price": 4500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691273660ue1h.jpg",
+      "oferta": false,
+      "id": "1778691273660ue1h"
+    },
+    {
+      "name": "Cable Play 4",
+      "category": "Cables",
+      "price": 5000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691273660lvab.jpg",
+      "oferta": false,
+      "id": "1778691273660lvab"
+    },
+    {
+      "name": "Cable Power infinito",
+      "category": "Cables",
+      "price": 4000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691273661c3qp.jpg",
+      "oferta": false,
+      "id": "1778691273661c3qp"
+    },
+    {
+      "name": "Cable Power PC",
+      "category": "Cables",
+      "price": 4500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691273661wvty.jpg",
+      "oferta": false,
+      "id": "1778691273661wvty"
+    },
+    {
+      "name": "Cable Power Trebol Mickey",
+      "category": "Cables",
+      "price": 4500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691273663q194.jpg",
+      "oferta": false,
+      "id": "1778691273663q194"
+    },
+    {
+      "name": "Cable Samsung Tipo C a Tipo C",
+      "category": "Cables",
+      "price": 6000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_17786912736634fvz.jpg",
+      "oferta": false,
+      "id": "17786912736634fvz"
+    },
+    {
+      "name": "Cable Sata Datos Comun",
+      "category": "Cables",
+      "price": 4000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691273664e8pw.jpg",
+      "oferta": false,
+      "id": "1778691273664e8pw"
+    },
+    {
+      "name": "Cable Sata Doble",
+      "category": "Cables",
+      "price": 4000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691273665vsos.jpg",
+      "oferta": false,
+      "id": "1778691273665vsos"
+    },
+    {
+      "name": "Cable Sata Power",
+      "category": "Cables",
+      "price": 4000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691273665tuzh.jpg",
+      "oferta": false,
+      "id": "1778691273665tuzh"
+    },
+    {
+      "name": "Cable Sata USB 3.0",
+      "category": "Cables",
+      "price": 15500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691273666vgzf.jpg",
+      "oferta": false,
+      "id": "1778691273666vgzf"
+    },
+    {
+      "name": "Cable USB 4 Pines 5 Pines",
+      "category": "Cables",
+      "price": 3500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691273667x9hf.jpg",
+      "oferta": false,
+      "id": "1778691273667x9hf"
+    },
+    {
+      "name": "Cable USB Extencion 1.5Mts",
+      "category": "Cables",
+      "price": 5000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691273667fgez.jpg",
+      "oferta": false,
+      "id": "1778691273667fgez"
+    },
+    {
+      "name": "Cable USB Macho Macho",
+      "category": "Cables",
+      "price": 4000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691273668zauo.jpg",
+      "oferta": false,
+      "id": "1778691273668zauo"
+    },
+    {
+      "name": "Cable Vga 1.8Mts",
+      "category": "Cables",
+      "price": 5500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691273669zwp8.jpg",
+      "oferta": false,
+      "id": "1778691273669zwp8"
+    },
+    {
+      "name": "Cable VGA 10.0Mts",
+      "category": "Cables",
+      "price": 17500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691273670oals.jpg",
+      "oferta": false,
+      "id": "1778691273670oals"
+    },
+    {
+      "name": "Cable VGA 15.0Mts",
+      "category": "Cables",
+      "price": 22000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_17786912736701k8w.jpg",
+      "oferta": false,
+      "id": "17786912736701k8w"
+    },
+    {
+      "name": "Cable Vga 3.0Mts Blindado",
+      "category": "Cables",
+      "price": 9500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691273671u17o.jpg",
+      "oferta": false,
+      "id": "1778691273671u17o"
+    },
+    {
+      "name": "Cable Vga 5.0Mts",
+      "category": "Cables",
+      "price": 8500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_17786912736715adz.jpg",
+      "oferta": false,
+      "id": "17786912736715adz"
+    },
+    {
+      "name": "Parlante Marshall M30",
+      "category": "Parlantes",
+      "price": 65000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691273673jupj.jpg",
+      "oferta": false,
+      "id": "1778691273673jupj"
+    },
+    {
+      "name": "Reloj Netmak Elite Power",
+      "category": "Relojes",
+      "price": 60000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691273673uug1.jpg",
+      "oferta": false,
+      "id": "1778691273673uug1"
+    },
+    {
+      "name": "Tripo Electricidad",
+      "category": "Cables",
+      "price": 8000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691273674wtad.jpg",
+      "oferta": false,
+      "id": "1778691273674wtad"
+    },
+    {
+      "name": "Webcam Raptor 4K",
+      "category": "Webcams",
+      "price": 39000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691273674jgoi.jpg",
+      "oferta": false,
+      "id": "1778691273674jgoi"
+    },
+    {
+      "name": "Calculadora Cientifica",
+      "category": "Calculadoras",
+      "price": 8000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691439673d234.jpg",
+      "oferta": false,
+      "id": "1778691439673d234"
+    },
+    {
+      "name": "Calculadora con Pantalla Tactil",
+      "category": "Calculadoras",
+      "price": 9500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691439675igzi.jpg",
+      "oferta": false,
+      "id": "1778691439675igzi"
+    },
+    {
+      "name": "Calculadora Gaona",
+      "category": "Calculadoras",
+      "price": 9500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691439676ka1s.jpg",
+      "oferta": false,
+      "id": "1778691439676ka1s"
+    },
+    {
+      "name": "Calculadora Kenko 1200",
+      "category": "Calculadoras",
+      "price": 10000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691439677apdb.jpg",
+      "oferta": false,
+      "id": "1778691439677apdb"
+    },
+    {
+      "name": "Calculadora Kenko 837",
+      "category": "Calculadoras",
+      "price": 7500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_17786914396775i4h.jpg",
+      "oferta": false,
+      "id": "17786914396775i4h"
+    },
+    {
+      "name": "Calculadora kk-402/kc-888",
+      "category": "Calculadoras",
+      "price": 6000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691439679eoft.jpg",
+      "oferta": false,
+      "id": "1778691439679eoft"
+    },
+    {
+      "name": "Adaptador Encendedor Auto Doble",
+      "category": "Cargadores",
+      "price": 7500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691474664vw4x.jpg",
+      "oferta": false,
+      "id": "1778691474664vw4x"
+    },
+    {
+      "name": "Base Cargador Play 4",
+      "category": "Cargadores",
+      "price": 12000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_17786914746650r7a.jpg",
+      "oferta": false,
+      "id": "17786914746650r7a"
+    },
+    {
+      "name": "Cabezal Iphone 5V",
+      "category": "Cargadores",
+      "price": 9000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691474666a9yz.jpg",
+      "oferta": false,
+      "id": "1778691474666a9yz"
+    },
+    {
+      "name": "Cabezal Motorola / Samsung 25w",
+      "category": "Cargadores",
+      "price": 7500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691474667s4hh.jpg",
+      "oferta": true,
+      "id": "1778691474667s4hh"
+    },
+    {
+      "name": "Cabezal Motorola / Samsung Original 45w",
+      "category": "Cargadores",
+      "price": 9500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_17786914746676feq.jpg",
+      "oferta": false,
+      "id": "17786914746676feq"
+    },
+    {
+      "name": "Cargador 2.1 Kosmo/Time",
+      "category": "Cargadores",
+      "price": 6000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691474669x94v.jpg",
+      "oferta": false,
+      "id": "1778691474669x94v"
+    },
+    {
+      "name": "Cargador Acer Pin Amarillo",
+      "category": "Cargadores",
+      "price": 40000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691474669eer3.jpg",
+      "oferta": false,
+      "id": "1778691474669eer3"
+    },
+    {
+      "name": "Cargador Auto Samsung",
+      "category": "Cargadores",
+      "price": 8000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_17786914746706nvv.jpg",
+      "oferta": false,
+      "id": "17786914746706nvv"
+    },
+    {
+      "name": "Cargador Base de Carga 10 usb",
+      "category": "Cargadores",
+      "price": 25000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_17786914746721zzf.jpg",
+      "oferta": false,
+      "id": "17786914746721zzf"
+    },
+    {
+      "name": "Cargador Dell Pin Fino",
+      "category": "Cargadores",
+      "price": 40000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691474672joxe.jpg",
+      "oferta": false,
+      "id": "1778691474672joxe"
+    },
+    {
+      "name": "Cargador HP Pin Fino",
+      "category": "Cargadores",
+      "price": 40000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691474673qfow.jpg",
+      "oferta": false,
+      "id": "1778691474673qfow"
+    },
+    {
+      "name": "Cargador HP Pin Grueso",
+      "category": "Cargadores",
+      "price": 40000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691474674rc5w.jpg",
+      "oferta": false,
+      "id": "1778691474674rc5w"
+    },
+    {
+      "name": "Cargador Iphone 2 in 1",
+      "category": "Cargadores",
+      "price": 16000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691474674u8c7.jpg",
+      "oferta": false,
+      "id": "1778691474674u8c7"
+    },
+    {
+      "name": "Cargador Motorola Turbo Original 3.1",
+      "category": "Cargadores",
+      "price": 12000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691474675w7us.jpg",
+      "oferta": false,
+      "id": "1778691474675w7us"
+    },
+    {
+      "name": "Cargador Motorola Ultra Rapido 50W",
+      "category": "Cargadores",
+      "price": 14500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691474676iund.jpg",
+      "oferta": false,
+      "id": "1778691474676iund"
+    },
+    {
+      "name": "Cargador Noga Inalambrico Celular 10W",
+      "category": "Cargadores",
+      "price": 16000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691474677uunz.jpg",
+      "oferta": false,
+      "id": "1778691474677uunz"
+    },
+    {
+      "name": "Cargador Notebook Samsung Pin",
+      "category": "Cargadores",
+      "price": 40000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691474678hz92.jpg",
+      "oferta": false,
+      "id": "1778691474678hz92"
+    },
+    {
+      "name": "Cargador Pilas Dinax",
+      "category": "Cargadores",
+      "price": 5500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_17786914746799bt0.jpg",
+      "oferta": false,
+      "id": "17786914746799bt0"
+    },
+    {
+      "name": "Cargador Pilas Noga NG516",
+      "category": "Cargadores",
+      "price": 9500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691474680gs9l.jpg",
+      "oferta": false,
+      "id": "1778691474680gs9l"
+    },
+    {
+      "name": "Cargador RoyalCell 2.4 Tipo C",
+      "category": "Cargadores",
+      "price": 6000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_17786914746802lcr.jpg",
+      "oferta": false,
+      "id": "17786914746802lcr"
+    },
+    {
+      "name": "Cargador Samsung 65W",
+      "category": "Cargadores",
+      "price": 17500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_17786914746810y25.jpg",
+      "oferta": false,
+      "id": "17786914746810y25"
+    },
+    {
+      "name": "Cargador Universal Bateria Led",
+      "category": "Cargadores",
+      "price": 5000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691474682s90e.jpg",
+      "oferta": false,
+      "id": "1778691474682s90e"
+    },
+    {
+      "name": "Cargador Universal Notebook",
+      "category": "Cargadores",
+      "price": 19500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691513007p1at.jpg",
+      "oferta": false,
+      "id": "1778691513007p1at"
+    },
+    {
+      "name": "Consola HDMI Stick X2",
+      "category": "Consolas",
+      "price": 82500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691513008aork.jpg",
+      "oferta": false,
+      "id": "1778691513008aork"
+    },
+    {
+      "name": "Ipod caja chica",
+      "category": "Auriculares",
+      "price": 20000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691513009osz3.jpg",
+      "oferta": false,
+      "id": "1778691513009osz3"
+    },
+    {
+      "name": "Ipods Caja grande",
+      "category": "Auriculares",
+      "price": 35000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691513009hl4i.jpg",
+      "oferta": false,
+      "id": "1778691513009hl4i"
+    },
+    {
+      "name": "Memoria SD 256GB",
+      "category": "Memorias",
+      "price": 59000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_17786915130101rd1.jpg",
+      "oferta": false,
+      "id": "17786915130101rd1"
+    },
+    {
+      "name": "Micro SD 128gb 180Mbs",
+      "category": "Memorias",
+      "price": 35000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_177869151301157q2.jpg",
+      "oferta": false,
+      "id": "177869151301157q2"
+    },
+    {
+      "name": "Micro SD 256gb 170Mbs",
+      "category": "Memorias",
+      "price": 59000,
+      "desc": "Importado masivamente",
+      "image": "https://images.unsplash.com/photo-1588702547919-26089e690ecc?auto=format&fit=crop&w=500&q=60",
+      "oferta": false,
+      "id": "1778691513012up6f"
+    },
+    {
+      "name": "Mouse Gamer Raptor Wireless 12800",
+      "category": "Mouse",
+      "price": 35000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_17786915130132g2y.jpg",
+      "oferta": false,
+      "id": "17786915130132g2y"
+    },
+    {
+      "name": "Mouse Gamer Raptor Wireless 24000",
+      "category": "Mouse",
+      "price": 45000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691513014wbpx.jpg",
+      "oferta": false,
+      "id": "1778691513014wbpx"
+    },
+    {
+      "name": "Pendrive 64GB Tipo C",
+      "category": "Memorias",
+      "price": 25000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691513015d8i1.jpg",
+      "oferta": false,
+      "id": "1778691513015d8i1"
+    },
+    {
+      "name": "Pilas Recargables Multilaser AA",
+      "category": "Pilas",
+      "price": 7500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691513016jv10.jpg",
+      "oferta": false,
+      "id": "1778691513016jv10"
+    },
+    {
+      "name": "Pilas Recargables Multilaser AAA",
+      "category": "Pilas",
+      "price": 7500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691513016u42r.jpg",
+      "oferta": false,
+      "id": "1778691513016u42r"
+    },
+    {
+      "name": "Proyector con Magis HD",
+      "category": "Consolas",
+      "price": 85000,
+      "desc": "Importado masivamente",
+      "image": "https://images.unsplash.com/photo-1588702547919-26089e690ecc?auto=format&fit=crop&w=500&q=60",
+      "oferta": false,
+      "id": "1778691513017gats"
+    },
+    {
+      "name": "Cargador Motorola 125W",
+      "category": "Cargadores",
+      "price": 27500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691553453h87h.jpg",
+      "oferta": false,
+      "id": "1778691553453h87h"
+    },
+    {
+      "name": "Cartucho 21 Gneiss",
+      "category": "Cartuchos",
+      "price": 28000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691553455h4jw.jpg",
+      "oferta": false,
+      "id": "1778691553455h4jw"
+    },
+    {
+      "name": "Cartucho 22 Gneiss",
+      "category": "Cartuchos",
+      "price": 32000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_17786915534569en2.jpg",
+      "oferta": false,
+      "id": "17786915534569en2"
+    },
+    {
+      "name": "Cartucho 60 Gneiss Negro",
+      "category": "Cartuchos",
+      "price": 37000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691553457diaa.jpg",
+      "oferta": false,
+      "id": "1778691553457diaa"
+    },
+    {
+      "name": "Cartucho Gneiss 117",
+      "category": "Cartuchos",
+      "price": 6000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691553458dpx6.jpg",
+      "oferta": false,
+      "id": "1778691553458dpx6"
+    },
+    {
+      "name": "Cartucho Gneiss 122 XL Color",
+      "category": "Cartuchos",
+      "price": 38000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691553458byzc.jpg",
+      "oferta": false,
+      "id": "1778691553458byzc"
+    },
+    {
+      "name": "Cartucho Gneiss 122 XL Negro",
+      "category": "Cartuchos",
+      "price": 38000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691553459p691.jpg",
+      "oferta": false,
+      "id": "1778691553459p691"
+    },
+    {
+      "name": "Cartucho Gneiss 133",
+      "category": "Cartuchos",
+      "price": 7000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691553460nl3f.jpg",
+      "oferta": false,
+      "id": "1778691553460nl3f"
+    },
+    {
+      "name": "Cartucho Gneiss 135",
+      "category": "Cartuchos",
+      "price": 5500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691553462k8m4.jpg",
+      "oferta": false,
+      "id": "1778691553462k8m4"
+    },
+    {
+      "name": "Cartucho Gneiss 206 Colores",
+      "category": "Cartuchos",
+      "price": 13000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691553463buam.jpg",
+      "oferta": false,
+      "id": "1778691553463buam"
+    },
+    {
+      "name": "Cartucho Gneiss 206 Negro",
+      "category": "Cartuchos",
+      "price": 13000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691553464x5ac.jpg",
+      "oferta": false,
+      "id": "1778691553464x5ac"
+    },
+    {
+      "name": "Cartucho Gneiss 296 297",
+      "category": "Cartuchos",
+      "price": 11000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691553464j810.jpg",
+      "oferta": false,
+      "id": "1778691553464j810"
+    },
+    {
+      "name": "Cartucho Gneiss 662 XL Color",
+      "category": "Cartuchos",
+      "price": 42000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_177869155346565ha.jpg",
+      "oferta": false,
+      "id": "177869155346565ha"
+    },
+    {
+      "name": "Cartucho Gneiss 662 XL Negro",
+      "category": "Cartuchos",
+      "price": 39000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691553466fddk.jpg",
+      "oferta": false,
+      "id": "1778691553466fddk"
+    },
+    {
+      "name": "Cartucho Gneiss 664 XL Color",
+      "category": "Cartuchos",
+      "price": 42000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_17786915534674bea.jpg",
+      "oferta": false,
+      "id": "17786915534674bea"
+    },
+    {
+      "name": "Cartucho Gneiss 664 XL Negro",
+      "category": "Cartuchos",
+      "price": 39000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691553468ssnm.jpg",
+      "oferta": false,
+      "id": "1778691553468ssnm"
+    },
+    {
+      "name": "Cartucho Gneiss 667 Negro",
+      "category": "Cartuchos",
+      "price": 49000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_17786915534691hwc.webp",
+      "oferta": false,
+      "id": "17786915534691hwc"
+    },
+    {
+      "name": "Cartucho Gneiss 731",
+      "category": "Cartuchos",
+      "price": 5500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691553469m3y5.jpg",
+      "oferta": false,
+      "id": "1778691553469m3y5"
+    },
+    {
+      "name": "Cartucho Gneiss 732",
+      "category": "Cartuchos",
+      "price": 5500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691553470vi5y.jpg",
+      "oferta": false,
+      "id": "1778691553470vi5y"
+    },
+    {
+      "name": "Cartucho Gneiss 733",
+      "category": "Cartuchos",
+      "price": 5500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691553471o3zs.jpg",
+      "oferta": false,
+      "id": "1778691553471o3zs"
+    },
+    {
+      "name": "Cartucho Gneiss 734",
+      "category": "Cartuchos",
+      "price": 5500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_17786915534724007.jpg",
+      "oferta": false,
+      "id": "17786915534724007"
+    },
+    {
+      "name": "Cartucho Gneiss 90",
+      "category": "Cartuchos",
+      "price": 5500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691553472j5l5.jpg",
+      "oferta": false,
+      "id": "1778691553472j5l5"
+    },
+    {
+      "name": "Cartuchos Gneiss 195 196 197",
+      "category": "Cartuchos",
+      "price": 7500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691553473nsq5.jpg",
+      "oferta": false,
+      "id": "1778691553473nsq5"
+    },
+    {
+      "name": "Tintas Botella 100Cm3",
+      "category": "Cartuchos",
+      "price": 10000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691553474v0u7.jpg",
+      "oferta": false,
+      "id": "1778691553474v0u7"
+    },
+    {
+      "name": "Toner Brother 283",
+      "category": "Cartuchos",
+      "price": 23000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691553475p9gm.jpg",
+      "oferta": false,
+      "id": "1778691553475p9gm"
+    },
+    {
+      "name": "Toner HP 105",
+      "category": "Cartuchos",
+      "price": 25000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691553476dc9g.jpg",
+      "oferta": false,
+      "id": "1778691553476dc9g"
+    },
+    {
+      "name": "Toner HP 217A",
+      "category": "Cartuchos",
+      "price": 19000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691553477yab3.jpg",
+      "oferta": false,
+      "id": "1778691553477yab3"
+    },
+    {
+      "name": "Toner HP 2612",
+      "category": "Cartuchos",
+      "price": 19000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691553478xmvk.jpg",
+      "oferta": false,
+      "id": "1778691553478xmvk"
+    },
+    {
+      "name": "Toner HP 285 / 435/ 436/ 278",
+      "category": "Cartuchos",
+      "price": 18000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778691553478l7mi.jpg",
+      "oferta": false,
+      "id": "1778691553478l7mi"
+    },
+    {
+      "name": "Toner HP Gneiss 48A",
+      "category": "Cartuchos",
+      "price": 25000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_17786915534795kbh.jpg",
+      "oferta": false,
+      "id": "17786915534795kbh"
+    },
+    {
+      "name": "Toner Samsung 101",
+      "category": "Cartuchos",
+      "price": 25000,
+      "desc": "Importado masivamente",
+      "image": "https://images.unsplash.com/photo-1588702547919-26089e690ecc?auto=format&fit=crop&w=500&q=60",
+      "oferta": false,
+      "id": "17786915534816r0y"
+    },
+    {
+      "name": "Toner Samsung 105",
+      "category": "Cartuchos",
+      "price": 29000,
+      "desc": "Importado masivamente",
+      "image": "https://images.unsplash.com/photo-1588702547919-26089e690ecc?auto=format&fit=crop&w=500&q=60",
+      "oferta": false,
+      "id": "177869155348213vn"
+    },
+    {
+      "name": "Toner Samsung 111",
+      "category": "Cartuchos",
+      "price": 26000,
+      "desc": "Importado masivamente",
+      "image": "https://images.unsplash.com/photo-1588702547919-26089e690ecc?auto=format&fit=crop&w=500&q=60",
+      "oferta": false,
+      "id": "17786915534836kni"
+    },
+    {
+      "name": "Consola HDMI Stick",
+      "category": "Consolas",
+      "price": 49000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_17786937274312w6m.jpg",
+      "oferta": false,
+      "id": "17786937274312w6m"
+    },
+    {
+      "name": "Consola Retro",
+      "category": "Consolas",
+      "price": 39000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778693727432wa4d.jpg",
+      "oferta": false,
+      "id": "1778693727432wa4d"
+    },
+    {
+      "name": "Tetris Pocket",
+      "category": "Consolas",
+      "price": 7000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778693727433vqcc.jpg",
+      "oferta": false,
+      "id": "1778693727433vqcc"
+    },
+    {
+      "name": "Base Cooler GTC",
+      "category": "Coolers",
+      "price": 20000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778693818172vbhk.jpg",
+      "oferta": false,
+      "id": "1778693818172vbhk"
+    },
+    {
+      "name": "Cooler 12mm Negro",
+      "category": "Coolers",
+      "price": 11000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778693818173zltl.jpg",
+      "oferta": false,
+      "id": "1778693818173zltl"
+    },
+    {
+      "name": "Cooler 8mm de Colores",
+      "category": "Coolers",
+      "price": 9500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_17786938181743crx.jpg",
+      "oferta": false,
+      "id": "17786938181743crx"
+    },
+    {
+      "name": "Cooler Gabinete Generico 8mm",
+      "category": "Coolers",
+      "price": 6000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778693818174b0i4.jpg",
+      "oferta": false,
+      "id": "1778693818174b0i4"
+    },
+    {
+      "name": "Ficha Hembra Vga",
+      "category": "Fichas",
+      "price": 4000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778694053819kg5q.jpg",
+      "oferta": false,
+      "id": "1778694053819kg5q"
+    },
+    {
+      "name": "Ficha Rj45 Extencion",
+      "category": "Fichas",
+      "price": 5000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778694053820mier.jpg",
+      "oferta": false,
+      "id": "1778694053820mier"
+    },
+    {
+      "name": "Fichas Notebook",
+      "category": "Fichas",
+      "price": 1000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_17786940538217q4f.jpg",
+      "oferta": false,
+      "id": "17786940538217q4f"
+    },
+    {
+      "name": "Estabilizador Future 1000 Watts",
+      "category": "Fuentes",
+      "price": 49000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_17786940860099qb2.jpg",
+      "oferta": false,
+      "id": "17786940860099qb2"
+    },
+    {
+      "name": "Estabilizador Lyonn 6 Tomas",
+      "category": "Fuentes",
+      "price": 64900,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778694086012g8t2.jpg",
+      "oferta": false,
+      "id": "1778694086012g8t2"
+    },
+    {
+      "name": "Fuente ATX 650W Noga",
+      "category": "Fuentes",
+      "price": 38500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_177869408601333ny.jpg",
+      "oferta": false,
+      "id": "177869408601333ny"
+    },
+    {
+      "name": "Fuente ATX 700W Noga",
+      "category": "Fuentes",
+      "price": 49500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_17786940860138nmj.jpg",
+      "oferta": false,
+      "id": "17786940860138nmj"
+    },
+    {
+      "name": "Fuente ATX Kelyx 500W Cooler 12",
+      "category": "Fuentes",
+      "price": 45000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_17786940860149kar.jpg",
+      "oferta": false,
+      "id": "17786940860149kar"
+    },
+    {
+      "name": "Fuente de 12v / 9V 1A",
+      "category": "Fuentes",
+      "price": 8000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778694086015yiec.jpg",
+      "oferta": false,
+      "id": "1778694086015yiec"
+    },
+    {
+      "name": "Fuente de 12v / 9V 2A",
+      "category": "Fuentes",
+      "price": 9500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778694086018rcem.jpg",
+      "oferta": false,
+      "id": "1778694086018rcem"
+    },
+    {
+      "name": "Fuente Multivoltaje 800Mha",
+      "category": "Fuentes",
+      "price": 15000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_17786940860181yix.jpg",
+      "oferta": false,
+      "id": "17786940860181yix"
+    },
+    {
+      "name": "Fuente Noga 600W",
+      "category": "Fuentes",
+      "price": 38500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778694086019gvhi.jpg",
+      "oferta": false,
+      "id": "1778694086019gvhi"
+    },
+    {
+      "name": "Fuente Noga 750w",
+      "category": "Fuentes",
+      "price": 65000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_177869408602065ne.jpg",
+      "oferta": false,
+      "id": "177869408602065ne"
+    },
+    {
+      "name": "Fuente Noganet ATX 550W",
+      "category": "Fuentes",
+      "price": 35000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_17786940860211po6.jpg",
+      "oferta": false,
+      "id": "17786940860211po6"
+    },
+    {
+      "name": "PowerBank 20000Mah",
+      "category": "Fuentes",
+      "price": 29500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778694086022hme2.webp",
+      "oferta": false,
+      "id": "1778694086022hme2"
+    },
+    {
+      "name": "PowerBank 5000mah Netmak",
+      "category": "Fuentes",
+      "price": 19000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778694086023sgzs.jpg",
+      "oferta": false,
+      "id": "1778694086023sgzs"
+    },
+    {
+      "name": "PowerBank Equipos 10000Mah",
+      "category": "Fuentes",
+      "price": 20000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778694086024c504.jpg",
+      "oferta": false,
+      "id": "1778694086024c504"
+    },
+    {
+      "name": "Zapatilla 5 Tomas 1.5mts",
+      "category": "Fuentes",
+      "price": 11000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_17786940860252ynw.jpg",
+      "oferta": false,
+      "id": "17786940860252ynw"
+    },
+    {
+      "name": "Zapatilla 5 Tomas 3.0mts",
+      "category": "Fuentes",
+      "price": 14000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_17786940860267ubn.jpg",
+      "oferta": false,
+      "id": "17786940860267ubn"
+    },
+    {
+      "name": "Zapatilla 5 Tomas 5 Metros",
+      "category": "Fuentes",
+      "price": 17000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778694086027w8yi.jpg",
+      "oferta": false,
+      "id": "1778694086027w8yi"
+    },
+    {
+      "name": "Funda Agua para Celular",
+      "category": "Fundas",
+      "price": 4000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778694123408tkf3.jpg",
+      "oferta": false,
+      "id": "1778694123408tkf3"
+    },
+    {
+      "name": "Funda Notebook 14",
+      "category": "Fundas",
+      "price": 25000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778694123410ksdh.jpg",
+      "oferta": false,
+      "id": "1778694123410ksdh"
+    },
+    {
+      "name": "Funda Notebook 15",
+      "category": "Fundas",
+      "price": 28000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778694123412hw64.jpg",
+      "oferta": false,
+      "id": "1778694123412hw64"
+    },
+    {
+      "name": "Funda Notebook 17",
+      "category": "Fundas",
+      "price": 31000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778694123413y3of.jpg",
+      "oferta": false,
+      "id": "1778694123413y3of"
+    },
+    {
+      "name": "Auricular Gamer Raptor Core",
+      "category": "Auriculares",
+      "price": 40000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_17786941424956ui1.jpg",
+      "oferta": false,
+      "id": "17786941424956ui1"
+    },
+    {
+      "name": "Auricular Gamer Raptor Inferno",
+      "category": "Auriculares",
+      "price": 55000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_17786941424974xpr.jpg",
+      "oferta": false,
+      "id": "17786941424974xpr"
+    },
+    {
+      "name": "Fuente Raptor 650W",
+      "category": "Fuentes",
+      "price": 95000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_17786941681351v6x.jpg",
+      "oferta": false,
+      "id": "17786941681351v6x"
+    },
+    {
+      "name": "Fuente Raptor 750W",
+      "category": "Fuentes",
+      "price": 105000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778694168136x8yp.jpg",
+      "oferta": false,
+      "id": "1778694168136x8yp"
+    },
+    {
+      "name": "Gamepad Celular X3",
+      "category": "Gamepads",
+      "price": 22000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778694204925qaxs.jpg",
+      "oferta": false,
+      "id": "1778694204925qaxs"
+    },
+    {
+      "name": "Gamepad PC USB",
+      "category": "Gamepads",
+      "price": 12000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_17786942049274sz8.jpg",
+      "oferta": false,
+      "id": "17786942049274sz8"
+    },
+    {
+      "name": "Gamepad Play 4 Sony Replica",
+      "category": "Gamepads",
+      "price": 32500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778694204929tl5b.jpg",
+      "oferta": false,
+      "id": "1778694204929tl5b"
+    },
+    {
+      "name": "Gamepad Play 5 original",
+      "category": "Gamepads",
+      "price": 145000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778694204930zrq6.jpg",
+      "oferta": false,
+      "id": "1778694204930zrq6"
+    },
+    {
+      "name": "Gamepad Replica Play 2",
+      "category": "Gamepads",
+      "price": 13000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_17786942049316y8q.jpg",
+      "oferta": false,
+      "id": "17786942049316y8q"
+    },
+    {
+      "name": "Gamepad Replica Play 3",
+      "category": "Gamepads",
+      "price": 16500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778694204933z9e1.jpg",
+      "oferta": false,
+      "id": "1778694204933z9e1"
+    },
+    {
+      "name": "Gamepad Sony Play 3",
+      "category": "Gamepads",
+      "price": 18500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778694204934jndj.jpg",
+      "oferta": false,
+      "id": "1778694204934jndj"
+    },
+    {
+      "name": "Gamepad Xbox 360 Cableado",
+      "category": "Gamepads",
+      "price": 35000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778694204935g5bo.jpg",
+      "oferta": false,
+      "id": "1778694204935g5bo"
+    },
+    {
+      "name": "Grasa Termica Raptor",
+      "category": "Limpieza",
+      "price": 17000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778694321257uxfz.jpg",
+      "oferta": false,
+      "id": "1778694321257uxfz"
+    },
+    {
+      "name": "Micro Sd 16GB",
+      "category": "Memorias",
+      "price": 15000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778694347929f8xf.jpg",
+      "oferta": false,
+      "id": "1778694347929f8xf"
+    },
+    {
+      "name": "Micro Sd 32GB Clase 10",
+      "category": "Memorias",
+      "price": 18000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778694347931u66y.jpg",
+      "oferta": false,
+      "id": "1778694347931u66y"
+    },
+    {
+      "name": "Micro Sd 64GB Clase 10",
+      "category": "Memorias",
+      "price": 22000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778694347932yivd.jpg",
+      "oferta": false,
+      "id": "1778694347932yivd"
+    },
+    {
+      "name": "Micro Sd de 128GB",
+      "category": "Memorias",
+      "price": 35000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778694347933qyhi.jpg",
+      "oferta": false,
+      "id": "1778694347933qyhi"
+    },
+    {
+      "name": "Pen de 32GB Kingston",
+      "category": "Memorias",
+      "price": 18000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778694347934nds7.jpg",
+      "oferta": false,
+      "id": "1778694347934nds7"
+    },
+    {
+      "name": "Pendrive 128Gb",
+      "category": "Memorias",
+      "price": 35000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778694347935nhmd.jpg",
+      "oferta": false,
+      "id": "1778694347935nhmd"
+    },
+    {
+      "name": "Pendrive 16Gb",
+      "category": "Memorias",
+      "price": 15000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778694347937dnsa.jpg",
+      "oferta": false,
+      "id": "1778694347937dnsa"
+    },
+    {
+      "name": "Pendrive 64GB",
+      "category": "Memorias",
+      "price": 22000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_177869434793813r5.jpg",
+      "oferta": false,
+      "id": "177869434793813r5"
+    },
+    {
+      "name": "Microfono Condenser Studio con Brazo",
+      "category": "Microfonos",
+      "price": 49000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778694384223a98p.jpg",
+      "oferta": false,
+      "id": "1778694384223a98p"
+    },
+    {
+      "name": "Microfono Condenser Studio sin Brazo",
+      "category": "Microfonos",
+      "price": 25000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_177869438422408uo.jpg",
+      "oferta": false,
+      "id": "177869438422408uo"
+    },
+    {
+      "name": "Microfono Noga Gamer",
+      "category": "Microfonos",
+      "price": 17000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778694384226vlns.jpg",
+      "oferta": false,
+      "id": "1778694384226vlns"
+    },
+    {
+      "name": "Microfono Noga Streamer Con Brazo",
+      "category": "Microfonos",
+      "price": 49000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778694384227ddst.jpg",
+      "oferta": false,
+      "id": "1778694384227ddst"
+    },
+    {
+      "name": "Mouse Genius USB 110",
+      "category": "Mouse",
+      "price": 8500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778694599895wasi.jpg",
+      "oferta": false,
+      "id": "1778694599895wasi"
+    },
+    {
+      "name": "Mouse Inalambrico 7010 / 7015",
+      "category": "Mouse",
+      "price": 18000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778694599897q9tr.jpg",
+      "oferta": false,
+      "id": "1778694599897q9tr"
+    },
+    {
+      "name": "Mouse Inalambrico Genius 7000",
+      "category": "Mouse",
+      "price": 15000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778694599898gek1.jpg",
+      "oferta": false,
+      "id": "1778694599898gek1"
+    },
+    {
+      "name": "Mouse Inalambrico Meetion R570",
+      "category": "Mouse",
+      "price": 15000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778694599899ilg7.jpg",
+      "oferta": false,
+      "id": "1778694599899ilg7"
+    },
+    {
+      "name": "Mouse Logitech G203",
+      "category": "Mouse",
+      "price": 40000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_177869459990030y7.jpg",
+      "oferta": false,
+      "id": "177869459990030y7"
+    },
+    {
+      "name": "Mouse Logitech Inalambrico M170",
+      "category": "Mouse",
+      "price": 16000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_17786945999014gjp.jpg",
+      "oferta": false,
+      "id": "17786945999014gjp"
+    },
+    {
+      "name": "Mouse Logitech M110",
+      "category": "Mouse",
+      "price": 15000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778694599903p1ly.jpg",
+      "oferta": false,
+      "id": "1778694599903p1ly"
+    },
+    {
+      "name": "Mouse Logitech M185",
+      "category": "Mouse",
+      "price": 20000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778694599904oin8.jpg",
+      "oferta": false,
+      "id": "1778694599904oin8"
+    },
+    {
+      "name": "Mouse Logitech M190",
+      "category": "Mouse",
+      "price": 21500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778694599905df9w.jpg",
+      "oferta": false,
+      "id": "1778694599905df9w"
+    },
+    {
+      "name": "Mouse Logitech M280",
+      "category": "Mouse",
+      "price": 23500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778694599906qtib.jpg",
+      "oferta": false,
+      "id": "1778694599906qtib"
+    },
+    {
+      "name": "Mouse Logitech M90",
+      "category": "Mouse",
+      "price": 10000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778694599907bb1e.jpg",
+      "oferta": false,
+      "id": "1778694599907bb1e"
+    },
+    {
+      "name": "Mouse Recargable Noga Azul 610",
+      "category": "Mouse",
+      "price": 20000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_177869459990979u1.jpg",
+      "oferta": false,
+      "id": "177869459990979u1"
+    },
+    {
+      "name": "Mouse USB Comun",
+      "category": "Mouse",
+      "price": 5000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778694599910pvib.jpg",
+      "oferta": false,
+      "id": "1778694599910pvib"
+    },
+    {
+      "name": "Mouse Pad Gel Niños",
+      "category": "Pads",
+      "price": 9500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778694665892gv10.jpg",
+      "oferta": false,
+      "id": "1778694665892gv10"
+    },
+    {
+      "name": "MousePad Comun chico",
+      "category": "Pads",
+      "price": 4000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778694665895jkr5.jpg",
+      "oferta": false,
+      "id": "1778694665895jkr5"
+    },
+    {
+      "name": "MousePad Comun Grande",
+      "category": "Pads",
+      "price": 6000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778694665896pc8t.jpg",
+      "oferta": false,
+      "id": "1778694665896pc8t"
+    },
+    {
+      "name": "MousePad Corsair M100",
+      "category": "Pads",
+      "price": 29000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778694665897y2ci.jpg",
+      "oferta": false,
+      "id": "1778694665897y2ci"
+    },
+    {
+      "name": "MousePad Gel",
+      "category": "Pads",
+      "price": 8000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778694665898svuv.jpg",
+      "oferta": false,
+      "id": "1778694665898svuv"
+    },
+    {
+      "name": "MousePad Genius P100",
+      "category": "Pads",
+      "price": 25000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778694665900nj7j.jpg",
+      "oferta": false,
+      "id": "1778694665900nj7j"
+    },
+    {
+      "name": "Pad Corcho Chico",
+      "category": "Pads",
+      "price": 7000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778694665901txck.jpg",
+      "oferta": false,
+      "id": "1778694665901txck"
+    },
+    {
+      "name": "Pad Corcho Grande",
+      "category": "Pads",
+      "price": 12000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778694665902gq5c.jpg",
+      "oferta": false,
+      "id": "1778694665902gq5c"
+    },
+    {
+      "name": "Parlante Genius BT380",
+      "category": "Parlantes",
+      "price": 45000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778694701659gdkt.jpg",
+      "oferta": false,
+      "id": "1778694701659gdkt"
+    },
+    {
+      "name": "Parlante Genius HF180",
+      "category": "Parlantes",
+      "price": 28000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_177869470166185sf.jpg",
+      "oferta": false,
+      "id": "177869470166185sf"
+    },
+    {
+      "name": "Parlante Genius HF280",
+      "category": "Parlantes",
+      "price": 28000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778694701662qzlx.jpg",
+      "oferta": false,
+      "id": "1778694701662qzlx"
+    },
+    {
+      "name": "Parlante Noga PC 509",
+      "category": "Parlantes",
+      "price": 17000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778694701663qmx8.jpg",
+      "oferta": false,
+      "id": "1778694701663qmx8"
+    },
+    {
+      "name": "Parlante Noga PC 512",
+      "category": "Parlantes",
+      "price": 15000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778694701665pe47.jpg",
+      "oferta": false,
+      "id": "1778694701665pe47"
+    },
+    {
+      "name": "Parlante Qugo con Mic/1383",
+      "category": "Parlantes",
+      "price": 18000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778694701666i6t6.jpg",
+      "oferta": false,
+      "id": "1778694701666i6t6"
+    },
+    {
+      "name": "Parlante RP911",
+      "category": "Parlantes",
+      "price": 24000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778694701668s2j7.jpg",
+      "oferta": false,
+      "id": "1778694701668s2j7"
+    },
+    {
+      "name": "PArlantes JBL Replica Charge 3+",
+      "category": "Parlantes",
+      "price": 39000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_17786947016690u1w.jpg",
+      "oferta": false,
+      "id": "17786947016690u1w"
+    },
+    {
+      "name": "Bateria Eveready 9v",
+      "category": "Pilas",
+      "price": 4000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_177869475824159v2.jpg",
+      "oferta": false,
+      "id": "177869475824159v2"
+    },
+    {
+      "name": "Bateria 9v Energizer",
+      "category": "Pilas",
+      "price": 6500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778694758243h0x9.jpg",
+      "oferta": false,
+      "id": "1778694758243h0x9"
+    },
+    {
+      "name": "Baterias Recargables 18650",
+      "category": "Pilas",
+      "price": 7000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778694758244bikg.jpg",
+      "oferta": false,
+      "id": "1778694758244bikg"
+    },
+    {
+      "name": "Pila 1130",
+      "category": "Pilas",
+      "price": 1000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778694758246hu73.webp",
+      "oferta": false,
+      "id": "1778694758246hu73"
+    },
+    {
+      "name": "Pila CR2",
+      "category": "Pilas",
+      "price": 7000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778694758247f6za.jpg",
+      "oferta": false,
+      "id": "1778694758247f6za"
+    },
+    {
+      "name": "Pilas A23",
+      "category": "Pilas",
+      "price": 2500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778694758248hbmj.jpg",
+      "oferta": false,
+      "id": "1778694758248hbmj"
+    },
+    {
+      "name": "Pilas A27",
+      "category": "Pilas",
+      "price": 2500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_17786947582498d7z.jpg",
+      "oferta": false,
+      "id": "17786947582498d7z"
+    },
+    {
+      "name": "Pilas AA Recargables Noga",
+      "category": "Pilas",
+      "price": 4500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778694758250u7pk.jpg",
+      "oferta": false,
+      "id": "1778694758250u7pk"
+    },
+    {
+      "name": "Pilas AAA Recargables Noga",
+      "category": "Pilas",
+      "price": 4500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778694758253pg9s.jpg",
+      "oferta": false,
+      "id": "1778694758253pg9s"
+    },
+    {
+      "name": "Pilas Alcalinas Energizer",
+      "category": "Pilas",
+      "price": 1500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778694758254pab2.jpg",
+      "oferta": false,
+      "id": "1778694758254pab2"
+    },
+    {
+      "name": "Pilas Audifonos",
+      "category": "Pilas",
+      "price": 2000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_17786947582567viy.jpg",
+      "oferta": false,
+      "id": "17786947582567viy"
+    },
+    {
+      "name": "Pilas CR 2016",
+      "category": "Pilas",
+      "price": 1500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_17786947582572wu1.jpg",
+      "oferta": false,
+      "id": "17786947582572wu1"
+    },
+    {
+      "name": "Pilas CR 2025",
+      "category": "Pilas",
+      "price": 1500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778694758258fuzu.jpg",
+      "oferta": false,
+      "id": "1778694758258fuzu"
+    },
+    {
+      "name": "Pilas CR 2032",
+      "category": "Pilas",
+      "price": 1500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_17786947802487cko.jpg",
+      "oferta": false,
+      "id": "17786947802487cko"
+    },
+    {
+      "name": "Pilas LR44",
+      "category": "Pilas",
+      "price": 1000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778694780250cqnw.jpg",
+      "oferta": false,
+      "id": "1778694780250cqnw"
+    },
+    {
+      "name": "Aire Grande Chemitec",
+      "category": "Limpieza",
+      "price": 17000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778694818567eo9k.jpg",
+      "oferta": false,
+      "id": "1778694818567eo9k"
+    },
+    {
+      "name": "Alcohol Isopropilico 1 Litro",
+      "category": "Limpieza",
+      "price": 25000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778694818568tw5c.jpg",
+      "oferta": false,
+      "id": "1778694818568tw5c"
+    },
+    {
+      "name": "Alcohol Isopropilico 500 cc",
+      "category": "Limpieza",
+      "price": 15000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_17786948185707pf1.jpg",
+      "oferta": false,
+      "id": "17786948185707pf1"
+    },
+    {
+      "name": "Alcohol Isopropilico Botella 250cm",
+      "category": "Limpieza",
+      "price": 11000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_17786948185712saf.jpg",
+      "oferta": false,
+      "id": "17786948185712saf"
+    },
+    {
+      "name": "Grasa Siliconada Delta Jeringa",
+      "category": "Limpieza",
+      "price": 7000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_17786948185737g9i.jpg",
+      "oferta": false,
+      "id": "17786948185737g9i"
+    },
+    {
+      "name": "Grasa Siliconada Servex Jeringa plateada",
+      "category": "Limpieza",
+      "price": 7500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778694818574lw06.jpg",
+      "oferta": false,
+      "id": "1778694818574lw06"
+    },
+    {
+      "name": "Grasa Termica Corsair Tm-30",
+      "category": "Limpieza",
+      "price": 17000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778694818576kow6.jpg",
+      "oferta": false,
+      "id": "1778694818576kow6"
+    },
+    {
+      "name": "Kit Limpia LCD Generico",
+      "category": "Limpieza",
+      "price": 7500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778694818577fnwd.jpg",
+      "oferta": false,
+      "id": "1778694818577fnwd"
+    },
+    {
+      "name": "Radio Suono Chica",
+      "category": "Radios",
+      "price": 15000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778694868799w0lg.jpg",
+      "oferta": false,
+      "id": "1778694868799w0lg"
+    },
+    {
+      "name": "Radio Suono Mediana",
+      "category": "Radios",
+      "price": 17500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778694868801ou7e.jpg",
+      "oferta": false,
+      "id": "1778694868801ou7e"
+    },
+    {
+      "name": "Access Point Tplink 850RE",
+      "category": "Redes",
+      "price": 57000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_17786951739233z6n.jpg",
+      "oferta": false,
+      "id": "17786951739233z6n"
+    },
+    {
+      "name": "Access Point Tplink RE200",
+      "category": "Redes",
+      "price": 55000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778695173925rwgi.jpg",
+      "oferta": false,
+      "id": "1778695173925rwgi"
+    },
+    {
+      "name": "Adaptador Usb a Rj45 Lan Noganet",
+      "category": "Adaptadores",
+      "price": 14500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_177869520057975y5.jpg",
+      "oferta": false,
+      "id": "177869520057975y5"
+    },
+    {
+      "name": "Adaptadores Usb Kit",
+      "category": "Adaptadores",
+      "price": 6000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778695200581ab3u.jpg",
+      "oferta": false,
+      "id": "1778695200581ab3u"
+    },
+    {
+      "name": "Auricular Marshall Bluetooth In Ear",
+      "category": "Auriculares",
+      "price": 35000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778695226610veqm.jpg",
+      "oferta": false,
+      "id": "1778695226610veqm"
+    },
+    {
+      "name": "Auricular Marshall Bluetooth Vincha",
+      "category": "Auriculares",
+      "price": 45000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_17786952266114286.jpg",
+      "oferta": false,
+      "id": "17786952266114286"
+    },
+    {
+      "name": "Auricular P9 - P9 pro max",
+      "category": "Auriculares",
+      "price": 15000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778695226612filp.jpg",
+      "oferta": false,
+      "id": "1778695226612filp"
+    },
+    {
+      "name": "Auricular Xiaomi Buds Lite 4",
+      "category": "Auriculares",
+      "price": 45000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_17786952266155bn1.jpg",
+      "oferta": false,
+      "id": "17786952266155bn1"
+    },
+    {
+      "name": "Base Cargador Gamepad Play 5",
+      "category": "Cargadores",
+      "price": 15000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_17786952531438kyu.jpg",
+      "oferta": false,
+      "id": "17786952531438kyu"
+    },
+    {
+      "name": "Bateria 9v recargable",
+      "category": "Pilas",
+      "price": 13500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778695284471r5ov.jpg",
+      "oferta": false,
+      "id": "1778695284471r5ov"
+    },
+    {
+      "name": "Cabezal 5v",
+      "category": "Cargadores",
+      "price": 5500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778695307397wkvm.jpg",
+      "oferta": false,
+      "id": "1778695307397wkvm"
+    },
+    {
+      "name": "Cabezal Iphone Tipo C",
+      "category": "Cargadores",
+      "price": 10000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778695307400bnci.jpg",
+      "oferta": false,
+      "id": "1778695307400bnci"
+    },
+    {
+      "name": "Cable HDMI 7.5Mts",
+      "category": "Cables",
+      "price": 11000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778695333948esdq.jpg",
+      "oferta": false,
+      "id": "1778695333948esdq"
+    },
+    {
+      "name": "Camara IP Domo Wifi HD",
+      "category": "Seguridad",
+      "price": 49000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_17786953629717ta2.jpg",
+      "oferta": false,
+      "id": "17786953629717ta2"
+    },
+    {
+      "name": "Camara Ip Externa",
+      "category": "Seguridad",
+      "price": 59000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778695362974hjwn.jpg",
+      "oferta": false,
+      "id": "1778695362974hjwn"
+    },
+    {
+      "name": "Camara Ip Interna",
+      "category": "Seguridad",
+      "price": 30000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778695362975oire.jpg",
+      "oferta": false,
+      "id": "1778695362975oire"
+    },
+    {
+      "name": "Combo Havit Inalambrico",
+      "category": "Teclados",
+      "price": 30000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778695427817aoch.jpg",
+      "oferta": false,
+      "id": "1778695427817aoch"
+    },
+    {
+      "name": "Destornillador Kit Profesional",
+      "category": "Accesorios",
+      "price": 23000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778695460792u6pn.jpg",
+      "oferta": false,
+      "id": "1778695460792u6pn"
+    },
+    {
+      "name": "Gamepad Xbox 360 Inalambrico",
+      "category": "Gamepads",
+      "price": 49500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_17786954809750z6h.jpg",
+      "oferta": false,
+      "id": "17786954809750z6h"
+    },
+    {
+      "name": "Hdmi TV Stick",
+      "category": "Consolas",
+      "price": 49000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778695518110qud5.jpg",
+      "oferta": false,
+      "id": "1778695518110qud5"
+    },
+    {
+      "name": "Laser Recargable",
+      "category": "Accesorios",
+      "price": 10000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_177869553779719f6.jpg",
+      "oferta": false,
+      "id": "177869553779719f6"
+    },
+    {
+      "name": "Linterna Encendedor",
+      "category": "Accesorios",
+      "price": 8000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778695537799vva1.jpg",
+      "oferta": false,
+      "id": "1778695537799vva1"
+    },
+    {
+      "name": "Microfono K8 inalambrico",
+      "category": "Microfonos",
+      "price": 14500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778695562700b8yo.jpg",
+      "oferta": false,
+      "id": "1778695562700b8yo"
+    },
+    {
+      "name": "Microfono K9",
+      "category": "Microfonos",
+      "price": 19500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778695562703vvbt.jpg",
+      "oferta": false,
+      "id": "1778695562703vvbt"
+    },
+    {
+      "name": "Mouse inalambrico/bluethoot",
+      "category": "Mouse",
+      "price": 12000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778695581427allm.jpg",
+      "oferta": false,
+      "id": "1778695581427allm"
+    },
+    {
+      "name": "Numerico Mini Inalambrico",
+      "category": "Teclados",
+      "price": 16000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_17786956025158hcw.jpg",
+      "oferta": false,
+      "id": "17786956025158hcw"
+    },
+    {
+      "name": "Parlante Ezra para Bici",
+      "category": "Parlantes",
+      "price": 22000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_17786956287868fml.jpg",
+      "oferta": false,
+      "id": "17786956287868fml"
+    },
+    {
+      "name": "Parlante Netmak Bora",
+      "category": "Parlantes",
+      "price": 35000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778695628788yd1m.jpg",
+      "oferta": false,
+      "id": "1778695628788yd1m"
+    },
+    {
+      "name": "Pendrive 256Gb",
+      "category": "Memorias",
+      "price": 59000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_17786956574760ke5.jpg",
+      "oferta": false,
+      "id": "17786956574760ke5"
+    },
+    {
+      "name": "PIla D Energizer",
+      "category": "Pilas",
+      "price": 6000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778695684688cdzs.jpg",
+      "oferta": false,
+      "id": "1778695684688cdzs"
+    },
+    {
+      "name": "Pilas C",
+      "category": "Pilas",
+      "price": 2200,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_177869568469179fo.jpg",
+      "oferta": false,
+      "id": "177869568469179fo"
+    },
+    {
+      "name": "Pilas Recargables Deleex AA",
+      "category": "Pilas",
+      "price": 3500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778695684692k9vn.jpg",
+      "oferta": false,
+      "id": "1778695684692k9vn"
+    },
+    {
+      "name": "Pilas Recargables Deleex AAA",
+      "category": "Pilas",
+      "price": 3500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778695684694qz94.jpg",
+      "oferta": false,
+      "id": "1778695684694qz94"
+    },
+    {
+      "name": "Placa Wifi Mercusys 150",
+      "category": "Redes",
+      "price": 16000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778695711417rvf1.jpg",
+      "oferta": false,
+      "id": "1778695711417rvf1"
+    },
+    {
+      "name": "Placa Wifi Mercusys 300",
+      "category": "Redes",
+      "price": 19000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778695711419k6jr.png",
+      "oferta": false,
+      "id": "1778695711419k6jr"
+    },
+    {
+      "name": "Placa Wifi Tplink AC600 Dual Band Grande",
+      "category": "Redes",
+      "price": 26000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778695711420rvw3.jpg",
+      "oferta": false,
+      "id": "1778695711420rvw3"
+    },
+    {
+      "name": "Placa Wifi USB Dinax 300",
+      "category": "Redes",
+      "price": 9500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778695711422fsro.jpg",
+      "oferta": false,
+      "id": "1778695711422fsro"
+    },
+    {
+      "name": "Power Bank Kaber 10000MAH",
+      "category": "Fuentes",
+      "price": 23500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778695742774hf7c.jpg",
+      "oferta": false,
+      "id": "1778695742774hf7c"
+    },
+    {
+      "name": "Power Bank kaber 20000MAH",
+      "category": "Fuentes",
+      "price": 29500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_17786957427769uj7.jpg",
+      "oferta": false,
+      "id": "17786957427769uj7"
+    },
+    {
+      "name": "Radio Meier Grande",
+      "category": "Radios",
+      "price": 59000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778695771821wgw1.jpg",
+      "oferta": false,
+      "id": "1778695771821wgw1"
+    },
+    {
+      "name": "Radio Meier Mediana",
+      "category": "Radios",
+      "price": 39000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_17786957718241puv.jpg",
+      "oferta": false,
+      "id": "17786957718241puv"
+    },
+    {
+      "name": "Repetidor RE300N",
+      "category": "Redes",
+      "price": 19000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_17786958035188c93.jpg",
+      "oferta": false,
+      "id": "17786958035188c93"
+    },
+    {
+      "name": "Repetidor Wifi Mercusys",
+      "category": "Redes",
+      "price": 39600,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_17786958035208j9a.jpg",
+      "oferta": false,
+      "id": "17786958035208j9a"
+    },
+    {
+      "name": "Router Mercusys 325",
+      "category": "Redes",
+      "price": 39000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778695803522aapb.jpg",
+      "oferta": false,
+      "id": "1778695803522aapb"
+    },
+    {
+      "name": "Router Tplink AC750",
+      "category": "Redes",
+      "price": 52000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_17786958035234tjm.jpg",
+      "oferta": false,
+      "id": "17786958035234tjm"
+    },
+    {
+      "name": "Smartwatch con Auriculares",
+      "category": "Relojes",
+      "price": 39000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778695841146r70a.jpg",
+      "oferta": false,
+      "id": "1778695841146r70a"
+    },
+    {
+      "name": "Soporte Plegable Notebook Metal",
+      "category": "Soportes",
+      "price": 12500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778695863073rlae.jpg",
+      "oferta": false,
+      "id": "1778695863073rlae"
+    },
+    {
+      "name": "Switch Tplink 5 Ports",
+      "category": "Redes",
+      "price": 23500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_17786958870406nw7.jpg",
+      "oferta": false,
+      "id": "17786958870406nw7"
+    },
+    {
+      "name": "Switch Tplink 8 Ports",
+      "category": "Redes",
+      "price": 29500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778695887042y98h.jpg",
+      "oferta": false,
+      "id": "1778695887042y98h"
+    },
+    {
+      "name": "Teclado Bluetooth Noga Plegable",
+      "category": "Teclados",
+      "price": 25000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778695910223dfnb.jpg",
+      "oferta": false,
+      "id": "1778695910223dfnb"
+    },
+    {
+      "name": "Teclado Raptor Mecanico",
+      "category": "Teclados",
+      "price": 69000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778695910225mnru.jpg",
+      "oferta": false,
+      "id": "1778695910225mnru"
+    },
+    {
+      "name": "Toner Brother 1060",
+      "category": "Cartuchos",
+      "price": 14000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_17786963080094qg9.jpg",
+      "oferta": false,
+      "id": "17786963080094qg9"
+    },
+    {
+      "name": "Toner W1500",
+      "category": "Cartuchos",
+      "price": 32000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_177869630801214yu.jpg",
+      "oferta": false,
+      "id": "177869630801214yu"
+    },
+    {
+      "name": "Ventilador Desk Fan",
+      "category": "Accesorios",
+      "price": 17000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778696327378q454.jpg",
+      "oferta": false,
+      "id": "1778696327378q454"
+    },
+    {
+      "name": "Auricular Iphone airpods Max",
+      "category": "Auriculares",
+      "price": 59000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778696348239anx1.jpg",
+      "oferta": true,
+      "id": "1778696348239anx1"
+    },
+    {
+      "name": "Reloj Band",
+      "category": "Relojes",
+      "price": 9000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_17786964035266f4n.jpg",
+      "oferta": false,
+      "id": "17786964035266f4n"
+    },
+    {
+      "name": "Reloj Despertador Digital",
+      "category": "Relojes",
+      "price": 12000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778696403527xg56.jpg",
+      "oferta": false,
+      "id": "1778696403527xg56"
+    },
+    {
+      "name": "Smart Watch T10",
+      "category": "Relojes",
+      "price": 23000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778696403529yobs.jpg",
+      "oferta": false,
+      "id": "1778696403529yobs"
+    },
+    {
+      "name": "SmartWatch Netmak Plus+",
+      "category": "Relojes",
+      "price": 60000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778696403530ry4s.jpg",
+      "oferta": false,
+      "id": "1778696403530ry4s"
+    },
+    {
+      "name": "Brazo Celular",
+      "category": "Soportes",
+      "price": 7500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_17786964244131b5j.jpg",
+      "oferta": false,
+      "id": "17786964244131b5j"
+    },
+    {
+      "name": "Soporte Auto Long Neck",
+      "category": "Soportes",
+      "price": 13500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778696424415o3d4.jpg",
+      "oferta": false,
+      "id": "1778696424415o3d4"
+    },
+    {
+      "name": "Soporte Bici Weather",
+      "category": "Soportes",
+      "price": 15500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778696424416f7nl.jpg",
+      "oferta": false,
+      "id": "1778696424416f7nl"
+    },
+    {
+      "name": "Soporte Celular Auto C/Iman",
+      "category": "Soportes",
+      "price": 19500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778696424417ynxm.jpg",
+      "oferta": false,
+      "id": "1778696424417ynxm"
+    },
+    {
+      "name": "Soporte LCD con Movimiento Brazo",
+      "category": "Soportes",
+      "price": 19500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778696424419uspz.jpg",
+      "oferta": false,
+      "id": "1778696424419uspz"
+    },
+    {
+      "name": "Soporte LCD Chico",
+      "category": "Soportes",
+      "price": 9500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778696424421ecpc.jpg",
+      "oferta": false,
+      "id": "1778696424421ecpc"
+    },
+    {
+      "name": "Soporte LCD Mediano",
+      "category": "Soportes",
+      "price": 13500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778696424422qcd9.jpg",
+      "oferta": false,
+      "id": "1778696424422qcd9"
+    },
+    {
+      "name": "Soporte Torpedo Celular",
+      "category": "Soportes",
+      "price": 5000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778696424424bt6l.jpg",
+      "oferta": false,
+      "id": "1778696424424bt6l"
+    },
+    {
+      "name": "Tripode Camaras Grande",
+      "category": "Soportes",
+      "price": 16500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778696424425ak8x.jpg",
+      "oferta": false,
+      "id": "1778696424425ak8x"
+    },
+    {
+      "name": "Teclado Bluetooth Mini",
+      "category": "Teclados",
+      "price": 25000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778696454092s2za.jpg",
+      "oferta": false,
+      "id": "1778696454092s2za"
+    },
+    {
+      "name": "Teclado Comun USB",
+      "category": "Teclados",
+      "price": 9500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778696454093iv4f.jpg",
+      "oferta": false,
+      "id": "1778696454093iv4f"
+    },
+    {
+      "name": "Teclado Ganon XS Noga",
+      "category": "Teclados",
+      "price": 49000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778696454095ld2y.jpg",
+      "oferta": false,
+      "id": "1778696454095ld2y"
+    },
+    {
+      "name": "Teclado Ganon XS Noga Sin Numerico",
+      "category": "Teclados",
+      "price": 49000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778696454096xwdn.jpg",
+      "oferta": false,
+      "id": "1778696454096xwdn"
+    },
+    {
+      "name": "Teclado Genius Combo Slimstar 8008 8006",
+      "category": "Teclados",
+      "price": 39000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778696454098cw58.jpg",
+      "oferta": false,
+      "id": "1778696454098cw58"
+    },
+    {
+      "name": "Teclado Genius Luxemate i100",
+      "category": "Teclados",
+      "price": 19500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_17786964541008hdf.jpg",
+      "oferta": false,
+      "id": "17786964541008hdf"
+    },
+    {
+      "name": "Teclado Genius Slimstar 100 110 USB KB125 128",
+      "category": "Teclados",
+      "price": 16500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778696454102yly7.jpg",
+      "oferta": false,
+      "id": "1778696454102yly7"
+    },
+    {
+      "name": "Teclado Genius Slimstar 230",
+      "category": "Teclados",
+      "price": 23000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778696454104nv64.jpg",
+      "oferta": false,
+      "id": "1778696454104nv64"
+    },
+    {
+      "name": "Teclado Inalambico Logitech MK270",
+      "category": "Teclados",
+      "price": 44000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778696454106wn25.jpg",
+      "oferta": false,
+      "id": "1778696454106wn25"
+    },
+    {
+      "name": "Teclado Inalambrico Genius KB-8000",
+      "category": "Teclados",
+      "price": 39000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778696454107vzmv.jpg",
+      "oferta": false,
+      "id": "1778696454107vzmv"
+    },
+    {
+      "name": "Teclado Inalambrico Logitech 295",
+      "category": "Teclados",
+      "price": 89000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778696454109715q.jpg",
+      "oferta": false,
+      "id": "1778696454109715q"
+    },
+    {
+      "name": "Teclado Inalambrico MK235 Logitech",
+      "category": "Teclados",
+      "price": 42000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778696454110oh2v.jpg",
+      "oferta": false,
+      "id": "1778696454110oh2v"
+    },
+    {
+      "name": "Teclado Netmak Tactical",
+      "category": "Teclados",
+      "price": 25000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778696454115rv5i.jpg",
+      "oferta": false,
+      "id": "1778696454115rv5i"
+    },
+    {
+      "name": "Teclado Noga Mini NKB78033",
+      "category": "Teclados",
+      "price": 13500,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778696454117nn5d.jpg",
+      "oferta": false,
+      "id": "1778696454117nn5d"
+    },
+    {
+      "name": "Teclado Numerico Genius",
+      "category": "Teclados",
+      "price": 19000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778696454119f9hg.jpg",
+      "oferta": false,
+      "id": "1778696454119f9hg"
+    },
+    {
+      "name": "Webcam Kelyx 1080",
+      "category": "Webcams",
+      "price": 21000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778696556929jzqy.jpg",
+      "oferta": false,
+      "id": "1778696556929jzqy"
+    },
+    {
+      "name": "Webcam Netmak 1080",
+      "category": "Webcams",
+      "price": 30000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_17786965569311x1m.jpg",
+      "oferta": false,
+      "id": "17786965569311x1m"
+    },
+    {
+      "name": "Webcam Noga 1080p",
+      "category": "Webcams",
+      "price": 30250,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_1778696556933xx5a.jpg",
+      "oferta": false,
+      "id": "1778696556933xx5a"
+    },
+    {
+      "name": "Webcam Noga 720",
+      "category": "Webcams",
+      "price": 11000,
+      "desc": "Importado masivamente",
+      "image": "assets/products/prod_17786965569352rsn.jpg",
+      "oferta": false,
+      "id": "17786965569352rsn"
+    }
+  ],
+  "clients": [
+    {
+      "name": "Arturo Rodriguez",
+      "phone": "11-5098-3626",
+      "email": "",
+      "address": "",
+      "id": "1779111549191k83n"
+    },
+    {
+      "name": "Juan Jose Calvo",
+      "phone": "11-4928-9569",
+      "email": "",
+      "address": "",
+      "id": "1779111857956eh8f"
+    },
+    {
+      "name": "Carlos Lopez",
+      "phone": "987654321",
+      "email": "",
+      "address": "",
+      "id": "1779116866069wrc6"
+    }
+  ],
+  "repairs": [
+    {
+      "id": "REP-001",
+      "code": "AMYVC",
+      "clientId": "1779111549191k83n",
+      "equipment": "Telefono LG",
+      "status": "Entregada",
+      "problem": "Publicidades, Virus",
+      "notes": "$10000",
+      "date": "2026-05-18"
+    },
+    {
+      "id": "REP-002",
+      "code": "E8CQP",
+      "clientId": "1779111857956eh8f",
+      "equipment": "Pc Escritorio",
+      "status": "Finalizada",
+      "problem": "Temperatura",
+      "notes": "$45.000",
+      "date": "2026-05-18"
+    }
+  ],
+  "services": [
+    {
+      "name": "Reparacion PC",
+      "icon": "ph-monitor",
+      "desc": "¿Tu computadora está lenta, se apaga sola o presenta fallas? En nuestro servicio de reparación de PC te ofrecemos soluciones rápidas, seguras y al mejor precio. Realizamos mantenimiento, eliminación de virus, instalación de programas, actualización de hardware y reparación de notebooks y computadoras de escritorio. Trabajamos con atención personalizada y diagnóstico profesional para que vuelvas a usar tu equipo como nuevo. ¡Consultanos hoy mismo y recuperá el rendimiento de tu PC!",
+      "id": "1779110778043wggx"
+    },
+    {
+      "name": "Reparacion Notebooks",
+      "icon": "ph-wrench",
+      "desc": "¿Tu notebook funciona lenta, tiene problemas de batería, pantalla o rendimiento? En nuestro servicio técnico especializado en notebooks te brindamos reparaciones rápidas y confiables para que vuelvas a trabajar, estudiar o disfrutar sin problemas. Realizamos mantenimiento, cambio de componentes, limpieza interna, instalación de software, eliminación de virus y optimización completa del sistema. Contamos con atención personalizada y soluciones efectivas para todas las marcas y modelos. ¡Consultanos y devolvele el mejor rendimiento a tu notebook!",
+      "id": "177911079182665s6"
+    },
+    {
+      "name": "Limpieza Interna",
+      "icon": "ph-fan",
+      "desc": "¿Tu PC o notebook se calienta demasiado, hace ruido o funciona más lenta de lo normal? Nuestro servicio de limpieza interna elimina polvo y suciedad acumulada para mejorar el rendimiento, reducir la temperatura y prolongar la vida útil de tu equipo. Realizamos limpieza profunda de ventiladores, disipadores y componentes internos, además de cambio de pasta térmica para un funcionamiento más eficiente y silencioso. Trabajamos con cuidado profesional en computadoras y notebooks de todas las marcas. ¡Dale mantenimiento a tu equipo y mantenelo como nuevo!",
+      "id": "1779110909070z16z"
+    },
+    {
+      "name": "Optimizacion Gamer",
+      "icon": "ph-mouse",
+      "desc": "¿Querés que tu PC o notebook rinda mejor en juegos? Nuestro servicio de optimización y performance gaming mejora el rendimiento de tu equipo para obtener más FPS, menor consumo de recursos y una experiencia mucho más fluida. Configuramos Windows, drivers, programas y ajustes avanzados para reducir el lag, mejorar tiempos de carga y aprovechar al máximo el hardware de tu computadora. Ideal para gamers, streamers y equipos de alto rendimiento. ¡Llevá tu experiencia de juego al siguiente nivel con una optimización profesional!",
+      "id": "1779110987979kf98"
+    },
+    {
+      "name": "Bisagras Notebooks",
+      "icon": "ph-laptop",
+      "desc": "¿Tu notebook tiene la bisagra rota, floja o trabada? Nuestro servicio de reparación de bisagras devuelve la firmeza y seguridad a la apertura de tu equipo, evitando daños mayores en la pantalla y la carcasa. Realizamos reparación y refuerzo de bisagras, ajuste de tapas, cambio de piezas dañadas y mantenimiento completo para que tu notebook vuelva a funcionar correctamente. Trabajamos con todas las marcas y modelos, ofreciendo soluciones duraderas y atención profesional. ¡Consultanos y recuperá tu notebook como nueva!",
+      "id": "1779111088927fjdf"
+    },
+    {
+      "name": "Pin de Carga notebooks",
+      "icon": "ph-plug",
+      "desc": "¿Tu notebook no carga correctamente, tenés que mover el cable para que funcione o el pin de carga está dañado? Nuestro servicio de cambio y reparación de pin de carga soluciona fallas de alimentación de forma rápida y segura. Reemplazamos conectores dañados, realizamos soldaduras profesionales y verificamos el correcto funcionamiento de la batería y el cargador para que tu equipo vuelva a cargar sin problemas. Trabajamos con notebooks de todas las marcas y modelos, brindando atención confiable y soluciones duraderas. ¡Consultanos y devolvele energía a tu notebook!",
+      "id": "1779111153925gamv"
+    },
+    {
+      "name": "Actualizaciones",
+      "icon": "ph-memory",
+      "desc": "¿Querés mejorar el rendimiento de tu PC y mantenerla al día? Nuestro servicio de actualización de PC te ayuda a potenciar tu equipo con mejoras de hardware y software para lograr mayor velocidad, estabilidad y rendimiento. Realizamos actualización de componentes, instalación de discos SSD, ampliación de memoria RAM, actualización de sistema operativo, drivers y optimización general para que tu computadora funcione de manera más rápida y eficiente. Ideal para trabajo, estudio, diseño o gaming. ¡Actualizá tu PC y sacale el máximo provecho a tu equipo!",
+      "id": "177911125038628t2"
+    },
+    {
+      "name": "Consultoria",
+      "icon": "ph-headset",
+      "desc": "¿Tenés dudas sobre tu PC o notebook y no sabés qué solución necesitás? Te ofrecemos consultoría gratuita vía WhatsApp para asesorarte de forma rápida y personalizada. Respondemos consultas sobre reparaciones, mejoras, rendimiento, compatibilidad de componentes y cualquier problema técnico que tengas con tu equipo. Nuestro objetivo es ayudarte a encontrar la mejor solución sin compromiso y con atención directa. ¡Escribinos por WhatsApp y recibí asesoramiento profesional totalmente gratis!",
+      "id": "1779111343166e7o6"
+    },
+    {
+      "name": "Chequeo Electronico",
+      "icon": "ph-cpu",
+      "desc": "¿Tu PC o notebook presenta fallas eléctricas, no enciende o tiene problemas de funcionamiento? Nuestro servicio de chequeo de electrónica permite detectar fallas en placas, circuitos y componentes internos mediante un diagnóstico técnico profesional. Revisamos el estado de la motherboard, conectores, alimentación y otros componentes electrónicos para encontrar la causa del problema y ofrecer la mejor solución. Trabajamos con equipos de todas las marcas y modelos, brindando atención confiable y precisa. ¡Consultanos y realizá un chequeo electrónico completo para tu equipo!",
+      "id": "1779111438931fkpm"
+    },
+    {
+      "name": "Cambio Teclado Notebooks",
+      "icon": "ph-keyboard",
+      "desc": "¿Las teclas de tu notebook no funcionan, están rotas o el teclado dejó de responder? Nuestro servicio de cambio y reparación de teclados para notebooks te ofrece una solución rápida y profesional para que vuelvas a usar tu equipo sin inconvenientes. Realizamos reemplazo de teclados dañados, limpieza interna y verificación completa del funcionamiento para garantizar un resultado seguro y duradero. Trabajamos con notebooks de todas las marcas y modelos, brindando atención personalizada y repuestos de calidad. ¡Consultanos y recuperá el funcionamiento de tu notebook!",
+      "id": "17791127371403y64"
+    },
+    {
+      "name": "Cambio de Displays",
+      "icon": "ph-desktop",
+      "desc": "¿La pantalla de tu notebook está rota, tiene líneas, manchas o dejó de mostrar imagen? Nuestro servicio de cambio de displays para notebooks te brinda una solución rápida y profesional para que vuelvas a usar tu equipo como nuevo. Reemplazamos pantallas dañadas, realizamos pruebas completas de funcionamiento y trabajamos con displays compatibles y de excelente calidad para garantizar una imagen nítida y segura. Atendemos notebooks de todas las marcas y modelos con atención personalizada y servicio confiable. ¡Consultanos y recuperá la pantalla de tu notebook!",
+      "id": "1779112797586cjgo"
+    }
+  ],
+  "config": {
+    "companyName": "GIGA Computers",
+    "address": "Rivadavia 6053",
+    "phone": "11-3606-7622",
+    "email": "gigacomputers2025@gmail.com",
+    "whatsapp": "5491136067622",
+    "hours": "Lun a Vie 9:30 a 18:30",
+    "instagram": "https://instagram.com/gigacomputers_argentina",
+    "facebook": "https://facebook.com/gigacomputers",
+    "popupActive": false,
+    "popupImage": "",
+    "popupDuration": 5,
+    "popupText": "Bienvenidos!!!",
+    "popupDelay": 3,
+    "popupAlways": false,
+    "homeProductLimit": 20,
+    "homeRandomOrder": true
+  },
+  "categories": [
+    {
+      "name": "Accesorios",
+      "id": "1778677209077ioqi"
+    },
+    {
+      "name": "Adaptadores",
+      "id": "17786772470928e76"
+    },
+    {
+      "name": "Auriculares",
+      "id": "1778677251627a51v"
+    },
+    {
+      "name": "Cables",
+      "id": "1778677163350l6am"
+    },
+    {
+      "name": "Calculadoras",
+      "id": "1778691405602hjju"
+    },
+    {
+      "name": "Cargadores",
+      "id": "1778677278402rve0"
+    },
+    {
+      "name": "Cartuchos",
+      "id": "17786771547185fg5"
+    },
+    {
+      "name": "Consolas",
+      "id": "1778693698071i4tc"
+    },
+    {
+      "name": "Coolers",
+      "id": "1778693765101fyb7"
+    },
+    {
+      "name": "Fichas",
+      "id": "1778694025548cbqs"
+    },
+    {
+      "name": "Fuentes",
+      "id": "17786772198206pso"
+    },
+    {
+      "name": "Fundas",
+      "id": "17786773739048s2w"
+    },
+    {
+      "name": "Gamepads",
+      "id": "1778677333097r1a0"
+    },
+    {
+      "name": "Limpieza",
+      "id": "1778694276914465s"
+    },
+    {
+      "name": "Memorias",
+      "id": "1778677168863rx8n"
+    },
+    {
+      "name": "Microfonos",
+      "id": "17786771949657lzx"
+    },
+    {
+      "name": "Mouse",
+      "id": "1778457273705b2ek"
+    },
+    {
+      "name": "Pads",
+      "id": "1778677316337q2fd"
+    },
+    {
+      "name": "Parlantes",
+      "id": "1778677143559hu63"
+    },
+    {
+      "name": "Pendrives",
+      "id": "1778677177046s2ls"
+    },
+    {
+      "name": "Pilas",
+      "id": "1778694719474x24z"
+    },
+    {
+      "name": "Radios",
+      "id": "1778677291250u9fd"
+    },
+    {
+      "name": "Redes",
+      "id": "1778677187918g4pc"
+    },
+    {
+      "name": "Relojes",
+      "id": "1778677359959jna3"
+    },
+    {
+      "name": "Seguridad",
+      "id": "17786772277003rdr"
+    },
+    {
+      "name": "Soportes",
+      "id": "1778677233820na5f"
+    },
+    {
+      "name": "Teclados",
+      "id": "1778620066239563f"
+    },
+    {
+      "name": "Webcams",
+      "id": "1778620089535zn1o"
+    }
+  ]
+}

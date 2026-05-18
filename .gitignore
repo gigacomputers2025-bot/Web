@@ -1,0 +1,5 @@
+node_modules
+.sync_tmp
+.DS_Store
+*.zip
+.git

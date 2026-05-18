@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Ventas de Computación</title>
+    <meta name="description" content="Catálogo online de productos de computación y estado de reparaciones">
+    
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://unpkg.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+
+    <!-- Preload fonts -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" as="style">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Phosphor Icons: Defer for non-critical icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web" defer></script>
+    
+    <!-- JSZip: Loaded only when needed, but defer for now -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js" defer></script>
+
+    <!-- Metrics Loader (Dynamic) -->
+    <script>
+        window.initMetrics = function(gtmId, gaId) {
+            // Google Tag Manager
+            if (gtmId && !window.gtmInitialized) {
+                (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+                j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+                'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+                })(window,document,'script','dataLayer',gtmId);
+                window.gtmInitialized = true;
+                console.log('GTM Initialized:', gtmId);
+            }
+            // Google Analytics 4
+            if (gaId && !window.gaInitialized) {
+                const script = document.createElement('script');
+                script.async = true;
+                script.src = 'https://www.googletagmanager.com/gtag/js?id=' + gaId;
+                document.head.appendChild(script);
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', gaId);
+                window.gaInitialized = true;
+                console.log('GA4 Initialized:', gaId);
+            }
+        };
+        // Compatibility shim
+        window.initGA = function(id) { window.initMetrics(null, id); };
+    </script>
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) - Updated Dynamically if possible, but standard GTM requires hardcoded for full support -->
+    <div id="gtm-noscript-container"></div>
+    <div class="app-container">
+        <!-- Navigation -->
+        <nav class="navbar glass">
+            <a href="#/" class="nav-brand">
+                <i class="ph ph-cpu"></i> TechStore
+            </a>
+            
+            <div class="nav-links" id="public-nav">
+                <a href="#/" class="nav-link" data-route="/">Catálogo</a>
+                <a href="#/ofertas" class="nav-link" data-route="/ofertas">Ofertas</a>
+                <a href="#/servicios" class="nav-link" data-route="/servicios">Servicios</a>
+                <a href="#/reparaciones" class="nav-link" data-route="/reparaciones">Reparaciones</a>
+            </div>
+            
+            <div class="nav-links d-none" id="admin-nav">
+                <a href="#/admin" class="nav-link" data-route="/admin">Dashboard</a>
+                <a href="#/admin/productos" class="nav-link" data-route="/admin/productos">Productos</a>
+                <a href="#/admin/servicios" class="nav-link" data-route="/admin/servicios">Servicios</a>
+                <a href="#/admin/clientes" class="nav-link" data-route="/admin/clientes">Clientes</a>
+                <a href="#/admin/reparaciones" class="nav-link" data-route="/admin/reparaciones">Reparaciones</a>
+                <a href="#/admin/local" class="nav-link" data-route="/admin/local" style="color: var(--accent-cyan);"><i class="ph ph-hard-drives"></i> Local Node</a>
+                <a href="#/admin/config" class="nav-link" data-route="/admin/config">Config</a>
+                <a href="https://github.com/gigacomputers2025-bot/Web" target="_blank" class="nav-link"><i class="ph ph-github-logo"></i> GitHub</a>
+                <a href="#" id="btn-logout"><i class="ph ph-sign-out"></i> Salir</a>
+            </div>
+        </nav>
+
+        <!-- Main Content Area where pages are rendered -->
+        <main class="main-content" id="app"></main>
+        
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4 id="footer-company-name-title">TechStore</h4>
+                    <p id="footer-address"><i class="ph ph-map-pin"></i> <span></span></p>
+                    <p id="footer-phone"><i class="ph ph-phone"></i> <span></span></p>
+                    <p id="footer-email"><i class="ph ph-envelope"></i> <span></span></p>
+                </div>
+                <div class="footer-section">
+                    <h4>Horarios de Atención</h4>
+                    <p id="footer-hours"><i class="ph ph-clock"></i> <span></span></p>
+                </div>
+                <div class="footer-section">
+                    <h4>Redes Sociales</h4>
+                    <div class="social-links">
+                        <a href="#" id="footer-ig" target="_blank"><i class="ph ph-instagram-logo"></i> Instagram</a>
+                        <a href="#" id="footer-fb" target="_blank"><i class="ph ph-facebook-logo"></i> Facebook</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 <span id="footer-company-name-bottom"></span>. Todos los derechos reservados.</p>
+            </div>
+        </footer>
+
+        <!-- Floating WhatsApp Button -->
+        <a href="#" class="floating-wa" id="floating-wa" aria-label="Contactar por WhatsApp">
+            <i class="ph ph-whatsapp-logo"></i>
+        </a>
+    </div>
+
+    <!-- Modal Base Overlay -->
+    <div class="modal-overlay" id="modal-base">
+        <div class="modal-content glass" id="modal-content">
+            <!-- Modal Content Injected Here -->
+        </div>
+    </div>
+
+    <!-- Toast Notification Container -->
+    <div id="toast-container" class="toast-notification">
+        <i id="toast-icon" class="ph"></i>
+        <span id="toast-message"></span>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="app.js?v=2" defer></script>
+</body>
+</html>
