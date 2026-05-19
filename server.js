@@ -80,7 +80,11 @@ app.post('/api/save', (req, res) => {
                 execSync(`git config user.name "TechStore Admin"`, { cwd: tmpDir });
                 execSync(`git config user.email "admin@techstore.local"`, { cwd: tmpDir });
                 execSync(`git add data.json`, { cwd: tmpDir });
-                execSync(`git commit -m "Auto-sync background"`, { cwd: tmpDir, stdio: 'ignore' });
+                try {
+                    execSync(`git commit -m "Auto-sync background"`, { cwd: tmpDir, stdio: 'ignore' });
+                } catch(commitErr) {
+                    // Nothing to commit, ignore
+                }
                 execSync(`git push origin main`, { cwd: tmpDir, stdio: 'ignore' });
                 if (fs.existsSync(tmpDir)) fs.rmSync(tmpDir, { recursive: true, force: true });
                 console.log("-> ¡Sincronización automática exitosa!");
@@ -99,4 +103,42 @@ app.listen(PORT, () => {
     console.log('--------------------------------------------------');
     console.log('Servidor local iniciado: http://localhost:' + PORT);
     console.log('--------------------------------------------------');
+
+    // Inicializar el Puente automático de SGTaller 3 en segundo plano
+    try {
+        console.log("-> Iniciando Puente con SGTaller 3...");
+        const bridge = require('./sgtaller_bridge.js');
+        
+        // Función para forzar el git auto-sync cuando el puente importe algo nuevo
+        const triggerGitSync = () => {
+            console.log("-> Puente SGTaller actualizó data.json. Sincronizando de fondo con GitHub...");
+            const { execSync } = require('child_process');
+            const repoUrl = "https://github.com/gigacomputers2025-bot/Web.git";
+            const tmpDir = path.join(__dirname, '.sync_tmp');
+            
+            try {
+                if (fs.existsSync(tmpDir)) fs.rmSync(tmpDir, { recursive: true, force: true });
+                execSync(`git clone ${repoUrl} "${tmpDir}"`, {stdio: 'ignore'});
+                fs.copyFileSync(path.join(__dirname, 'data.json'), path.join(tmpDir, 'data.json'));
+                execSync(`git config user.name "TechStore Admin"`, { cwd: tmpDir });
+                execSync(`git config user.email "admin@techstore.local"`, { cwd: tmpDir });
+                execSync(`git add data.json`, { cwd: tmpDir });
+                try {
+                    execSync(`git commit -m "Auto-sync SGTaller Bridge"`, { cwd: tmpDir, stdio: 'ignore' });
+                } catch(commitErr) {
+                    // Nothing to commit, ignore and proceed to push check
+                }
+                execSync(`git push origin main`, { cwd: tmpDir, stdio: 'ignore' });
+                if (fs.existsSync(tmpDir)) fs.rmSync(tmpDir, { recursive: true, force: true });
+                console.log("-> ¡Puente SGTaller: Sincronización automática de fondo exitosa!");
+            } catch(e) {
+                if (fs.existsSync(tmpDir)) try { fs.rmSync(tmpDir, { recursive: true, force: true }); } catch(err){}
+                console.error("-> Puente SGTaller: Error en auto-sync:", e.message);
+            }
+        };
+
+        bridge.startLoop(triggerGitSync);
+    } catch (e) {
+        console.error("-> Error al iniciar el Puente de SGTaller 3:", e.message);
+    }
 });

@@ -523,6 +523,7 @@ const UI = {
 // --- Pages Renderers ---
 const Pages = {
     app: document.getElementById('app'),
+    currentRepairsSort: 'date-desc',
 
     renderCatalog(filterOfertas = false, highlightId = null) {
         const allProducts = DB.get('products');
@@ -774,6 +775,7 @@ const Pages = {
                             <tr><td style="padding: 0.5rem 0; color: var(--text-muted);">Problema</td><td>${repair.problem}</td></tr>
                             <tr><td style="padding: 0.5rem 0; color: var(--text-muted);">Fecha Ingreso</td><td>${repair.date}</td></tr>
                             ${repair.notes ? `<tr><td style="padding: 0.5rem 0; color: var(--text-muted);">Notas</td><td>${repair.notes}</td></tr>` : ''}
+                            <tr><td style="padding: 0.5rem 0; color: var(--text-muted); font-weight: 600;">Costo de Reparación</td><td style="font-weight: 700; color: var(--success); font-size: 1.1rem;">${repair.price && repair.price > 0 ? formatMoney(repair.price) : 'A Confirmar'}</td></tr>
                         </table>
                         <button class="btn btn-secondary" onclick="Pages.printRepairPDF('${repair.code}')" style="width: 100%; margin-top: 1.5rem;">
                             <i class="ph ph-printer"></i> Imprimir / Guardar como PDF
@@ -1013,6 +1015,7 @@ const Pages = {
                             <tr><td>Equipo</td><td>${repair.equipment}</td></tr>
                             <tr><td>Fecha Ingreso</td><td>${repair.date}</td></tr>
                             <tr><td>Estado Inicial</td><td>${repair.status}</td></tr>
+                            <tr><td>Costo</td><td style="color: var(--primary); font-weight: 700;">${repair.price && repair.price > 0 ? formatMoney(repair.price) : 'A Confirmar'}</td></tr>
                         </table>
                     </section>
                 </div>
@@ -1087,8 +1090,21 @@ const Pages = {
         const products = DB.get('products');
         const clients = DB.get('clients');
         const repairs = DB.get('repairs');
-        const activeRepairs = repairs.filter(r => r.status !== 'Entregada');
-        const deliveredRepairs = repairs.filter(r => r.status === 'Entregada');
+        const activeRepairs = repairs
+            .filter(r => r.status !== 'Entregada' && r.status !== 'Finalizada')
+            .sort((a, b) => {
+                const numA = parseInt(a.id.replace(/\D/g, ''), 10) || 0;
+                const numB = parseInt(b.id.replace(/\D/g, ''), 10) || 0;
+                return numB - numA;
+            });
+
+        const finishedRepairs = repairs
+            .filter(r => r.status === 'Finalizada')
+            .sort((a, b) => {
+                const numA = parseInt(a.id.replace(/\D/g, ''), 10) || 0;
+                const numB = parseInt(b.id.replace(/\D/g, ''), 10) || 0;
+                return numB - numA;
+            });
 
         this.app.innerHTML = `
             <h1>Dashboard</h1>
@@ -1110,8 +1126,8 @@ const Pages = {
                 <div class="stat-card glass">
                     <div class="stat-icon green"><i class="ph ph-wrench"></i></div>
                     <div class="stat-info">
-                        <h3>${activeRepairs.length}</h3>
-                        <p>Reparaciones Activas</p>
+                        <h3>${activeRepairs.length + finishedRepairs.length}</h3>
+                        <p>Equipos en Taller</p>
                     </div>
                 </div>
                 <div class="stat-card glass" onclick="Router.navigate('/admin/config')" style="cursor: pointer;">
@@ -1123,30 +1139,32 @@ const Pages = {
                 </div>
             </div>
 
-            <!-- Sección Dividida: Reparaciones Activas -->
+            <!-- Sección: Reparaciones Finalizadas (Listas para Entregar) -->
             <div style="margin-top: 2rem; margin-bottom: 2rem;">
-                <h2 style="display: flex; align-items: center; gap: 0.5rem;"><i class="ph ph-wrench" style="color: var(--accent-blue);"></i> Reparaciones Activas</h2>
+                <h2 style="display: flex; align-items: center; gap: 0.5rem;"><i class="ph ph-check-circle" style="color: var(--success);"></i> Reparaciones Finalizadas (Listas para Entregar)</h2>
                 <div class="table-container glass">
                     <table>
                         <thead>
                             <tr>
                                 <th>N° Orden</th>
                                 <th>Cliente</th>
+                                <th>Teléfono</th>
                                 <th>Equipo</th>
                                 <th>Estado</th>
                                 <th>Fecha de Recepción</th>
                             </tr>
                         </thead>
                         <tbody>
-                            ${activeRepairs.length === 0 
-                                ? '<tr><td colspan="5" class="text-center" style="color: var(--text-muted); padding: 1.5rem;">No hay reparaciones activas</td></tr>' 
-                                : activeRepairs.slice().reverse().map(r => {
-                                    const client = clients.find(c => c.id === r.clientId) || {name: 'Desconocido'};
+                            ${finishedRepairs.length === 0 
+                                ? '<tr><td colspan="6" class="text-center" style="color: var(--text-muted); padding: 1.5rem;">No hay reparaciones finalizadas</td></tr>' 
+                                : finishedRepairs.map(r => {
+                                    const client = clients.find(c => c.id === r.clientId) || {name: 'Desconocido', phone: '-'};
                                     const statusClass = `status-${r.status.replace(/\s+/g, '')}`;
                                     return `
-                                        <tr>
+                                        <tr class="repair-row" data-id="${r.id}" style="cursor: pointer;" title="Doble clic para ver/editar">
                                             <td><strong>${r.id}</strong></td>
                                             <td>${client.name}</td>
+                                            <td>${client.phone || '-'}</td>
                                             <td>${r.equipment}</td>
                                             <td><span class="status-badge ${statusClass}">${r.status}</span></td>
                                             <td>${r.date}</td>
@@ -1158,37 +1176,32 @@ const Pages = {
                 </div>
             </div>
 
-            <!-- Sección Dividida: Reparaciones Entregadas e Historial con Buscador -->
-            <div style="margin-top: 2.5rem;">
-                <div class="flex justify-between items-center mb-4" style="flex-wrap: wrap; gap: 1rem;">
-                    <h2 style="margin: 0; display: flex; align-items: center; gap: 0.5rem;"><i class="ph ph-archive" style="color: var(--success);"></i> Historial de Reparaciones Entregadas</h2>
-                    <div style="position: relative;">
-                        <i class="ph ph-magnifying-glass" style="position: absolute; left: 0.75rem; top: 50%; transform: translateY(-50%); color: var(--text-muted);"></i>
-                        <input type="text" id="search-delivered" class="form-control" placeholder="Buscar en entregadas..." style="padding-left: 2.2rem; width: 250px;">
-                    </div>
-                </div>
-                
+            <!-- Sección: Reparaciones en Curso -->
+            <div style="margin-top: 2rem; margin-bottom: 2rem;">
+                <h2 style="display: flex; align-items: center; gap: 0.5rem;"><i class="ph ph-wrench" style="color: var(--accent-blue);"></i> Reparaciones en Curso</h2>
                 <div class="table-container glass">
                     <table>
                         <thead>
                             <tr>
                                 <th>N° Orden</th>
                                 <th>Cliente</th>
+                                <th>Teléfono</th>
                                 <th>Equipo</th>
                                 <th>Estado</th>
-                                <th>Fecha de Entrega</th>
+                                <th>Fecha de Recepción</th>
                             </tr>
                         </thead>
-                        <tbody id="delivered-repairs-tbody">
-                            ${deliveredRepairs.length === 0 
-                                ? '<tr><td colspan="5" class="text-center" style="color: var(--text-muted); padding: 1.5rem;">No hay reparaciones entregadas</td></tr>' 
-                                : deliveredRepairs.slice().reverse().map(r => {
-                                    const client = clients.find(c => c.id === r.clientId) || {name: 'Desconocido'};
+                        <tbody>
+                            ${activeRepairs.length === 0 
+                                ? '<tr><td colspan="6" class="text-center" style="color: var(--text-muted); padding: 1.5rem;">No hay reparaciones en curso</td></tr>' 
+                                : activeRepairs.map(r => {
+                                    const client = clients.find(c => c.id === r.clientId) || {name: 'Desconocido', phone: '-'};
                                     const statusClass = `status-${r.status.replace(/\s+/g, '')}`;
                                     return `
-                                        <tr class="delivered-row">
+                                        <tr class="repair-row" data-id="${r.id}" style="cursor: pointer;" title="Doble clic para ver/editar">
                                             <td><strong>${r.id}</strong></td>
                                             <td>${client.name}</td>
+                                            <td>${client.phone || '-'}</td>
                                             <td>${r.equipment}</td>
                                             <td><span class="status-badge ${statusClass}">${r.status}</span></td>
                                             <td>${r.date}</td>
@@ -1201,23 +1214,6 @@ const Pages = {
             </div>
         `;
 
-        // Real-time multi-word search for delivered repairs
-        const searchInput = document.getElementById('search-delivered');
-        if (searchInput) {
-            searchInput.addEventListener('input', (e) => {
-                const q = e.target.value.trim().toLowerCase();
-                const queryWords = q ? q.split(/\s+/) : [];
-                document.querySelectorAll('.delivered-row').forEach(row => {
-                    if (queryWords.length === 0) {
-                        row.style.display = '';
-                        return;
-                    }
-                    const content = row.textContent.toLowerCase();
-                    row.style.display = queryWords.every(word => content.includes(word)) ? '' : 'none';
-                });
-            });
-        }
-
         // Cargar las visitas de forma asíncrona
         try {
             const hits = await Stats.getHits();
@@ -1227,6 +1223,18 @@ const Pages = {
             const visitsEl = document.getElementById('dash-visits-count');
             if (visitsEl) visitsEl.textContent = '—';
         }
+
+        // Double click listener to view/edit order
+        document.querySelectorAll('.repair-row').forEach(row => {
+            row.addEventListener('dblclick', (e) => {
+                const id = row.getAttribute('data-id');
+                const repairs = DB.get('repairs');
+                const repair = repairs.find(r => r.id === id);
+                if (repair) {
+                    this.showRepairModal(repair);
+                }
+            });
+        });
     },
 
     renderProductsAdmin(preserveScroll = false) {
@@ -1718,18 +1726,79 @@ const Pages = {
         });
     },
 
-    renderRepairsAdmin(showHistory = false) {
+    renderRepairsAdmin() {
         const allRepairs = DB.get('repairs');
-        const repairs = showHistory ? allRepairs : allRepairs.filter(r => r.status !== 'Entregada');
+        const finishedRepairs = allRepairs.filter(r => r.status === 'Finalizada');
+        const activeRepairs = allRepairs.filter(r => r.status !== 'Entregada' && r.status !== 'Finalizada');
         const clients = DB.get('clients');
+
+        // Apply Sorting Logic
+        const sortVal = this.currentRepairsSort || 'date-desc';
+        const sortRepairs = (arr) => {
+            arr.sort((a, b) => {
+                if (sortVal === 'date-desc') {
+                    return new Date(b.date) - new Date(a.date);
+                }
+                if (sortVal === 'date-asc') {
+                    return new Date(a.date) - new Date(b.date);
+                }
+                if (sortVal === 'id-desc') {
+                    const numA = parseInt(a.id.replace(/\D/g, ''), 10) || 0;
+                    const numB = parseInt(b.id.replace(/\D/g, ''), 10) || 0;
+                    return numB - numA;
+                }
+                if (sortVal === 'id-asc') {
+                    const numA = parseInt(a.id.replace(/\D/g, ''), 10) || 0;
+                    const numB = parseInt(b.id.replace(/\D/g, ''), 10) || 0;
+                    return numA - numB;
+                }
+                if (sortVal === 'status-asc') {
+                    return a.status.localeCompare(b.status);
+                }
+                if (sortVal === 'status-desc') {
+                    return b.status.localeCompare(a.status);
+                }
+                return 0;
+            });
+        };
+
+        sortRepairs(finishedRepairs);
+        sortRepairs(activeRepairs);
+
+        const renderRow = (r) => {
+            const client = clients.find(c => c.id === r.clientId) || {name: 'Desconocido'};
+            const statusClass = `status-${r.status.replace(/\s+/g, '')}`;
+            return `
+                <tr>
+                    <td><strong>${r.id}</strong></td>
+                    <td><span style="font-size: 1.1rem; font-weight: 700; letter-spacing: 0.2rem; color: var(--accent-blue);">${r.code || '—'}</span></td>
+                    <td>${client.name}</td>
+                    <td>${r.equipment}</td>
+                    <td><span class="status-badge ${statusClass}">${r.status}</span></td>
+                    <td>${r.date}</td>
+                    <td>
+                        <button class="btn btn-secondary btn-edit" data-id="${r.id}"><i class="ph ph-pencil"></i></button>
+                        <button class="btn btn-secondary btn-pdf" data-code="${r.code}" title="Imprimir comprobante"><i class="ph ph-printer"></i></button>
+                        <button class="btn btn-danger btn-delete-repair" data-id="${r.id}"><i class="ph ph-trash"></i></button>
+                    </td>
+                </tr>
+            `;
+        };
 
         this.app.innerHTML = `
             <div class="flex justify-between items-center mb-4" style="flex-wrap: wrap; gap: 1rem;">
                 <h1 style="margin-bottom: 0;">Gestión de Reparaciones</h1>
                 <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; align-items: center;">
-                    <div class="flex items-center gap-2 mr-4" style="background: rgba(0,0,0,0.05); padding: 0.5rem 1rem; border-radius: 2rem;">
-                        <input type="checkbox" id="toggle-history" ${showHistory ? 'checked' : ''}>
-                        <label for="toggle-history" style="font-size: 0.85rem; cursor: pointer; margin: 0;">Ver Historial</label>
+                    <div style="position: relative; display: flex; align-items: center; gap: 0.5rem; background: rgba(0,0,0,0.05); padding: 0.25rem 0.75rem; border-radius: 2rem;">
+                        <i class="ph ph-sort-ascending" style="color: var(--text-muted); font-size: 1.2rem;"></i>
+                        <select id="sort-repairs" class="form-control" style="width: 210px; cursor: pointer; border: none; background: transparent; padding: 0.25rem 0.5rem; font-size: 0.85rem; font-weight: 500;">
+                            <option value="date-desc" ${sortVal === 'date-desc' ? 'selected' : ''}>Fecha: Más Nuevas primero</option>
+                            <option value="date-asc" ${sortVal === 'date-asc' ? 'selected' : ''}>Fecha: Más Antiguas primero</option>
+                            <option value="id-desc" ${sortVal === 'id-desc' ? 'selected' : ''}>N° Orden: Mayor primero</option>
+                            <option value="id-asc" ${sortVal === 'id-asc' ? 'selected' : ''}>N° Orden: Menor primero</option>
+                            <option value="status-asc" ${sortVal === 'status-asc' ? 'selected' : ''}>Estado: A - Z</option>
+                            <option value="status-desc" ${sortVal === 'status-desc' ? 'selected' : ''}>Estado: Z - A</option>
+                        </select>
                     </div>
                     <div style="position: relative;">
                         <i class="ph ph-magnifying-glass" style="position: absolute; left: 0.75rem; top: 50%; transform: translateY(-50%); color: var(--text-muted);"></i>
@@ -1739,56 +1808,73 @@ const Pages = {
                 </div>
             </div>
             
-            <div class="table-container glass">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>N° Orden</th>
-                            <th>Clave</th>
-                            <th>Cliente</th>
-                            <th>Equipo</th>
-                            <th>Estado</th>
-                            <th>Fecha</th>
-                            <th>Acciones</th>
-                        </tr>
-                    </thead>
-                    <tbody id="admin-repairs-tbody">
-                        ${repairs.map(r => {
-                            const client = clients.find(c => c.id === r.clientId) || {name: 'Desconocido'};
-                            const statusClass = `status-${r.status.replace(/\s+/g, '')}`;
-                            return `
+            <!-- Sección: Reparaciones Finalizadas (Listas para Entregar) -->
+            <div style="margin-top: 1rem; margin-bottom: 2rem;">
+                <h3 style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
+                    <i class="ph ph-check-circle" style="color: var(--success);"></i> Reparaciones Finalizadas (Listas para Entregar)
+                </h3>
+                <div class="table-container glass">
+                    <table>
+                        <thead>
                             <tr>
-                                <td><strong>${r.id}</strong></td>
-                                <td><span style="font-size: 1.1rem; font-weight: 700; letter-spacing: 0.2rem; color: var(--accent-blue);">${r.code || '—'}</span></td>
-                                <td>${client.name}</td>
-                                <td>${r.equipment}</td>
-                                <td><span class="status-badge ${statusClass}">${r.status}</span></td>
-                                <td>${r.date}</td>
-                                <td>
-                                    <button class="btn btn-secondary btn-edit" data-id="${r.id}"><i class="ph ph-pencil"></i></button>
-                                    <button class="btn btn-secondary btn-pdf" data-code="${r.code}" title="Imprimir comprobante"><i class="ph ph-printer"></i></button>
-                                    <button class="btn btn-danger btn-delete-repair" data-id="${r.id}"><i class="ph ph-trash"></i></button>
-                                </td>
+                                <th>N° Orden</th>
+                                <th>Clave</th>
+                                <th>Cliente</th>
+                                <th>Equipo</th>
+                                <th>Estado</th>
+                                <th>Fecha</th>
+                                <th>Acciones</th>
                             </tr>
-                        `}).join('')}
-                    </tbody>
-                </table>
+                        </thead>
+                        <tbody id="admin-repairs-finished-tbody">
+                            ${finishedRepairs.length === 0 
+                                ? '<tr><td colspan="7" class="text-center" style="color: var(--text-muted); padding: 1.5rem;">No hay reparaciones finalizadas</td></tr>' 
+                                : finishedRepairs.map(renderRow).join('')}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Sección: Reparaciones en Curso -->
+            <div style="margin-top: 1rem; margin-bottom: 2rem;">
+                <h3 style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
+                    <i class="ph ph-wrench" style="color: var(--accent-blue);"></i> Reparaciones en Curso
+                </h3>
+                <div class="table-container glass">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>N° Orden</th>
+                                <th>Clave</th>
+                                <th>Cliente</th>
+                                <th>Equipo</th>
+                                <th>Estado</th>
+                                <th>Fecha</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="admin-repairs-active-tbody">
+                            ${activeRepairs.length === 0 
+                                ? '<tr><td colspan="7" class="text-center" style="color: var(--text-muted); padding: 1.5rem;">No hay reparaciones en curso</td></tr>' 
+                                : activeRepairs.map(renderRow).join('')}
+                        </tbody>
+                    </table>
+                </div>
             </div>
         `;
 
         document.getElementById('btn-add-repair').addEventListener('click', () => this.showRepairModal());
         
-
-        
-        document.getElementById('toggle-history').addEventListener('change', (e) => {
-            this.renderRepairsAdmin(e.target.checked);
+        document.getElementById('sort-repairs').addEventListener('change', (e) => {
+            this.currentRepairsSort = e.target.value;
+            this.renderRepairsAdmin();
         });
         
         // Buscador en tiempo real
         document.getElementById('search-repairs').addEventListener('input', (e) => {
             const q = e.target.value.trim().toLowerCase();
             const queryWords = q ? q.split(/\s+/) : [];
-            document.querySelectorAll('#admin-repairs-tbody tr').forEach(row => {
+            document.querySelectorAll('#admin-repairs-finished-tbody tr, #admin-repairs-active-tbody tr').forEach(row => {
                 if (queryWords.length === 0) {
                     row.style.display = '';
                     return;
@@ -1799,48 +1885,45 @@ const Pages = {
         });
         
         // Usar delegación de eventos para los botones de la tabla
-        const tbody = document.getElementById('admin-repairs-tbody');
-        if (tbody) {
-            tbody.addEventListener('click', (e) => {
-                const btnDelete = e.target.closest('.btn-delete-repair');
-                const btnEdit = e.target.closest('.btn-edit');
-                const btnPdf = e.target.closest('.btn-pdf');
+        const handleTbodyClick = (e) => {
+            const btnDelete = e.target.closest('.btn-delete-repair');
+            const btnEdit = e.target.closest('.btn-edit');
+            const btnPdf = e.target.closest('.btn-pdf');
 
-                if (btnDelete) {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    const id = btnDelete.dataset.id;
-                    if (window.confirm('¿Está seguro de eliminar esta orden de reparación?')) {
-                        DB.delete('repairs', id);
-                        const historyToggle = document.getElementById('toggle-history');
-                        this.renderRepairsAdmin(historyToggle ? historyToggle.checked : false);
-                    }
-                } else if (btnPdf) {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    const code = btnPdf.dataset.code;
-                    if (code) Pages.printRepairPDF(code);
-                } else if (btnEdit) {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    const id = btnEdit.dataset.id;
-                    this.showRepairModal(repairs.find(r => r.id === id));
+            if (btnDelete) {
+                e.preventDefault();
+                e.stopPropagation();
+                const id = btnDelete.dataset.id;
+                if (window.confirm('¿Está seguro de eliminar esta orden de reparación?')) {
+                    DB.delete('repairs', id);
+                    this.renderRepairsAdmin();
                 }
-            });
-        }
+            } else if (btnPdf) {
+                e.preventDefault();
+                e.stopPropagation();
+                const code = btnPdf.dataset.code;
+                if (code) Pages.printRepairPDF(code);
+            } else if (btnEdit) {
+                e.preventDefault();
+                e.stopPropagation();
+                const id = btnEdit.dataset.id;
+                this.showRepairModal(allRepairs.find(r => r.id === id));
+            }
+        };
 
-        // Eliminar los listeners individuales que ya no son necesarios
-        /*
-        document.querySelectorAll('.btn-edit').forEach(btn => { ... });
-        document.querySelectorAll('.btn-pdf').forEach(btn => { ... });
-        document.querySelectorAll('.btn-delete-repair').forEach(btn => { ... });
-        */
+        const tbodyFinished = document.getElementById('admin-repairs-finished-tbody');
+        const tbodyActive = document.getElementById('admin-repairs-active-tbody');
+        if (tbodyFinished) tbodyFinished.addEventListener('click', handleTbodyClick);
+        if (tbodyActive) tbodyActive.addEventListener('click', handleTbodyClick);
 
         // Doble clic para editar
-        document.querySelectorAll('#admin-repairs-tbody tr').forEach(row => {
+        document.querySelectorAll('#admin-repairs-finished-tbody tr, #admin-repairs-active-tbody tr').forEach(row => {
             row.addEventListener('dblclick', () => {
-                const id = row.querySelector('.btn-edit').dataset.id;
-                this.showRepairModal(repairs.find(r => r.id === id));
+                const btnEdit = row.querySelector('.btn-edit');
+                if (btnEdit) {
+                    const id = btnEdit.dataset.id;
+                    this.showRepairModal(allRepairs.find(r => r.id === id));
+                }
             });
         });
     },
@@ -1898,6 +1981,10 @@ const Pages = {
                             <select id="r-status" class="form-control" required>
                                 ${statuses.map(s => `<option value="${s}" ${isEdit && repair.status===s ? 'selected' : ''}>${s}</option>`).join('')}
                             </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Costo / Presupuesto ($)</label>
+                            <input type="number" id="r-price" class="form-control" value="${isEdit ? (repair.price || 0) : 0}" step="0.01" min="0" ${isEdit && repair.id.startsWith('REP-SGT-') ? 'readonly title="Vinculado desde SGTaller"' : ''}>
                         </div>
                     </div>
                     <div>
@@ -2085,6 +2172,7 @@ const Pages = {
                 const data = {
                     equipment: document.getElementById('r-equipment').value,
                     status: document.getElementById('r-status').value,
+                    price: parseFloat(document.getElementById('r-price').value) || 0,
                     problem: document.getElementById('r-problem').value,
                     notes: document.getElementById('r-notes').value
                 };
@@ -2139,6 +2227,7 @@ const Pages = {
                     clientId: document.getElementById('r-client').value,
                     equipment: document.getElementById('r-equipment').value,
                     status: document.getElementById('r-status').value,
+                    price: parseFloat(document.getElementById('r-price').value) || 0,
                     problem: document.getElementById('r-problem').value,
                     notes: document.getElementById('r-notes').value,
                     date: new Date().toISOString().split('T')[0]
@@ -2183,8 +2272,7 @@ const Pages = {
             document.getElementById('btn-delete-repair-modal').addEventListener('click', () => {
                 if (confirm('¿Está seguro de eliminar esta orden de reparación de forma permanente?')) {
                     DB.delete('repairs', repair.id);
-                    const historyToggle = document.getElementById('toggle-history');
-                    this.renderRepairsAdmin(historyToggle ? historyToggle.checked : false);
+                    this.renderRepairsAdmin();
                 }
             });
         }

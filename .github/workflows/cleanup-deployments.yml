@@ -1,0 +1,70 @@
+name: Limpieza Automática de Deployments
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch: # Permite ejecución manual si fuera necesario
+
+jobs:
+  cleanup:
+    name: Conservar sólo el último deployment
+    runs-on: ubuntu-latest
+    permissions:
+      deployments: write
+
+    steps:
+      - name: Eliminar deployments antiguos
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const environment = 'github-pages';
+            const keepCount = 1; // Conservar sólo el último (el actual/activo)
+            
+            console.log(`Iniciando limpieza. Entorno: ${environment}. Conservando los últimos ${keepCount} deployments.`);
+            
+            // 1. Obtener todos los deployments
+            const deployments = await github.paginate(github.rest.repos.listDeployments, {
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              environment: environment
+            });
+            
+            console.log(`Se encontraron ${deployments.length} deployments.`);
+            
+            if (deployments.length <= keepCount) {
+              console.log('No se requiere limpieza.');
+              return;
+            }
+            
+            // Ordenar por fecha de creación (más nuevo primero)
+            deployments.sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
+            
+            // Los deployments a eliminar son todos los que están después del índice 'keepCount'
+            const toDelete = deployments.slice(keepCount);
+            console.log(`Eliminando ${toDelete.length} deployments antiguos...`);
+            
+            for (const dep of toDelete) {
+              console.log(`Eliminando ID: ${dep.id} (Creado el: ${dep.created_at})`);
+              try {
+                // Cambiar estado a inactivo
+                await github.rest.repos.createDeploymentStatus({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  deployment_id: dep.id,
+                  state: 'inactive'
+                });
+                
+                // Eliminar deployment
+                await github.rest.repos.deleteDeployment({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  deployment_id: dep.id
+                });
+                console.log(`  -> Eliminado con éxito`);
+              } catch (error) {
+                console.error(`  -> Error al eliminar ID ${dep.id}:`, error.message);
+              }
+            }
+            console.log('¡Limpieza completada!');

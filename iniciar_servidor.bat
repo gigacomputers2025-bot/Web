@@ -3,9 +3,9 @@ echo =======================================
 echo Iniciando Servidor Local TechStore
 echo =======================================
 echo.
-echo Verificando e instalando dependencias (esto puede tardar unos segundos)...
-call npm install
+echo Verificando e instalando dependencias...
+call cmd.exe /c npm install
 echo.
 echo Iniciando el servidor...
-call npm start
+call cmd.exe /c npm start
 pause
