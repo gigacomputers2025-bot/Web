@@ -41226,6 +41226,17 @@
       "price": 440000
     },
     {
+      "id": "REP-SGT-16309",
+      "code": "656C9",
+      "clientId": "CLI-SGT-4787",
+      "equipment": "Varios Tv stick varios",
+      "status": "En Diagnóstico",
+      "problem": "Actualizacion",
+      "notes": "",
+      "date": "2026-05-20",
+      "price": 0
+    },
+    {
       "id": "REP-SGT-16129",
       "code": "NFQV4",
       "clientId": "CLI-SGT-4135",
