@@ -1239,4 +1239,152 @@ tbody tr {
     box-shadow: 0 2px 6px rgba(220, 38, 38, 0.25) !important;
 }
 
+/* Promotional Carousel Styles */
+.promotional-carousel {
+    position: relative;
+    height: 380px;
+    overflow: hidden;
+    width: 100%;
+    background: #0d0d0d;
+}
+
+.carousel-track {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: 1;
+    transition: opacity 0.8s ease-in-out;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.carousel-slide.active {
+    opacity: 1;
+    z-index: 2;
+}
+
+.carousel-slide-link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+}
+
+.carousel-slide-content {
+    position: absolute;
+    bottom: 2rem;
+    left: 2rem;
+    max-width: 500px;
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    z-index: 4;
+    color: white;
+    pointer-events: none; /* Let clicks pass through to the link */
+    backdrop-filter: blur(10px);
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.carousel-slide-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    text-align: left !important;
+}
+
+.carousel-slide-desc {
+    font-size: 1rem;
+    opacity: 0.9;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: white;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 5;
+    transition: background 0.3s, border-color 0.3s, transform 0.2s;
+}
+
+.carousel-btn:hover {
+    background: rgba(0, 0, 0, 0.7);
+    border-color: var(--accent-blue);
+    transform: translateY(-50%) scale(1.05);
+}
+
+.carousel-btn--left { left: 1.5rem; }
+.carousel-btn--right { right: 1.5rem; }
+
+.carousel-nav {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 0.5rem;
+    z-index: 5;
+}
+
+.carousel-indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.4);
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.carousel-indicator.active {
+    background: var(--accent-blue);
+    transform: scale(1.25);
+}
+
+@media (max-width: 768px) {
+    .promotional-carousel {
+        height: 220px;
+    }
+    .carousel-btn {
+        width: 36px;
+        height: 36px;
+    }
+    .carousel-btn--left { left: 0.5rem; }
+    .carousel-btn--right { right: 0.5rem; }
+    .carousel-slide-content {
+        bottom: 1rem;
+        left: 1rem;
+        right: 1rem;
+        padding: 0.75rem;
+    }
+    .carousel-slide-title {
+        font-size: 1.1rem;
+    }
+    .carousel-slide-desc {
+        font-size: 0.8rem;
+    }
+}
+
 

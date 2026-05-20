@@ -236,7 +236,8 @@ const DB = {
         googleAnalyticsId: '', // ID de seguimiento (G-XXXXXXXXXX)
         gtmId: '',             // ID de Tag Manager (GTM-XXXXXXX)
         siteTitle: '',         // Título personalizado para SEO
-        siteDescription: ''    // Descripción personalizada para SEO
+        siteDescription: '',   // Descripción personalizada para SEO
+        banners: []            // Banners rotativos del carrousel
     },
     defaultCategories: [
         { id: '1', name: 'Notebooks' },
@@ -2728,6 +2729,23 @@ const Pages = {
                                 <input type="hidden" id="cfg-popup-image" value="${config.popupImage || ''}">
                             </div>
                         </div>
+
+                        <!-- Promotional Banners Section -->
+                        <div style="border-top: 1px solid var(--glass-border); margin: 1.5rem 0; padding-top: 1.5rem;">
+                            <h3 style="margin-bottom: 0.5rem; text-align: left;">Banners Rotativos (Carrousel)</h3>
+                            <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1.25rem;">
+                                Sube imágenes o introduce URLs de banners promocionales para el carrousel superior del catálogo.
+                            </p>
+                            
+                            <div id="cfg-banners-list">
+                                <!-- Dynamically rendered slides -->
+                            </div>
+                            
+                            <button type="button" class="btn btn-secondary" id="btn-cfg-add-banner" style="width: 100%; margin-top: 1rem;">
+                                <i class="ph ph-plus"></i> Agregar Banner
+                            </button>
+                        </div>
+
                         <button type="submit" class="btn btn-primary" style="width:100%;">Guardar Configuración</button>
                     </form>
                     <div id="cfg-msg" style="color: var(--success); margin-top: 1rem; display: none; text-align: center;">Configuración guardada correctamente.</div>
@@ -2792,6 +2810,132 @@ const Pages = {
             if (e.dataTransfer.files.length) handleFile(e.dataTransfer.files[0]);
         });
 
+        // Banners Logic
+        let localBanners = [...(config.banners || [])];
+        const updateBannersUI = () => {
+            const listEl = document.getElementById('cfg-banners-list');
+            if (!listEl) return;
+            
+            listEl.innerHTML = localBanners.length === 0 
+                ? `<div class="empty-state" style="padding: 1.5rem; border: 1px dashed var(--glass-border); border-radius: 0.5rem; text-align: center;"><p style="margin: 0; font-size: 0.85rem; color: var(--text-muted);">No hay banners configurados.</p></div>` 
+                : localBanners.map(b => `
+                    <div class="banner-config-card glass" data-id="${b.id}" style="padding: 1rem; border-radius: 0.5rem; display: flex; gap: 1rem; position: relative; flex-wrap: wrap; margin-bottom: 1rem; border: 1px solid var(--glass-border);">
+                        <button type="button" class="btn btn-danger btn-delete-banner" data-id="${b.id}" style="position: absolute; top: 0.5rem; right: 0.5rem; padding: 0.25rem 0.5rem; font-size: 0.75rem;">
+                            <i class="ph ph-trash"></i>
+                        </button>
+                        <div style="width: 120px; display: flex; flex-direction: column; gap: 0.5rem;">
+                            <label class="form-label" style="font-size: 0.75rem; margin: 0;">Imagen</label>
+                            <div class="drop-zone banner-drop-zone ${b.image ? 'drop-zone--has-image' : ''}" data-id="${b.id}" style="height: 80px; padding: 0.5rem; font-size: 0.7rem; border-radius: 0.25rem; cursor: pointer; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; border: 2px dashed var(--glass-border);">
+                                <img src="${b.image || ''}" class="drop-zone-preview" style="max-width: 100%; max-height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: ${b.image ? 1 : 0};">
+                                <div class="drop-zone-prompt" style="font-size: 0.6rem; display: ${b.image ? 'none' : 'flex'}; flex-direction: column; align-items: center;">
+                                    <i class="ph ph-image-plus" style="font-size: 1.2rem; margin-bottom: 0.25rem;"></i>
+                                    <span>Subir</span>
+                                </div>
+                                <input type="file" class="banner-file-input" accept="image/*" style="display: none;">
+                            </div>
+                            <input type="text" class="form-control banner-image-url" placeholder="O URL" value="${(b.image || '').startsWith('data:') ? '' : (b.image || '')}" style="font-size: 0.75rem; padding: 0.25rem 0.5rem; margin-top: 0.25rem;">
+                        </div>
+                        <div style="flex: 1; min-width: 200px; display: flex; flex-direction: column; gap: 0.5rem;">
+                            <div class="flex gap-2">
+                                <div style="flex: 1;">
+                                    <label class="form-label" style="font-size: 0.75rem; margin-bottom: 0.25rem;">Título (Opcional)</label>
+                                    <input type="text" class="form-control banner-title" placeholder="Título" value="${b.title || ''}" style="font-size: 0.8rem; padding: 0.4rem 0.75rem;">
+                                </div>
+                                <div style="flex: 1;">
+                                    <label class="form-label" style="font-size: 0.75rem; margin-bottom: 0.25rem;">Link de Destino (Opcional)</label>
+                                    <input type="text" class="form-control banner-link" placeholder="Ej: #/ofertas" value="${b.link || ''}" style="font-size: 0.8rem; padding: 0.4rem 0.75rem;">
+                                </div>
+                            </div>
+                            <div>
+                                <label class="form-label" style="font-size: 0.75rem; margin-bottom: 0.25rem;">Subtítulo / Descripción (Opcional)</label>
+                                <input type="text" class="form-control banner-desc" placeholder="Descripción" value="${b.description || ''}" style="font-size: 0.8rem; padding: 0.4rem 0.75rem;">
+                            </div>
+                        </div>
+                    </div>
+                `).join('');
+
+            // Attach listeners to items
+            listEl.querySelectorAll('.banner-config-card').forEach(card => {
+                const id = card.dataset.id;
+                const banner = localBanners.find(b => b.id === id);
+                if (!banner) return;
+
+                // Delete
+                card.querySelector('.btn-delete-banner').addEventListener('click', () => {
+                    localBanners = localBanners.filter(b => b.id !== id);
+                    updateBannersUI();
+                });
+
+                // Drop zone file select
+                const dropZone = card.querySelector('.banner-drop-zone');
+                const fileInput = card.querySelector('.banner-file-input');
+                const previewImg = dropZone.querySelector('.drop-zone-preview');
+                const promptEl = dropZone.querySelector('.drop-zone-prompt');
+
+                dropZone.addEventListener('click', () => fileInput.click());
+                fileInput.addEventListener('change', () => {
+                    if (fileInput.files.length) {
+                        const file = fileInput.files[0];
+                        if (file.type.startsWith('image/')) {
+                            const reader = new FileReader();
+                            reader.onload = (e) => {
+                                const base64 = e.target.result;
+                                banner.image = base64;
+                                previewImg.src = base64;
+                                previewImg.style.opacity = 1;
+                                promptEl.style.display = 'none';
+                                dropZone.classList.add('drop-zone--has-image');
+                                card.querySelector('.banner-image-url').value = '';
+                            };
+                            reader.readAsDataURL(file);
+                        }
+                    }
+                });
+
+                // URL change
+                const urlInput = card.querySelector('.banner-image-url');
+                urlInput.addEventListener('input', (e) => {
+                    banner.image = e.target.value.trim();
+                    if (banner.image) {
+                        previewImg.src = banner.image;
+                        previewImg.style.opacity = 1;
+                        promptEl.style.display = 'none';
+                        dropZone.classList.add('drop-zone--has-image');
+                    } else {
+                        previewImg.src = '';
+                        previewImg.style.opacity = 0;
+                        promptEl.style.display = 'flex';
+                        dropZone.classList.remove('drop-zone--has-image');
+                    }
+                });
+
+                // Title, link, desc changes
+                card.querySelector('.banner-title').addEventListener('input', (e) => {
+                    banner.title = e.target.value;
+                });
+                card.querySelector('.banner-link').addEventListener('input', (e) => {
+                    banner.link = e.target.value;
+                });
+                card.querySelector('.banner-desc').addEventListener('input', (e) => {
+                    banner.description = e.target.value;
+                });
+            });
+        };
+
+        // Initialize Banners UI
+        updateBannersUI();
+
+        document.getElementById('btn-cfg-add-banner').addEventListener('click', () => {
+            localBanners.push({
+                id: Date.now().toString() + Math.random().toString(36).substring(2, 6),
+                image: '',
+                link: '',
+                title: '',
+                description: ''
+            });
+            updateBannersUI();
+        });
+
         document.getElementById('config-form').addEventListener('submit', (e) => {
             e.preventDefault();
             const newConfig = {
@@ -2814,7 +2958,8 @@ const Pages = {
                 googleAnalyticsId: document.getElementById('cfg-ga-id').value.trim(),
                 gtmId: document.getElementById('cfg-gtm-id').value.trim(),
                 siteTitle: document.getElementById('cfg-site-title').value.trim(),
-                siteDescription: document.getElementById('cfg-site-desc').value.trim()
+                siteDescription: document.getElementById('cfg-site-desc').value.trim(),
+                banners: localBanners
             };
             DB.setConfig(newConfig);
             WA.updateFloatingButton();
@@ -3069,6 +3214,144 @@ pause`;
     }
 };
 
+// --- Carousel Module ---
+const Carousel = {
+    timer: null,
+    currentIndex: 0,
+    
+    init() {
+        const config = DB.getConfig();
+        const container = document.getElementById('promotional-carousel');
+        if (!container) return;
+
+        const path = window.location.hash.slice(1) || '/';
+        const isPublicRoute = (path === '/' || path === '/ofertas');
+        const hasBanners = config.banners && config.banners.length > 0;
+
+        if (isPublicRoute && hasBanners) {
+            container.classList.remove('d-none');
+            this.render(config.banners);
+        } else {
+            container.classList.add('d-none');
+            this.stopAutoplay();
+        }
+    },
+
+    render(banners) {
+        const track = document.getElementById('carousel-track');
+        const nav = document.getElementById('carousel-nav');
+        const leftBtn = document.getElementById('carousel-btn-left');
+        const rightBtn = document.getElementById('carousel-btn-right');
+        if (!track || !nav) return;
+
+        this.stopAutoplay();
+        this.currentIndex = 0;
+
+        // Render Slides
+        track.innerHTML = banners.map((b, idx) => {
+            const hasText = b.title || b.description;
+            const content = `
+                <div class="carousel-slide ${idx === 0 ? 'active' : ''}" style="background-image: url('${b.image}');">
+                    ${b.link ? `<a href="${b.link}" class="carousel-slide-link" ${b.link.startsWith('http') ? 'target="_blank"' : ''}></a>` : ''}
+                    ${hasText ? `
+                        <div class="carousel-slide-content">
+                            ${b.title ? `<h2 class="carousel-slide-title">${b.title}</h2>` : ''}
+                            ${b.description ? `<p class="carousel-slide-desc">${b.description}</p>` : ''}
+                        </div>
+                    ` : ''}
+                </div>
+            `;
+            return content;
+        }).join('');
+
+        // Render Dots
+        nav.innerHTML = banners.map((_, idx) => `
+            <button class="carousel-indicator ${idx === 0 ? 'active' : ''}" data-slide="${idx}"></button>
+        `).join('');
+
+        // Hide navigation elements if there's only 1 slide
+        if (banners.length <= 1) {
+            if (leftBtn) leftBtn.style.display = 'none';
+            if (rightBtn) rightBtn.style.display = 'none';
+            nav.style.display = 'none';
+            return;
+        } else {
+            if (leftBtn) leftBtn.style.display = 'flex';
+            if (rightBtn) rightBtn.style.display = 'flex';
+            nav.style.display = 'flex';
+        }
+
+        // Add Listeners
+        const indicators = nav.querySelectorAll('.carousel-indicator');
+        indicators.forEach(ind => {
+            ind.addEventListener('click', (e) => {
+                const targetIdx = parseInt(e.target.dataset.slide);
+                this.goToSlide(targetIdx, banners.length);
+            });
+        });
+
+        if (leftBtn && rightBtn) {
+            // Remove existing event listeners by replacing buttons with clones
+            const newLeft = leftBtn.cloneNode(true);
+            const newRight = rightBtn.cloneNode(true);
+            leftBtn.parentNode.replaceChild(newLeft, leftBtn);
+            rightBtn.parentNode.replaceChild(newRight, rightBtn);
+
+            newLeft.addEventListener('click', () => {
+                this.prevSlide(banners.length);
+            });
+            newRight.addEventListener('click', () => {
+                this.nextSlide(banners.length);
+            });
+        }
+
+        this.startAutoplay(banners.length);
+    },
+
+    goToSlide(index, total) {
+        if (index < 0 || index >= total) return;
+        
+        const track = document.getElementById('carousel-track');
+        if (!track) return;
+        
+        const slides = track.querySelectorAll('.carousel-slide');
+        const indicators = document.querySelectorAll('.carousel-indicator');
+
+        if (slides[this.currentIndex]) slides[this.currentIndex].classList.remove('active');
+        if (indicators[this.currentIndex]) indicators[this.currentIndex].classList.remove('active');
+
+        this.currentIndex = index;
+
+        if (slides[this.currentIndex]) slides[this.currentIndex].classList.add('active');
+        if (indicators[this.currentIndex]) indicators[this.currentIndex].classList.add('active');
+    },
+
+    nextSlide(total) {
+        let target = this.currentIndex + 1;
+        if (target >= total) target = 0;
+        this.goToSlide(target, total);
+    },
+
+    prevSlide(total) {
+        let target = this.currentIndex - 1;
+        if (target < 0) target = total - 1;
+        this.goToSlide(target, total);
+    },
+
+    startAutoplay(total) {
+        this.timer = setInterval(() => {
+            this.nextSlide(total);
+        }, 5000); // 5 seconds autoplay
+    },
+
+    stopAutoplay() {
+        if (this.timer) {
+            clearInterval(this.timer);
+            this.timer = null;
+        }
+    }
+};
+
 // --- Router Module ---
 const Router = {
     isLocal() {
@@ -3129,6 +3412,9 @@ const Router = {
         } else {
             Pages.app.innerHTML = '<h1>404 - Página no encontrada</h1>';
         }
+
+        // Initialize/update promotional carousel
+        Carousel.init();
     },
 
     updateNavUI(path) {
