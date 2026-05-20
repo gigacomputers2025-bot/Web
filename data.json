@@ -2572,11 +2572,12 @@
     {
       "name": "Auricular Gamer Raptor Inferno",
       "category": "Auriculares",
-      "price": 55000,
+      "price": 65000,
       "desc": "Importado masivamente",
       "image": "assets/products/prod_17786941424974xpr.jpg",
       "oferta": false,
-      "id": "17786941424974xpr"
+      "id": "17786941424974xpr",
+      "nuevo": false
     },
     {
       "name": "Fuente Raptor 650W",
