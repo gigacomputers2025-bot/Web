@@ -40541,10 +40541,10 @@
       "clientId": "CLI-SGT-4806",
       "equipment": "NETBOOK HP 15 Azul",
       "status": "En Diagnóstico",
-      "problem": "Revisar SO win 11 / Tecla C",
+      "problem": "Revisar SO win 11 / Tecla C\r\nCambio a SSD 240GB",
       "notes": "",
       "date": "2026-05-19",
-      "price": 0
+      "price": 175000
     },
     {
       "id": "REP-SGT-16111",
@@ -41582,7 +41582,9 @@
         "title": "",
         "description": ""
       }
-    ]
+    ],
+    "sgtallerEnabled": true,
+    "sgtallerDbPath": "C:\\SGTaller 3 Demo\\Base\\service.fdb"
   },
   "categories": [
     {
