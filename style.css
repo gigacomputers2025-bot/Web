@@ -425,6 +425,13 @@ textarea.form-control {
     z-index: 10;
 }
 
+.product-badge.new {
+    left: 1rem;
+    right: auto;
+    background: var(--success);
+    box-shadow: 0 2px 8px rgba(16, 185, 129, 0.4);
+}
+
 .product-content {
     padding: 1.25rem;
     display: flex;

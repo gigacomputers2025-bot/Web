@@ -634,9 +634,12 @@ const Pages = {
             const activeCat = document.querySelector('.category-item.active').dataset.category;
             
             let filtered = filterOfertas ? allProducts.filter(p => p.oferta) : allProducts;
-            if (activeCat !== 'all') {
+            
+            // Only filter by category if there is no active search query
+            if (activeCat !== 'all' && !query) {
                 filtered = filtered.filter(p => p.category === activeCat);
             }
+            
             if (query) {
                 const queryWords = query.split(/\s+/);
                 filtered = filtered.filter(p => {
@@ -663,13 +666,29 @@ const Pages = {
             item.addEventListener('click', () => {
                 document.querySelectorAll('.category-item').forEach(i => i.classList.remove('active'));
                 item.classList.add('active');
+                
+                // Clear the search input when a category is manually clicked
+                const searchInput = document.getElementById('search-input');
+                if (searchInput) searchInput.value = '';
+                
                 updateGrid();
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             });
         });
 
         // Search and Sort logic
-        const debouncedUpdate = DB.utils.debounce(updateGrid, 200);
+        const debouncedUpdate = DB.utils.debounce(() => {
+            const query = document.getElementById('search-input').value.trim();
+            if (query) {
+                // Highlight "Todas" category visually when searching
+                const allCatBtn = document.querySelector('.category-item[data-category="all"]');
+                if (allCatBtn && !allCatBtn.classList.contains('active')) {
+                    document.querySelectorAll('.category-item').forEach(i => i.classList.remove('active'));
+                    allCatBtn.classList.add('active');
+                }
+            }
+            updateGrid();
+        }, 200);
         document.getElementById('search-input').addEventListener('input', debouncedUpdate);
         document.getElementById('sort-select').addEventListener('change', updateGrid);
 
@@ -684,6 +703,7 @@ const Pages = {
         return products.map(p => `
             <div class="product-card glass ${p.id === highlightId ? 'highlighted' : ''}" data-id="${p.id}">
                 ${p.oferta ? '<span class="product-badge">OFERTA</span>' : ''}
+                ${p.nuevo ? '<span class="product-badge new">NUEVO</span>' : ''}
                 <div class="product-img-container">
                     <img src="${p.image || 'https://images.unsplash.com/photo-1588702547919-26089e690ecc?auto=format&fit=crop&w=500&q=60'}" alt="${p.name}" loading="lazy" onload="this.classList.add('loaded')" onerror="this.src='https://images.unsplash.com/photo-1588702547919-26089e690ecc?auto=format&fit=crop&w=500&q=60';">
                     ${!p.image ? '<div class="no-image-overlay">Sin Foto</div>' : ''}
@@ -1271,6 +1291,7 @@ const Pages = {
                             <th>Categoría</th>
                             <th>Precio</th>
                             <th>Oferta</th>
+                            <th>Nuevo</th>
                             <th>Acciones</th>
                         </tr>
                     </thead>
@@ -1282,6 +1303,7 @@ const Pages = {
                                 <td>${p.category}</td>
                                 <td>${formatMoney(p.price)}</td>
                                 <td>${p.oferta ? '<span class="status-badge status-Finalizada">Sí</span>' : '-'}</td>
+                                <td>${p.nuevo ? '<span class="status-badge status-EnReparacion">Sí</span>' : '-'}</td>
                                 <td>
                                     <button class="btn btn-secondary btn-edit" data-id="${p.id}"><i class="ph ph-pencil"></i></button>
                                     <button class="btn btn-danger btn-delete" data-id="${p.id}"><i class="ph ph-trash"></i></button>
@@ -1395,9 +1417,15 @@ const Pages = {
                             <label class="form-label">Descripción</label>
                             <textarea id="p-desc" class="form-control" style="height: 80px;">${isEdit ? (product.desc || '') : ''}</textarea>
                         </div>
-                        <div class="form-group flex items-center gap-2">
-                            <input type="checkbox" id="p-oferta" ${isEdit && product.oferta ? 'checked' : ''}>
-                            <label for="p-oferta" class="form-label" style="margin:0;">Destacar en Ofertas</label>
+                        <div style="display: flex; gap: 1.5rem; margin-bottom: 0.75rem;">
+                            <div class="form-group flex items-center gap-2" style="margin: 0;">
+                                <input type="checkbox" id="p-oferta" ${isEdit && product.oferta ? 'checked' : ''}>
+                                <label for="p-oferta" class="form-label" style="margin:0; cursor: pointer;">Destacar en Ofertas</label>
+                            </div>
+                            <div class="form-group flex items-center gap-2" style="margin: 0;">
+                                <input type="checkbox" id="p-nuevo" ${isEdit && product.nuevo ? 'checked' : ''}>
+                                <label for="p-nuevo" class="form-label" style="margin:0; cursor: pointer;">Producto Nuevo</label>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1466,7 +1494,8 @@ const Pages = {
                 price: parseFloat(document.getElementById('p-price').value),
                 desc: document.getElementById('p-desc').value,
                 image: document.getElementById('p-image').value,
-                oferta: document.getElementById('p-oferta').checked
+                oferta: document.getElementById('p-oferta').checked,
+                nuevo: document.getElementById('p-nuevo').checked
             };
 
             if (isEdit) {
@@ -1650,7 +1679,8 @@ const Pages = {
                         price: price,
                         desc: 'Importado masivamente',
                         image: 'https://images.unsplash.com/photo-1588702547919-26089e690ecc?auto=format&fit=crop&w=500&q=60',
-                        oferta: false
+                        oferta: false,
+                        nuevo: false
                     }, false); // No sincronizar todavía
                     count++;
                 }
