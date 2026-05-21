@@ -1376,7 +1376,13 @@ tbody tr {
 
 @media (max-width: 768px) {
     .promotional-carousel {
-        height: 250px;
+        height: auto;
+        min-height: 260px;
+        aspect-ratio: 16 / 9;
+    }
+    .carousel-slide {
+        background-size: contain;
+        background-position: top center;
     }
     .carousel-btn {
         width: 36px;
@@ -1390,6 +1396,7 @@ tbody tr {
         right: 1rem;
         max-width: none;
         padding: 0.75rem;
+        background: rgba(0, 0, 0, 0.65);
     }
     .carousel-slide-title {
         font-size: 1.25rem;
@@ -1404,7 +1411,9 @@ tbody tr {
 
 @media (max-width: 480px) {
     .promotional-carousel {
-        height: 200px;
+        height: auto;
+        min-height: 220px;
+        aspect-ratio: 4 / 3;
     }
     .carousel-btn {
         width: 32px;

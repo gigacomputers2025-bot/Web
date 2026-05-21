@@ -40053,7 +40053,7 @@
       "code": "NKLJR",
       "clientId": "CLI-SGT-4805",
       "equipment": "NOTEBOOK dell 15 gris",
-      "status": "En Diagnóstico",
+      "status": "Finalizada",
       "problem": "revisar se tilda + Bateria",
       "notes": "",
       "date": "2026-05-18",
@@ -40247,6 +40247,17 @@
       "price": 0
     },
     {
+      "id": "REP-SGT-16312",
+      "code": "429GA",
+      "clientId": "CLI-SGT-2023",
+      "equipment": "PC ESCRITORIO",
+      "status": "En Diagnóstico",
+      "problem": "armado + S.0",
+      "notes": "",
+      "date": "2026-05-21",
+      "price": 0
+    },
+    {
       "id": "REP-SGT-16186",
       "code": "D8FNZ",
       "clientId": "CLI-SGT-4488",
@@ -40321,6 +40332,17 @@
       "problem": "Magis",
       "notes": "",
       "date": "2026-05-14",
+      "price": 0
+    },
+    {
+      "id": "REP-SGT-16313",
+      "code": "LXMQW",
+      "clientId": "CLI-SGT-1459",
+      "equipment": "Varios TV BOX Tv Box",
+      "status": "En Diagnóstico",
+      "problem": "Magis",
+      "notes": "",
+      "date": "2026-05-21",
       "price": 0
     },
     {
@@ -40570,7 +40592,7 @@
       "code": "ZCJ44",
       "clientId": "CLI-SGT-4806",
       "equipment": "NETBOOK HP 15 Azul",
-      "status": "En Diagnóstico",
+      "status": "Finalizada",
       "problem": "Revisar SO win 11 / Tecla C\r\nCambio a SSD 240GB",
       "notes": "",
       "date": "2026-05-19",
@@ -40779,7 +40801,7 @@
       "code": "MSSLL",
       "clientId": "CLI-SGT-2476",
       "equipment": "NOTEBOOK Lenovo 15 gris",
-      "status": "Finalizada",
+      "status": "Entregada",
       "problem": "SSD 240",
       "notes": "",
       "date": "2026-05-19",
@@ -40823,7 +40845,7 @@
       "code": "DAPBH",
       "clientId": "CLI-SGT-4797",
       "equipment": "Varios tvbox caja negra",
-      "status": "Finalizada",
+      "status": "Entregada",
       "problem": "revisar se apaga",
       "notes": "Placa levanta temperatura",
       "date": "2026-05-08",
