@@ -9,6 +9,87 @@ app.use(cors());
 app.use(express.json({limit: '50mb'}));
 app.use(express.static(__dirname));
 
+const BASE_URL = 'https://gigacomputers.com.ar';
+
+function csvEscape(val) {
+    if (val == null) return '';
+    const s = String(val);
+    if (s.includes(',') || s.includes('"') || s.includes('\n') || s.includes('\r')) {
+        return '"' + s.replace(/"/g, '""') + '"';
+    }
+    return s;
+}
+
+function generateCatalogCsv() {
+    const dataPath = path.join(__dirname, 'data.json');
+    const data = JSON.parse(fs.readFileSync(dataPath, 'utf8'));
+    const products = data.products || [];
+    const brand = (data.config && data.config.companyName) || 'GIGA Computers';
+
+    const header = 'id,title,description,availability,condition,price,link,image_link,brand,inventory,quantity_to_sell_on_facebook';
+    const rows = products.map(p => {
+        const id = p.id || '';
+        const title = (p.name || '').trim();
+        const desc = (p.desc || title || '').trim();
+        const availability = 'in stock';
+        const condition = 'new';
+        const price = (p.price != null ? Number(p.price).toFixed(2) : '0.00') + ' ARS';
+        const link = BASE_URL + '/index.html?id=' + encodeURIComponent(id);
+
+        let imageLink = '';
+        if (p.image) {
+            if (p.image.startsWith('http')) {
+                imageLink = p.image;
+            } else if (p.image.startsWith('assets/') || p.image.startsWith('/')) {
+                imageLink = BASE_URL + '/' + p.image.replace(/^\//, '');
+            }
+        }
+
+        const inventory = '99';
+        const qty = '99';
+
+        return [
+            csvEscape(id),
+            csvEscape(title),
+            csvEscape(desc),
+            csvEscape(availability),
+            csvEscape(condition),
+            csvEscape(price),
+            csvEscape(link),
+            csvEscape(imageLink),
+            csvEscape(brand),
+            csvEscape(inventory),
+            csvEscape(qty)
+        ].join(',');
+    });
+
+    const csvContent = header + '\n' + rows.join('\n');
+    const csvPath = path.join(__dirname, 'catalog.csv');
+    fs.writeFileSync(csvPath, csvContent, 'utf8');
+    console.log('-> catalog.csv generado con ' + products.length + ' productos');
+    return products.length;
+}
+
+// API endpoint para que Nexus POS importe artículos
+app.get('/api/products', (req, res) => {
+    try {
+        const data = JSON.parse(fs.readFileSync(path.join(__dirname, 'data.json'), 'utf8'));
+        res.json(data.products || []);
+    } catch (e) {
+        res.status(500).json({ error: 'Error al leer catálogo' });
+    }
+});
+
+// API endpoint para que Nexus POS importe configuración de empresa
+app.get('/api/config', (req, res) => {
+    try {
+        const data = JSON.parse(fs.readFileSync(path.join(__dirname, 'data.json'), 'utf8'));
+        res.json(data.config || {});
+    } catch (e) {
+        res.status(500).json({ error: 'Error al leer configuración' });
+    }
+});
+
 app.post('/api/sync-full', (req, res) => {
     try {
         const { execSync } = require('child_process');
@@ -64,6 +145,14 @@ app.post('/api/sync-full', (req, res) => {
 app.post('/api/save', (req, res) => {
     try {
         fs.writeFileSync(path.join(__dirname, 'data.json'), JSON.stringify(req.body, null, 2));
+        
+        // Regenerar catalog.csv automaticamente
+        try {
+            generateCatalogCsv();
+        } catch (csvErr) {
+            console.error("Error generando catalog.csv en auto-save:", csvErr.message);
+        }
+        
         res.json({success: true});
         
         // Auto-sync en segundo plano
@@ -95,6 +184,17 @@ app.post('/api/save', (req, res) => {
         
     } catch(e) {
         res.status(500).json({success: false, error: e.message});
+    }
+});
+
+// API endpoint para generar catalog.csv para WhatsApp Business Catalog
+app.post('/api/generate-catalog-csv', (req, res) => {
+    try {
+        const count = generateCatalogCsv();
+        res.json({ success: true, count });
+    } catch (e) {
+        console.error("Error generando catalog.csv:", e.message);
+        res.status(500).json({ success: false, error: e.message });
     }
 });
 

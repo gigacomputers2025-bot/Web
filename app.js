@@ -1267,11 +1267,9 @@ const Pages = {
                 <div class="flex justify-between items-center mb-4" style="flex-wrap: wrap; gap: 1rem;">
                     <h1 style="margin-bottom: 0;">Gestión de Productos</h1>
                 <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; align-items: center;">
-                    <!-- Button Sync WhatsApp Deshabilitado 
-                    <button class="btn btn-secondary" id="btn-sync-catalog-shortcut" title="Sincronizar con WhatsApp / GitHub">
+                    <button class="btn btn-secondary" id="btn-sync-catalog-shortcut" title="Generar catalog.csv para WhatsApp Business">
                         <i class="ph ph-whatsapp-logo"></i> Sync WhatsApp
                     </button>
-                    -->
                     <div style="position: relative;">
                         <i class="ph ph-magnifying-glass" style="position: absolute; left: 0.75rem; top: 50%; transform: translateY(-50%); color: var(--text-muted);"></i>
                         <input type="text" id="search-products" class="form-control" placeholder="Buscar producto..." style="padding-left: 2.2rem; width: 220px;">
@@ -1319,12 +1317,20 @@ const Pages = {
 
         document.getElementById('btn-add-product').addEventListener('click', () => this.showProductModal());
 
-        // Shortcut Sync Button
-        /* Shortcut Sync Button Deshabilitado
         document.getElementById('btn-sync-catalog-shortcut').addEventListener('click', async () => {
-            // ...
+            try {
+                Toast.show('Generando catalog.csv...', 'sync');
+                const res = await fetch('/api/generate-catalog-csv', { method: 'POST' });
+                const result = await res.json();
+                if (res.ok && result.success) {
+                    Toast.show('catalog.csv generado con ' + result.count + ' productos', 'success');
+                } else {
+                    Toast.show('Error: ' + (result.error || 'desconocido'), 'error');
+                }
+            } catch (e) {
+                Toast.show('Error de conexión: ' + e.message, 'error');
+            }
         });
-        */
         document.getElementById('btn-manage-categories').addEventListener('click', () => this.showCategoryModal());
         document.getElementById('btn-bulk-price').addEventListener('click', () => this.showBulkPriceModal());
         document.getElementById('btn-import-products').addEventListener('click', () => this.showImportModal());
@@ -1764,14 +1770,26 @@ const Pages = {
         const clients = DB.get('clients');
 
         // Apply Sorting Logic
-        const sortVal = this.currentRepairsSort || 'date-desc';
+        const sortVal = this.currentRepairsSort || 'id-desc';
         const sortRepairs = (arr) => {
             arr.sort((a, b) => {
                 if (sortVal === 'date-desc') {
-                    return new Date(b.date) - new Date(a.date);
+                    const diff = new Date(b.date) - new Date(a.date);
+                    if (diff === 0) {
+                        const numA = parseInt(a.id.replace(/\D/g, ''), 10) || 0;
+                        const numB = parseInt(b.id.replace(/\D/g, ''), 10) || 0;
+                        return numB - numA;
+                    }
+                    return diff;
                 }
                 if (sortVal === 'date-asc') {
-                    return new Date(a.date) - new Date(b.date);
+                    const diff = new Date(a.date) - new Date(b.date);
+                    if (diff === 0) {
+                        const numA = parseInt(a.id.replace(/\D/g, ''), 10) || 0;
+                        const numB = parseInt(b.id.replace(/\D/g, ''), 10) || 0;
+                        return numA - numB;
+                    }
+                    return diff;
                 }
                 if (sortVal === 'id-desc') {
                     const numA = parseInt(a.id.replace(/\D/g, ''), 10) || 0;
