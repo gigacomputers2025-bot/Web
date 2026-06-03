@@ -41804,6 +41804,21 @@
       "notes": "",
       "price": 0,
       "date": "2026-06-03"
+    },
+    {
+      "id": "REP-303846",
+      "code": "C836X",
+      "clientId": "17804193041845h87",
+      "clientName": "Daniel Pereira",
+      "clientPhone": "4431 6663",
+      "equipment": "Tv Box",
+      "marca": "Mx9",
+      "modelo": "Mx9",
+      "status": "Recibida",
+      "problem": "Actualizar App",
+      "notes": "",
+      "price": 0,
+      "date": "2026-06-03"
     }
   ],
   "services": [
