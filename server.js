@@ -1,244 +1,67 @@
 const express = require('express');
-const fs = require('fs');
-const { exec } = require('child_process');
 const path = require('path');
 const cors = require('cors');
+const http = require('http');
+
+const POS_URL = process.env.POS_URL || 'http://localhost:3010';
 
 const app = express();
 app.use(cors());
 app.use(express.json({limit: '50mb'}));
 app.use(express.static(__dirname));
 
-const BASE_URL = 'https://gigacomputers.com.ar';
-
-function csvEscape(val) {
-    if (val == null) return '';
-    const s = String(val);
-    if (s.includes(',') || s.includes('"') || s.includes('\n') || s.includes('\r')) {
-        return '"' + s.replace(/"/g, '""') + '"';
-    }
-    return s;
-}
-
-function generateCatalogCsv() {
-    const dataPath = path.join(__dirname, 'data.json');
-    const data = JSON.parse(fs.readFileSync(dataPath, 'utf8'));
-    const products = data.products || [];
-    const brand = (data.config && data.config.companyName) || 'GIGA Computers';
-
-    const header = 'id,title,description,availability,condition,price,link,image_link,brand,inventory,quantity_to_sell_on_facebook';
-    const rows = products.map(p => {
-        const id = p.id || '';
-        const title = (p.name || '').trim();
-        const desc = (p.desc || title || '').trim();
-        const availability = 'in stock';
-        const condition = 'new';
-        const price = (p.price != null ? Number(p.price).toFixed(2) : '0.00') + ' ARS';
-        const link = BASE_URL + '/index.html?id=' + encodeURIComponent(id);
-
-        let imageLink = '';
-        if (p.image) {
-            if (p.image.startsWith('http')) {
-                imageLink = p.image;
-            } else if (p.image.startsWith('assets/') || p.image.startsWith('/')) {
-                imageLink = BASE_URL + '/' + p.image.replace(/^\//, '');
-            }
-        }
-
-        const inventory = '99';
-        const qty = '99';
-
-        return [
-            csvEscape(id),
-            csvEscape(title),
-            csvEscape(desc),
-            csvEscape(availability),
-            csvEscape(condition),
-            csvEscape(price),
-            csvEscape(link),
-            csvEscape(imageLink),
-            csvEscape(brand),
-            csvEscape(inventory),
-            csvEscape(qty)
-        ].join(',');
+function proxy(method, posPath, req, res) {
+  const { host, ...cleanHeaders } = req.headers;
+  const opts = { method, hostname: 'localhost', port: new URL(POS_URL).port || 3010, path: posPath, headers: cleanHeaders };
+  const pr = http.request(opts, (prRes) => {
+    let data = '';
+    prRes.on('data', c => data += c);
+    prRes.on('end', () => {
+      res.status(prRes.statusCode);
+      for (const [k, v] of Object.entries(prRes.headers)) res.setHeader(k, v);
+      try { res.json(JSON.parse(data)); } catch { res.send(data); }
     });
-
-    const csvContent = header + '\n' + rows.join('\n');
-    const csvPath = path.join(__dirname, 'catalog.csv');
-    fs.writeFileSync(csvPath, csvContent, 'utf8');
-    console.log('-> catalog.csv generado con ' + products.length + ' productos');
-    return products.length;
+  });
+  pr.on('error', () => res.status(502).json({ error: 'POS no disponible' }));
+  if (req.body && Object.keys(req.body).length > 0) pr.write(JSON.stringify(req.body));
+  pr.end();
 }
 
-// API endpoint para que Nexus POS importe artículos
-app.get('/api/products', (req, res) => {
-    try {
-        const data = JSON.parse(fs.readFileSync(path.join(__dirname, 'data.json'), 'utf8'));
-        res.json(data.products || []);
-    } catch (e) {
-        res.status(500).json({ error: 'Error al leer catálogo' });
-    }
-});
+// Proxy all /api/* routes to POS server
+const API_PROXY = ['/api/web-data', '/api/web-save', '/api/save', '/api/web/config', '/api/web/products', '/api/products', '/api/config', '/api/upload-image', '/api/visits/increment', '/api/visits/stats', '/api/visits'];
+for (const route of API_PROXY) {
+  if (route === '/api/visits/increment') {
+    app.post(route, (req, res) => proxy('POST', '/api/visits', req, res));
+  } else if (route === '/api/visits/stats') {
+    app.get(route, (req, res) => proxy('GET', '/api/visits', req, res));
+  } else if (route === '/api/visits') {
+    app.get(route, (req, res) => proxy('GET', '/api/visits', req, res));
+  } else if (route === '/api/upload-image') {
+    app.post(route, (req, res) => proxy('POST', '/api/web/upload-image', req, res));
+  } else if (route === '/api/save') {
+    app.post(route, (req, res) => proxy('POST', '/api/web-save', req, res));
+  } else if (route === '/api/web-save') {
+    app.post(route, (req, res) => proxy('POST', '/api/web-save', req, res));
+  } else if (route === '/api/web-data') {
+    app.get(route, (req, res) => proxy('GET', '/api/web-data', req, res));
+  } else if (route === '/api/web/config') {
+    app.get(route, (req, res) => proxy('GET', '/api/web/config', req, res));
+  } else if (route === '/api/web/products') {
+    app.get(route, (req, res) => proxy('GET', '/api/web/products', req, res));
+  } else if (route === '/api/products') {
+    app.get(route, (req, res) => proxy('GET', '/api/web/products', req, res));
+  } else if (route === '/api/config') {
+    app.get(route, (req, res) => proxy('GET', '/api/web/config', req, res));
+  }
+}
 
-// API endpoint para que Nexus POS importe configuración de empresa
-app.get('/api/config', (req, res) => {
-    try {
-        const data = JSON.parse(fs.readFileSync(path.join(__dirname, 'data.json'), 'utf8'));
-        res.json(data.config || {});
-    } catch (e) {
-        res.status(500).json({ error: 'Error al leer configuración' });
-    }
-});
-
-app.post('/api/sync-full', (req, res) => {
-    try {
-        const { execSync } = require('child_process');
-        const repoUrl = "https://github.com/gigacomputers2025-bot/Web.git";
-        
-        console.log("-> Iniciando sincronización completa del repositorio...");
-        
-        // 1. Asegurar .gitignore
-        const gitignorePath = path.join(__dirname, '.gitignore');
-        if (!fs.existsSync(gitignorePath)) {
-            fs.writeFileSync(gitignorePath, "node_modules\n.sync_tmp\n.DS_Store\n*.zip\n.git\n");
-        }
-        
-        // 2. Inicializar si no es un repo
-        if (!fs.existsSync(path.join(__dirname, '.git'))) {
-            execSync('git init', { cwd: __dirname });
-            try {
-                execSync(`git remote add origin ${repoUrl}`, { cwd: __dirname });
-            } catch(e) { /* Ya existe */ }
-        }
-        
-        // 3. Configurar usuario
-        execSync('git config user.name "TechStore Admin"', { cwd: __dirname });
-        execSync('git config user.email "admin@techstore.local"', { cwd: __dirname });
-        
-        // 4. Asegurar rama main
-        try {
-            execSync('git branch -M main', { cwd: __dirname });
-        } catch(e) { /* Fallo si no hay commits */ }
-        
-        // 5. Agregar y commit
-        execSync('git add .', { cwd: __dirname });
-        try {
-            execSync('git commit -m "Manual full sync from Admin Panel"', { cwd: __dirname });
-        } catch(e) { /* Nada para commit */ }
-        
-        // 6. Volver a intentar renombrar si falló antes
-        try {
-            execSync('git branch -M main', { cwd: __dirname });
-        } catch(e) {}
-        
-        // 7. Push
-        execSync('git push -u origin main --force', { cwd: __dirname });
-        
-        console.log("-> ¡Sincronización completa exitosa!");
-        res.json({success: true});
-    } catch(e) {
-        console.error("Error en sincronización completa:", e.message);
-        res.status(500).json({success: false, error: e.message});
-    }
-});
-
-app.post('/api/save', (req, res) => {
-    try {
-        fs.writeFileSync(path.join(__dirname, 'data.json'), JSON.stringify(req.body, null, 2));
-        
-        // Regenerar catalog.csv automaticamente
-        try {
-            generateCatalogCsv();
-        } catch (csvErr) {
-            console.error("Error generando catalog.csv en auto-save:", csvErr.message);
-        }
-        
-        res.json({success: true});
-        
-        // Auto-sync en segundo plano
-        setTimeout(() => {
-            console.log("-> Cambio detectado. Sincronizando con GitHub de fondo...");
-            const { execSync } = require('child_process');
-            const repoUrl = "https://github.com/gigacomputers2025-bot/Web.git";
-            const tmpDir = path.join(__dirname, '.sync_tmp');
-            
-            try {
-                if (fs.existsSync(tmpDir)) fs.rmSync(tmpDir, { recursive: true, force: true });
-                execSync(`git clone ${repoUrl} "${tmpDir}"`, {stdio: 'ignore'});
-                fs.copyFileSync(path.join(__dirname, 'data.json'), path.join(tmpDir, 'data.json'));
-                execSync(`git config user.name "TechStore Admin"`, { cwd: tmpDir });
-                execSync(`git config user.email "admin@techstore.local"`, { cwd: tmpDir });
-                execSync(`git add data.json`, { cwd: tmpDir });
-                try {
-                    execSync(`git commit -m "Auto-sync background"`, { cwd: tmpDir, stdio: 'ignore' });
-                } catch(commitErr) {
-                    // Nothing to commit, ignore
-                }
-                execSync(`git push origin main`, { cwd: tmpDir, stdio: 'ignore' });
-                if (fs.existsSync(tmpDir)) fs.rmSync(tmpDir, { recursive: true, force: true });
-                console.log("-> ¡Sincronización automática exitosa!");
-            } catch(e) {
-                if (fs.existsSync(tmpDir)) try { fs.rmSync(tmpDir, { recursive: true, force: true }); } catch(err){}
-            }
-        }, 1000);
-        
-    } catch(e) {
-        res.status(500).json({success: false, error: e.message});
-    }
-});
-
-// API endpoint para generar catalog.csv para WhatsApp Business Catalog
-app.post('/api/generate-catalog-csv', (req, res) => {
-    try {
-        const count = generateCatalogCsv();
-        res.json({ success: true, count });
-    } catch (e) {
-        console.error("Error generando catalog.csv:", e.message);
-        res.status(500).json({ success: false, error: e.message });
-    }
-});
+// Public repair lookup proxy (dynamic route with :code param)
+app.get('/api/repairs/lookup/:code', (req, res) => proxy('GET', '/api/repairs/lookup/' + req.params.code, req, res));
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log('--------------------------------------------------');
-    console.log('Servidor local iniciado: http://localhost:' + PORT);
+    console.log('Web-main proxy iniciado: http://localhost:' + PORT);
+    console.log('Proxy hacia POS: ' + POS_URL);
     console.log('--------------------------------------------------');
-
-    // Inicializar el Puente automático de SGTaller 3 en segundo plano
-    try {
-        console.log("-> Iniciando Puente con SGTaller 3...");
-        const bridge = require('./sgtaller_bridge.js');
-        
-        // Función para forzar el git auto-sync cuando el puente importe algo nuevo
-        const triggerGitSync = () => {
-            console.log("-> Puente SGTaller actualizó data.json. Sincronizando de fondo con GitHub...");
-            const { execSync } = require('child_process');
-            const repoUrl = "https://github.com/gigacomputers2025-bot/Web.git";
-            const tmpDir = path.join(__dirname, '.sync_tmp');
-            
-            try {
-                if (fs.existsSync(tmpDir)) fs.rmSync(tmpDir, { recursive: true, force: true });
-                execSync(`git clone ${repoUrl} "${tmpDir}"`, {stdio: 'ignore'});
-                fs.copyFileSync(path.join(__dirname, 'data.json'), path.join(tmpDir, 'data.json'));
-                execSync(`git config user.name "TechStore Admin"`, { cwd: tmpDir });
-                execSync(`git config user.email "admin@techstore.local"`, { cwd: tmpDir });
-                execSync(`git add data.json`, { cwd: tmpDir });
-                try {
-                    execSync(`git commit -m "Auto-sync SGTaller Bridge"`, { cwd: tmpDir, stdio: 'ignore' });
-                } catch(commitErr) {
-                    // Nothing to commit, ignore and proceed to push check
-                }
-                execSync(`git push origin main`, { cwd: tmpDir, stdio: 'ignore' });
-                if (fs.existsSync(tmpDir)) fs.rmSync(tmpDir, { recursive: true, force: true });
-                console.log("-> ¡Puente SGTaller: Sincronización automática de fondo exitosa!");
-            } catch(e) {
-                if (fs.existsSync(tmpDir)) try { fs.rmSync(tmpDir, { recursive: true, force: true }); } catch(err){}
-                console.error("-> Puente SGTaller: Error en auto-sync:", e.message);
-            }
-        };
-
-        bridge.startLoop(triggerGitSync);
-    } catch (e) {
-        console.error("-> Error al iniciar el Puente de SGTaller 3:", e.message);
-    }
 });

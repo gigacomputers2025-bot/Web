@@ -28,7 +28,7 @@ const DB = {
     async init() {
         try {
             // Usamos un versionado más controlado que Date.now() para permitir el cache del navegador
-            const res = await fetch('data.json?v=2'); 
+            const res = await fetch('/api/web-data'); 
             if (res.ok) {
                 const data = await res.json();
                 Object.keys(this.keys).forEach(key => {
@@ -433,26 +433,17 @@ const formatMoney = (amount) => {
 
 // --- Stats Module (Visits Counter) ---
 const Stats = {
-    apiKey: 'gigacomputers-lujan-stats',
-    baseUrl: 'https://api.counterapi.dev/v1',
-
     async increment() {
-        // No incrementar en localhost para no falsear estadísticas
         if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') return;
-        
-        try {
-            await fetch(`${this.baseUrl}/${this.apiKey}/hits/up`);
-        } catch (e) {}
+        try { await fetch('/api/visits/increment', { method: 'POST' }); } catch {}
     },
 
     async getHits() {
         try {
-            const res = await fetch(`${this.baseUrl}/${this.apiKey}/hits`);
+            const res = await fetch('/api/visits/stats');
             const data = await res.json();
-            return data.count || 0;
-        } catch (e) {
-            return '---';
-        }
+            return data.total || 0;
+        } catch { return '---'; }
     }
 };
 
@@ -757,7 +748,7 @@ const Pages = {
         this.app.innerHTML = `
             <div style="max-width: 520px; margin: 0 auto; text-align: center;">
                 <h1>Consulta de Reparaciones</h1>
-                <p style="color: var(--text-muted); margin-bottom: 2rem;">Ingresá tu clave de 5 dígitos para verificar el estado de tu equipo.</p>
+                <p style="color: var(--text-muted); margin-bottom: 2rem;">Ingres\u00e1 tu clave de 5 d\u00edgitos para verificar el estado de tu equipo.</p>
                 
                 <div class="glass" style="padding: 2rem; border-radius: 1rem;">
                     <div class="form-group">
@@ -770,16 +761,24 @@ const Pages = {
             </div>
         `;
 
-        document.getElementById('btn-search-repair').addEventListener('click', () => {
-            const query = document.getElementById('repair-search').value.trim();
-            const repairs = DB.get('repairs');
-            const clients = DB.get('clients');
-            const repair = repairs.find(r => r.code === query.toUpperCase());
+        document.getElementById('btn-search-repair').addEventListener('click', async () => {
+            const query = document.getElementById('repair-search').value.trim().toUpperCase();
             const resultDiv = document.getElementById('repair-result');
 
-            if (repair) {
-                const client = clients.find(c => c.id === repair.clientId) || {};
-                const statusClass = `status-${repair.status.replace(/\s+/g, '')}`;
+            if (!query) {
+                resultDiv.innerHTML = `<div class="glass" style="padding: 1.5rem; border-radius: 1rem; color: var(--warning); text-align: center;">Ingrese una clave de consulta.</div>`;
+                return;
+            }
+
+            try {
+                const res = await fetch('/api/repairs/lookup/' + encodeURIComponent(query));
+                if (!res.ok) throw new Error('No encontrada');
+                const data = await res.json();
+                const repair = data.repair;
+                const clientName = repair.clientName || 'N/A';
+                const clientPhone = repair.clientPhone || '';
+
+                const statusClass = 'status-' + repair.status.replace(/\\s+/g, '');
                 resultDiv.innerHTML = `
                     <div class="glass" style="padding: 1.5rem; border-radius: 1rem; text-align: left;">
                         <div style="background: var(--accent-blue); color: white; padding: 1rem; border-radius: 0.5rem; text-align: center; margin-bottom: 1.5rem;">
@@ -791,32 +790,48 @@ const Pages = {
                             <span class="status-badge ${statusClass}">${repair.status}</span>
                         </div>
                         <table style="width: 100%; border-collapse: collapse; font-size: 0.95rem;">
-                            <tr><td style="padding: 0.5rem 0; color: var(--text-muted); width: 40%;">Cliente</td><td style="font-weight: 600;">${client.name || 'N/A'}</td></tr>
-                            <tr><td style="padding: 0.5rem 0; color: var(--text-muted);">Equipo</td><td style="font-weight: 600;">${repair.equipment}</td></tr>
+                            <tr><td style="padding: 0.5rem 0; color: var(--text-muted); width: 40%;">Cliente</td><td style="font-weight: 600;">${clientName}</td></tr>
+                            <tr><td style="padding: 0.5rem 0; color: var(--text-muted);">Equipo</td><td style="font-weight: 600;">${repair.equipment}${repair.marca ? ' (' + repair.marca + ')' : ''}${repair.modelo ? ' ' + repair.modelo : ''}</td></tr>
                             <tr><td style="padding: 0.5rem 0; color: var(--text-muted);">Problema</td><td>${repair.problem}</td></tr>
                             <tr><td style="padding: 0.5rem 0; color: var(--text-muted);">Fecha Ingreso</td><td>${repair.date}</td></tr>
-                            ${repair.notes ? `<tr><td style="padding: 0.5rem 0; color: var(--text-muted);">Notas</td><td>${repair.notes}</td></tr>` : ''}
-                            <tr><td style="padding: 0.5rem 0; color: var(--text-muted); font-weight: 600;">Costo de Reparación</td><td style="font-weight: 700; color: var(--success); font-size: 1.1rem;">${repair.price && repair.price > 0 ? formatMoney(repair.price) : 'A Confirmar'}</td></tr>
+                            ${repair.notes ? '<tr><td style="padding: 0.5rem 0; color: var(--text-muted);">Notas</td><td>' + repair.notes + '</td></tr>' : ''}
+                            <tr><td style="padding: 0.5rem 0; color: var(--text-muted); font-weight: 600;">Costo de Reparaci\u00f3n</td><td style="font-weight: 700; color: var(--success); font-size: 1.1rem;">${repair.price && repair.price > 0 ? formatMoney(repair.price) : 'A Confirmar'}</td></tr>
                         </table>
-                        <button class="btn btn-secondary" onclick="Pages.printRepairPDF('${repair.code}')" style="width: 100%; margin-top: 1.5rem;">
+                        <button class="btn btn-secondary" onclick="Pages.printRepairPDFPublic('${repair.code}')" style="width: 100%; margin-top: 1.5rem;">
                             <i class="ph ph-printer"></i> Imprimir / Guardar como PDF
                         </button>
                     </div>
                 `;
-            } else {
+            } catch {
                 resultDiv.innerHTML = `
                     <div class="glass" style="padding: 1.5rem; border-radius: 1rem; color: var(--danger); text-align: center;">
                         <i class="ph ph-warning" style="font-size: 2rem; display: block; margin-bottom: 0.5rem;"></i>
-                        No se encontró ninguna orden con esa clave.
+                        No se encontr\u00f3 ninguna orden con esa clave.
                     </div>
                 `;
             }
         });
 
-        // Permitir buscar presionando Enter
         document.getElementById('repair-search').addEventListener('keydown', (e) => {
             if (e.key === 'Enter') document.getElementById('btn-search-repair').click();
         });
+    },
+
+    async printRepairPDFPublic(code) {
+        try {
+            const res = await fetch('http://localhost:3010/api/repairs/lookup/' + encodeURIComponent(code));
+            if (!res.ok) return;
+            const data = await res.json();
+            const repair = data.repair;
+            const clientName = repair.clientName || 'N/A';
+            const clientPhone = repair.clientPhone || '';
+            const config = DB.getConfig();
+
+            const printWin = window.open('', '_blank');
+            if (!printWin) return;
+            printWin.document.write('\x3C!DOCTYPE html>\x3Chtml lang="es">\x3Chead>\x3Cmeta charset="UTF-8">\x3Ctitle>Comprobante de Reparaci\u00f3n - ' + repair.code + '\x3C/title>\x3Cstyle>:root{--primary:#dc2626;--dark:#111827;--gray-50:#f9fafb;--gray-100:#f3f4f6;--gray-200:#e5e7eb;--gray-500:#6b7280;--gray-700:#374151}*{box-sizing:border-box;margin:0;padding:0}body{font-family:Inter,-apple-system,sans-serif;padding:0;color:var(--dark);line-height:1.5;background:white}.page{width:210mm;padding:15mm;margin:auto;background:white;position:relative}@page{size:A4;margin:0}.header{display:flex;justify-content:space-between;align-items:flex-start;border-bottom:2px solid var(--primary);padding-bottom:1rem;margin-bottom:1.5rem}.company-name{font-size:1.75rem;font-weight:800;color:var(--primary);text-transform:uppercase;letter-spacing:-0.025em}.company-info{font-size:0.85rem;color:var(--gray-500);margin-top:0.2rem;font-weight:500}.order-header{display:flex;justify-content:space-between;background:var(--gray-50);padding:1rem;border-radius:0.75rem;margin-bottom:1.5rem;border:1px solid var(--gray-100)}.code-section{text-align:center;flex:1}.badge-label{font-size:0.7rem;color:var(--gray-500);font-weight:700;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.4rem}.badge-code{background:var(--primary);color:white;padding:0.5rem 1.5rem;border-radius:0.75rem;font-size:4rem;font-weight:800;letter-spacing:0.4rem;display:inline-block;line-height:1}.order-meta{text-align:right;display:flex;flex-direction:column;justify-content:center;gap:0.25rem}.order-id{font-size:0.8rem;color:var(--gray-500);text-transform:uppercase;letter-spacing:0.05em}.order-number{font-size:1.5rem;font-weight:700;color:var(--primary)}.details-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-bottom:1.5rem}.details-section h3{font-size:0.8rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--primary);font-weight:700;border-bottom:2px solid var(--gray-100);padding-bottom:0.5rem;margin-bottom:0.75rem}.detail-row{display:flex;padding:0.35rem 0;border-bottom:1px solid var(--gray-100);font-size:0.85rem}.detail-label{color:var(--gray-500);font-weight:600;width:120px;flex-shrink:0}.detail-value{color:var(--dark);font-weight:500}.notes-section{margin-bottom:1rem}.notes-section h3{font-size:0.8rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--primary);font-weight:700;border-bottom:2px solid var(--gray-100);padding-bottom:0.5rem;margin-bottom:0.75rem}.notes-box{padding:0.75rem;border-radius:0.5rem;font-size:0.85rem;line-height:1.6;background:var(--gray-50);border-left:4px solid var(--primary)}.notes-box-secondary{border-left-color:var(--gray-500);margin-top:0.5rem}.stamp{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) rotate(-15deg);font-size:4rem;font-weight:900;color:rgba(220,38,38,0.08);text-transform:uppercase;pointer-events:none;white-space:nowrap;border:4px solid rgba(220,38,38,0.12);border-radius:2rem;padding:1rem 3rem}.footer{margin-top:2rem;padding-top:1rem;border-top:1px solid var(--gray-200);display:flex;justify-content:space-between;font-size:0.75rem;color:var(--gray-500)}\x3C/style>\x3C/head>\x3Cbody>\x3Cdiv class="page">\x3Cdiv class="header">\x3Cdiv>\x3Cdiv class="company-name">' + (config.companyName || 'Nexus POS') + '\x3C/div>\x3Cdiv class="company-info">' + (config.address ? config.address + ' &bull; ' : '') + (config.phone ? config.phone + ' &bull; ' : '') + (config.email || '') + '\x3C/div>\x3C/div>\x3Cdiv class="order-meta">\x3Cdiv class="order-id">Orden de Servicio\x3C/div>\x3Cdiv class="order-number"># ' + repair.id + '\x3C/div>\x3C/div>\x3C/div>\x3Cdiv class="order-header">\x3Cdiv class="code-section">\x3Cdiv class="badge-label">Clave para consulta web\x3C/div>\x3Cdiv class="badge-code">' + repair.code + '\x3C/div>\x3Cdiv style="margin-top:0.5rem;font-size:0.75rem;color:var(--gray-500)">Use esta clave en nuestro sitio para ver el estado\x3C/div>\x3C/div>\x3C/div>\x3Cdiv class="details-grid">\x3Cdiv class="details-section">\x3Ch3>Datos del Cliente\x3C/h3>\x3Cdiv class="detail-row">\x3Cspan class="detail-label">Nombre\x3C/span>\x3Cspan class="detail-value">' + clientName + '\x3C/span>\x3C/div>\x3Cdiv class="detail-row">\x3Cspan class="detail-label">Tel\u00e9fono\x3C/span>\x3Cspan class="detail-value">' + (clientPhone || '-') + '\x3C/span>\x3C/div>\x3C/div>\x3Cdiv class="details-section">\x3Ch3>Detalles del Equipo\x3C/h3>\x3Cdiv class="detail-row">\x3Cspan class="detail-label">Equipo\x3C/span>\x3Cspan class="detail-value">' + repair.equipment + (repair.marca ? ' (' + repair.marca + ')' : '') + (repair.modelo ? ' ' + repair.modelo : '') + '\x3C/span>\x3C/div>\x3Cdiv class="detail-row">\x3Cspan class="detail-label">Fecha Ing\x3C/span>\x3Cspan class="detail-value">' + repair.date + '\x3C/span>\x3C/div>\x3Cdiv class="detail-row">\x3Cspan class="detail-label">Estado\x3C/span>\x3Cspan class="detail-value">' + repair.status + '\x3C/span>\x3C/div>\x3Cdiv class="detail-row">\x3Cspan class="detail-label">Costo\x3C/span>\x3Cspan class="detail-value">$' + (Number(repair.price || 0).toLocaleString('es-AR', {minimumFractionDigits: 2})) + '\x3C/span>\x3C/div>\x3C/div>\x3C/div>\x3Cdiv class="notes-section">\x3Ch3>Problema Reportado\x3C/h3>\x3Cdiv class="notes-box">' + (repair.problem || 'No especificado') + '\x3C/div>\x3C/div>' + (repair.notes ? '\x3Cdiv class="notes-section">\x3Ch3>Observaciones Adicionales\x3C/h3>\x3Cdiv class="notes-box notes-box-secondary">' + repair.notes + '\x3C/div>\x3C/div>' : '') + '\x3Cdiv class="stamp">' + repair.status.toUpperCase() + '\x3C/div>\x3Cdiv class="footer">\x3Cspan>Conserve este comprobante para retirar su equipo.\x3C/span>\x3Cspan>' + repair.date + ' &mdash; ' + (config.companyName || 'Nexus POS') + '\x3C/span>\x3C/div>\x3C/div>\x3C/body>\x3C/html>');
+            printWin.document.close();
+        } catch {}
     },
 
     printRepairPDF(code) {
