@@ -41819,6 +41819,21 @@
       "notes": "",
       "price": 0,
       "date": "2026-06-03"
+    },
+    {
+      "id": "REP-343386",
+      "code": "ZX85K",
+      "clientId": "17804193044316ymg",
+      "clientName": "Marcelo Mato",
+      "clientPhone": "15-3337-5069",
+      "equipment": "Disco Rigido Externo",
+      "marca": "Noga",
+      "modelo": "Noga",
+      "status": "Recibida",
+      "problem": "revisar no funciona",
+      "notes": "",
+      "price": 0,
+      "date": "2026-06-03"
     }
   ],
   "services": [
