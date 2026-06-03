@@ -27,7 +27,7 @@ const DB = {
     
     async init() {
         try {
-            // Usamos un versionado más controlado que Date.now() para permitir el cache del navegador
+            // Try via API proxy first (local server mode)
             const res = await fetch('/api/web-data'); 
             if (res.ok) {
                 const data = await res.json();
@@ -40,7 +40,24 @@ const DB = {
                 return;
             }
         } catch (e) {
-            console.log("No data.json found or fetch failed, falling back to local defaults.");
+            console.log("API not available, trying data.json...");
+        }
+
+        // Fallback: load data.json directly (GitHub Pages / static mode)
+        try {
+            const res = await fetch('/data.json?t=' + Date.now());
+            if (res.ok) {
+                const data = await res.json();
+                Object.keys(this.keys).forEach(key => {
+                    if (data[key]) {
+                        localStorage.setItem(this.keys[key], JSON.stringify(data[key]));
+                        this._cache[key] = data[key];
+                    }
+                });
+                return;
+            }
+        } catch (e) {
+            console.log("data.json not available, using defaults.");
         }
 
         // Cargar defaults si no hay nada en localStorage
@@ -770,15 +787,35 @@ const Pages = {
                 return;
             }
 
+            // Try API first (local proxy mode), fallback to local data (GitHub Pages)
+            let repair = null;
             try {
                 const res = await fetch('/api/repairs/lookup/' + encodeURIComponent(query));
-                if (!res.ok) throw new Error('No encontrada');
-                const data = await res.json();
-                const repair = data.repair;
-                const clientName = repair.clientName || 'N/A';
-                const clientPhone = repair.clientPhone || '';
+                if (res.ok) {
+                    const data = await res.json();
+                    repair = data.repair;
+                }
+            } catch {}
 
-                const statusClass = 'status-' + repair.status.replace(/\\s+/g, '');
+            if (!repair) {
+                const repairs = DB.get('repairs') || [];
+                repair = repairs.find(r => r.code === query) || null;
+            }
+
+            if (!repair) {
+                resultDiv.innerHTML = `
+                    <div class="glass" style="padding: 1.5rem; border-radius: 1rem; color: var(--danger); text-align: center;">
+                        <i class="ph ph-warning" style="font-size: 2rem; display: block; margin-bottom: 0.5rem;"></i>
+                        No se encontr\u00f3 ninguna orden con esa clave.
+                    </div>
+                `;
+                return;
+            }
+
+            const clientName = repair.clientName || 'N/A';
+            const clientPhone = repair.clientPhone || '';
+
+            const statusClass = 'status-' + repair.status.replace(/\\s+/g, '');
                 resultDiv.innerHTML = `
                     <div class="glass" style="padding: 1.5rem; border-radius: 1rem; text-align: left;">
                         <div style="background: var(--accent-blue); color: white; padding: 1rem; border-radius: 0.5rem; text-align: center; margin-bottom: 1.5rem;">
@@ -802,14 +839,6 @@ const Pages = {
                         </button>
                     </div>
                 `;
-            } catch {
-                resultDiv.innerHTML = `
-                    <div class="glass" style="padding: 1.5rem; border-radius: 1rem; color: var(--danger); text-align: center;">
-                        <i class="ph ph-warning" style="font-size: 2rem; display: block; margin-bottom: 0.5rem;"></i>
-                        No se encontr\u00f3 ninguna orden con esa clave.
-                    </div>
-                `;
-            }
         });
 
         document.getElementById('repair-search').addEventListener('keydown', (e) => {
@@ -818,11 +847,19 @@ const Pages = {
     },
 
     async printRepairPDFPublic(code) {
+        let repair = null;
         try {
-            const res = await fetch('http://localhost:3010/api/repairs/lookup/' + encodeURIComponent(code));
-            if (!res.ok) return;
-            const data = await res.json();
-            const repair = data.repair;
+            const res = await fetch('/api/repairs/lookup/' + encodeURIComponent(code));
+            if (res.ok) {
+                const data = await res.json();
+                repair = data.repair;
+            }
+        } catch {}
+        if (!repair) {
+            const repairs = DB.get('repairs') || [];
+            repair = repairs.find(r => r.code === code) || null;
+        }
+        if (!repair) return;
             const clientName = repair.clientName || 'N/A';
             const clientPhone = repair.clientPhone || '';
             const config = DB.getConfig();
